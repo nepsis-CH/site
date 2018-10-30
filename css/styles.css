@@ -1,0 +1,34 @@
+@font-face {
+    font-family: SongerByAlexanderPravdin;
+    src: url("SONGERT_SE_Heavy.otf") format("opentype");
+}
+
+.img-responsive {
+    margin: 0 auto;
+}
+
+.smaller-image {
+  width: 150px;
+}
+
+html, body, .container-table {
+	height: 100%;
+	font:inherit;
+    font-weight: 400;
+}
+
+h1 {
+	font-family: SongerByAlexanderPravdin, sans-serif;
+}
+
+div {
+	font-family: sans-serif;
+}
+
+.container-table {
+   display: table;
+}
+.vertical-center-row {
+   display: table-cell;
+   vertical-align: middle;
+}
