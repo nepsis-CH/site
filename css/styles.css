@@ -32,3 +32,7 @@ div {
    display: table-cell;
    vertical-align: middle;
 }
+
+.adresa-speciala:after {
+  content: attr(data-x) "@" attr(data-y) "." attr(data-z); 
+}
