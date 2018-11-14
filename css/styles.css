@@ -36,3 +36,8 @@ div {
 .adresa-speciala:after {
   content: attr(data-x) "@" attr(data-y) "." attr(data-z); 
 }
+
+tr.gri td {
+  color: #DCDCDC;
+}
+
