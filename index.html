@@ -35,7 +35,7 @@
 				<h3 class="text-center">Calendarul evenimentelor Nepsis Elve&#355;ia</h3>
 				<div class="col-sm-2"></div>
 				<div class="col-sm-8">
-					<table class="table table-striped">
+					<table id="calendar-nepsis" class="table table-striped">
 					  <thead>
 						<tr>
 						  <th scope="col" >Dat&#259;</th>
@@ -44,7 +44,7 @@
 						</tr>
 					  </thead>
 					  <tbody>
-						<tr class="gri">
+						<tr>
 						  <td><b>2 februarie 2019</b></td>
 						  <td><b>Turul parohiilor: parohia Z&uuml;rich</b></td>
 						  <td><a href="img/evenimente/TP-feb-mar-2019.jpg" target="_blank">afiș</a></td>
@@ -118,7 +118,7 @@ Intrarea se face pe lateral (intrarea în bibliotecă, ușa din stânga)
 				<h3 class="text-center">Alte evenimente duhovnicești din Elve&#355;ia</h3>
 				<div class="col-sm-1"></div>
 				<div class="col-sm-10">
-					<table class="table table-striped">
+					<table id="calendar-altele" class="table table-striped">
 					  <thead>
 						<tr>
 						  <th scope="col" >Dat&#259;</th>
@@ -128,43 +128,43 @@ Intrarea se face pe lateral (intrarea în bibliotecă, ușa din stânga)
 						</tr>
 					  </thead>
 					  <tbody>
-						<tr class="gri">
+						<tr>
 						  <td>2-4 noiembrie 2018</td>
 						  <td>Serie de conferin&#355;e cu Pr. Constantin Necula</td>
 						  <td>Parohia Berna</td>
 						  <td><a href="img/evenimente/20181102-berna.PNG" target="_blank">poster</a></td>
 						</tr>
-						<tr class="gri">
+						<tr>
 						  <td>3 noiembrie 2018</td>
 						  <td>&#206;nt&#226;lnirea tinerilor &#351;i a familiilor tinere cu &#206;PS Iosif</td>
 						  <td>Parohia Geneva, Grand-Lancy</td>
   						  <td><a href="img/evenimente/20181103-geneva.PNG" target="_blank">poster</a></td>
 						</tr>
-						<tr class="gri">
+						<tr>
 						  <td>1 decembrie 2018</td>
 						  <td>Conferin&#355;&#259; cu Pr. Nicolae Tănase</td>
 						  <td>Parohia Berna</td>
 						  <td><a href="img/evenimente/conferinte-berna-2009.pdf" target="_blank">pdf</a></td>
 						</tr>
-						<tr class="gri">
+						<tr>
 						  <td>9 decembrie 2018</td>
 						  <td>Hramul parohiei Z&uuml;rich (particip&#259; &#206;PS Iosif)</td>
 						  <td>Parohia Z&uuml;rich</td>
   						  <td><a>-</a></td>
 						</tr>
-						<tr class="gri">
+						<tr>
 						  <td>9-10 februarie 2019</td>
 						  <td>Prietenii din <a href="https://www.atorg.de/" target="_blank">ATORG</a> vin la Berna, laolaltă cu prietenii din alte filiale Nepsis (Franța, UK etc). O super ocazie de a ne cunoaște mai bine!</td>
 						  <td><a href="https://www.atorg.de/" target="_blank">ATORG</a></td>
 						  <td><a href="https://www.atorg.de/pelerinaje-si-excursii/" target="_blank">detalii excursie</a></td>
 						</tr>
-						<tr class="gri">
+						<tr>
 						  <td>9 februarie 2019</td>
 						  <td>P.S. Sofian Brașoveanul (episcop vicar din Germania): "Postul și hrana duhovnicească"</td>
 						  <td>Parohia Berna</td>
 						  <td><a href="img/evenimente/conferinte-berna-2009.pdf" target="_blank">pdf</a></td>
 						</tr>
-						<tr class="gri">
+						<tr>
 						  <td>10 februarie 2019</td>
 						  <td>&#206;nt&#226;lnire cu Dan Puric</td>
 						  <td>Parohia Berna</td>
@@ -190,5 +190,10 @@ Intrarea se face pe lateral (intrarea în bibliotecă, ușa din stânga)
 		</div>
 		<script src="scripts/jquery-1.11.3.min.js"></script>
 		<script src="scripts/bootstrap.min.js"></script>
+		<script src="scripts/autodate.js"></script>
+		<script>
+			markPastEvents("#calendar-nepsis");
+			markPastEvents("#calendar-altele");
+		</script>
 	</body>
 </html>
