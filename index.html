@@ -35,7 +35,7 @@
 				<h3 class="text-center">Calendarul evenimentelor Nepsis Elve&#355;ia</h3>
 				<div class="col-sm-2"></div>
 				<div class="col-sm-8">
-					<table  id="nepsis" class="table table-striped">
+					<table id="calendar-nepsis" class="table table-striped">
 					  <thead>
 						<tr>
 						  <th scope="col" >Dat&#259;</th>
@@ -93,7 +93,7 @@ Intrarea se face pe lateral (intrarea în bibliotecă, ușa din stânga)
 				<h3 class="text-center">Alte evenimente duhovnicești din Elve&#355;ia</h3>
 				<div class="col-sm-1"></div>
 				<div class="col-sm-10">
-					<table id="elvetia" class="table table-striped">
+					<table id="calendar-altele" class="table table-striped">
 					  <thead>
 						<tr>
 						  <th scope="col" >Dat&#259;</th>
@@ -189,47 +189,10 @@ Intrarea se face pe lateral (intrarea în bibliotecă, ușa din stânga)
 		</div>
 		<script src="scripts/jquery-1.11.3.min.js"></script>
 		<script src="scripts/bootstrap.min.js"></script>
+		<script src="scripts/autodate.js"></script>
 		<script>
-        var LUNI={
-        	"ianuarie":0, "februarie":1, "martie":2, "aprilie":3,
-        	"mai":4, "iunie":5, "iulie":6, "august":7, "septembrie":8,
-        	"octombrie":9, "noiembrie":10, "decembrie":11
-        };
-
-        function parseRoDateRange(text) {
-        	var parts = text.split(" ");
-        	var zile = parts[0].split("-").map(Number);
-        	var luni = parts[1].split("-").map(l => LUNI[l.toLowerCase()]);
-        	var an = Number(parts[2]);
-        	var start = new Date(an, luni[0], zile[0]);
-        	if (zile.length == 1) {
-        		var end = new Date(an, luni[0], zile[0]);
-        	} else {
-    			var end = new Date(an, luni.length == 1 ? luni[0] : luni[1], zile[1]);
-        	}
-        	return [start, end]
-        };
-
-        function markPastEvents(selector) {
-            var now = new Date();
-
-            var rows = $(selector);
-            for (var i=0; i < rows.length; i++) {
-            	var row = rows[i];
-            	var dataTd = $(row).children("td")[0];
-                var range = parseRoDateRange($(dataTd).text());
-                var start = range[0];
-                var end = range[1];
-				
-				console.log(start + " - " + end + " < " + now);
-                if (end < now) {
-                	$(row).addClass("gri");
-                } 
-            }
-        }
-
-        markPastEvents("table#nepsis > tbody > tr");
-        markPastEvents("table#elvetia > tbody > tr");
-    </script> 
+			markPastEvents("#calendar-nepsis");
+			markPastEvents("#calendar-altele");
+		</script>
 	</body>
 </html>
