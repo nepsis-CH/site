@@ -28,7 +28,8 @@ function parseRoDateRange(text) {
 };
 
 function markPastEvents(id) {
-    var now = new Date();
+    var nowDate = new Date();
+    var now = new Date(nowDate.getFullYear(), nowDate.getMonth(), nowDate.getDate(), 0, 0, 0);
 
     var rows = $(id + " > tbody > tr");
     for (var i=0; i < rows.length; i++) {
