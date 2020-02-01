@@ -17,6 +17,10 @@ html, body, .container-table {
     font-weight: 400;
 }
 
+body {
+	padding-top: 70px;
+}
+
 h1 {
 	font-family: SongerByAlexanderPravdin, sans-serif;
 }
