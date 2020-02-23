@@ -220,7 +220,7 @@ h6 {
 
 #intro .intro-info h2 {
   color: #413e66;
-  margin-bottom: 40px;
+  margin-bottom: 400px;
   font-size: 48px;
   font-weight: 700;
 }
@@ -1566,12 +1566,12 @@ h6 {
 
   #intro .intro-info {
     text-align: center;
-    padding-top: 40px;
+    padding-top: 20px;
   }
 
   #intro .intro-info h2 {
     font-size: 34px;
-    margin-bottom: 30px;
+    margin-bottom: 200px;
   }
 
   .section-header p {
