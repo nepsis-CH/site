@@ -214,7 +214,7 @@ h6 {
   width: 100%;
   height: 100vh;
   position: relative;
-  background: #f5f8fd url("../img/oras.jpg") center top no-repeat;
+  background: #f5f8fd url("../img/oras-web-mic.jpg") center top no-repeat;
   background-size: cover;
 }
 
@@ -1610,4 +1610,8 @@ h6 {
 .row-striped{
   background-color: #ffffff;
   padding: 15px 0;
+}
+
+mark {
+  background-color: #d28065;
 }
