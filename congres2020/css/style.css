@@ -242,7 +242,7 @@ h6 {
   transition: 0.5s;
   color: #fff;
   background: #1bb1dc;
-  color: #fff;
+  color: #fff;``
 }
 
 #intro .intro-info .btn-get-started:hover,
@@ -1500,7 +1500,7 @@ h6 {
 
 @media (min-width: 992px) {
   #intro .intro-info {
-    padding-top: 80px;
+    padding-top: 0px;
   }
 
   #testimonials .testimonial-item p {
@@ -1571,7 +1571,7 @@ h6 {
 
   #intro .intro-info h2 {
     font-size: 34px;
-    margin-bottom: 200px;
+    margin-bottom: 10px;
   }
 
   .section-header p {
@@ -1607,13 +1607,7 @@ h6 {
 }*/
 
 
-.row-striped:nth-of-type(odd){
+.row-striped{
   background-color: #ffffff;
-}
-.row-striped:nth-of-type(even){
-  background-color: #ffffff;
-}
-
-.row-striped {
-    padding: 15px 0;
+  padding: 15px 0;
 }
