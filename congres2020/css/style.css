@@ -1242,6 +1242,58 @@ h6 {
   content: "\f2c7" !important;
 }
 
+/* Covid Section
+--------------------------------*/
+
+#covid {
+  padding: 60px 0;
+  overflow: hidden;
+}
+
+#covid #covid-list {
+  padding: 0;
+  list-style: none;
+}
+
+#covid #covid-list li {
+  border-bottom: 1px solid #ebebeb;
+}
+
+#covid #covid-list button {
+  padding: 22px 0;
+  display: block;
+  position: relative;
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  line-height: 1;
+  font-weight: 400;
+  padding-right: 20px;
+}
+
+#covid #covid-list i {
+  font-size: 24px;
+  position: absolute;
+  right: 0;
+  top: 20px;
+}
+
+#covid #covid-list p {
+  margin-bottom: 20px;
+}
+
+#covid #covid-list button.collapse {
+  color: #1bb1dc;
+}
+
+#covid #covid-list button.collapsed {
+  color: #000;
+}
+
+#covid #covid-list button.collapsed i::before {
+  content: "\f2c7" !important;
+}
+
+
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
@@ -1546,6 +1598,20 @@ h6 {
   }
 
   #faq #faq-list i {
+    top: 13px;
+  }
+}
+
+@media (max-width: 768px) {
+  .back-to-top {
+    bottom: 15px;
+  }
+
+  #covid #covid-list a {
+    font-size: 18px;
+  }
+
+  #covid #covid-list i {
     top: 13px;
   }
 }
