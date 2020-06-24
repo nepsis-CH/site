@@ -9,6 +9,10 @@
 # General
 --------------------------------------------------------------*/
 
+.adresa-speciala:after {
+  content: attr(data-x) "@" attr(data-y) "." attr(data-z); 
+}
+
 body {
   background: #fff;
   color: #444;
