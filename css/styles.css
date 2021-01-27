@@ -45,12 +45,3 @@ tr.gri td {
   color: #DCDCDC;
 }
 
-/*
- This big-text is a hack for the psaltica/index.html page.
- The layout changed after I used two columns on the page, and the text became smaller.
- So I added this to make the text similar to what it was before.
- It's a hack.
-*/
-.big-text {
-	font-size: 1.5rem
-}
