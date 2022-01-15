@@ -41,6 +41,11 @@ div {
   content: attr(data-x) "@" attr(data-y) "." attr(data-z); 
 }
 
+.evident {
+	background-color:tomato;
+	color:white;
+}
+
 tr.gri td {
   color: #808080;
 }
