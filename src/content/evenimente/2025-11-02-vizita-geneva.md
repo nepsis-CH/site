@@ -8,4 +8,4 @@ lang: ro
 translationKey: geneva-2025
 ---
 
-Biserica din Geneva a avut binecuvântarea de a-l primi în vizită pastorală pe Înaltpreasfințitul Părinte Mitropolit Iosif. Cum a fost poți citi pe [pagina cu amintiri](/amintiri/).
+Biserica din Geneva a avut binecuvântarea de a-l primi în vizită pastorală pe Înaltpreasfințitul Părinte Mitropolit Iosif. Cum a fost poți citi pe [pagina cu amintiri](/amintiri/2025-vizita-geneva/).

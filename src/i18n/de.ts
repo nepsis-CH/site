@@ -7,7 +7,7 @@ const de: Partial<typeof ro> = {
 
   // Menü
   'nav.home': 'Startseite',
-  'nav.activities': 'Aktivitäten',
+  'nav.activities': 'Veranstaltungen',
   'nav.memories': 'Erinnerungen',
   'nav.patron': 'Schutzpatron',
   'nav.members': 'Mitglieder',
@@ -28,17 +28,17 @@ const de: Partial<typeof ro> = {
   'home.latestEvent': 'Jüngste Veranstaltung',
   'home.noUpcoming':
     'Zurzeit ist keine neue Veranstaltung angekündigt. Abonnieren Sie den Newsletter oder schreiben Sie uns, um über die nächsten Aktivitäten informiert zu werden.',
-  'home.allActivities': 'Alle Aktivitäten',
+  'home.allActivities': 'Alle Veranstaltungen',
   'home.seeMemories': 'Unsere Erinnerungen ansehen',
   'home.contactUs': 'Kontaktieren Sie uns',
   'home.moreAbout': 'Möchten Sie mehr darüber erfahren, wer wir sind und was wir tun?',
   'home.moreAboutLink': 'Besuchen Sie die Erinnerungsseite.',
 
   // Aktivitäten
-  'activities.title': 'Aktivitäten',
+  'activities.title': 'Veranstaltungen',
   'activities.description':
     'Der Veranstaltungskalender von Nepsis Schweiz: kommende Veranstaltungen und das Archiv der vergangenen.',
-  'activities.intro': 'Wir freuen uns, Sie bei unseren nächsten Aktivitäten begrüßen zu dürfen.',
+  'activities.intro': 'Wir freuen uns, Sie bei unseren nächsten Veranstaltungen begrüßen zu dürfen.',
   'activities.upcoming': 'Demnächst',
   'activities.past': 'Vergangene Veranstaltungen',
   'activities.noUpcoming':
@@ -59,6 +59,7 @@ const de: Partial<typeof ro> = {
     'Wenn Sie wissen möchten, wie wir aussehen und was wir bisher unternommen haben, sind Sie hier genau richtig!',
   'memories.year': 'Jahr',
   'memories.onlyRo': 'Ältere Erinnerungen sind nur auf Rumänisch verfügbar.',
+  'memories.back': 'Zurück zu den Erinnerungen',
 
   // Schutzpatron
   'patron.title': 'Heiliger Johannes Cassian',

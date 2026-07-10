@@ -1,8 +1,8 @@
 ---
-import Base from '../../layouts/Base.astro';
-import MemoryCard from '../../components/MemoryCard.astro';
-import { langStaticPaths, localeFromParam, useTranslations, defaultLocale } from '../../i18n';
-import { getMemoriesByYear } from '../../lib/content';
+import Base from '../../../layouts/Base.astro';
+import MemoryCard from '../../../components/MemoryCard.astro';
+import { langStaticPaths, localeFromParam, localePath, useTranslations, defaultLocale } from '../../../i18n';
+import { getMemoriesByYear } from '../../../lib/content';
 
 export function getStaticPaths() {
   return langStaticPaths();
@@ -47,13 +47,13 @@ const years = await getMemoriesByYear(lang);
               {t('memories.year')} {year}
             </h2>
             <div class="relative mt-8 space-y-8 border-l-2 border-brand-100 pl-6 sm:pl-8 [&>article]:relative">
-              {entries.map((memory) => (
+              {entries.map(({ memory, slug }) => (
                 <div class="relative">
                   <span
                     class="absolute -left-6 top-8 h-3 w-3 -translate-x-[7px] rounded-full border-2 border-white bg-brand-500 sm:-left-8"
                     aria-hidden="true"
                   />
-                  <MemoryCard memory={memory} lang={lang} />
+                  <MemoryCard memory={memory} lang={lang} href={localePath(lang, `/amintiri/${slug}/`)} />
                 </div>
               ))}
             </div>

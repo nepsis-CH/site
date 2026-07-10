@@ -5,4 +5,4 @@ lang: ro
 translationKey: aniversare-parohie-2025
 ---
 
-Cu prezența Înaltpreasfințitului Părinte Mitropolit Iosif, s-au sărbătorit 10 ani de activitate ai Parohiei. Detalii pe [pagina cu amintiri](/amintiri/).
+Cu prezența Înaltpreasfințitului Părinte Mitropolit Iosif, s-au sărbătorit 10 ani de activitate ai Parohiei. Detalii pe [pagina cu amintiri](/amintiri/2025-aniversare-10-ani-parohie/).

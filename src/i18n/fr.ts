@@ -7,7 +7,7 @@ const fr: Partial<typeof ro> = {
 
   // Menu
   'nav.home': 'Accueil',
-  'nav.activities': 'Activités',
+  'nav.activities': 'Événements',
   'nav.memories': 'Souvenirs',
   'nav.patron': 'Saint protecteur',
   'nav.members': 'Membres',
@@ -28,17 +28,17 @@ const fr: Partial<typeof ro> = {
   'home.latestEvent': 'Événement le plus récent',
   'home.noUpcoming':
     'Aucun nouvel événement n’est annoncé pour le moment. Abonnez-vous à la newsletter ou écrivez-nous pour être informé(e) des prochaines activités.',
-  'home.allActivities': 'Toutes les activités',
+  'home.allActivities': 'Tous les événements',
   'home.seeMemories': 'Voir nos souvenirs',
   'home.contactUs': 'Contactez-nous',
   'home.moreAbout': 'Vous voulez en savoir plus sur qui nous sommes et ce que nous faisons ?',
   'home.moreAboutLink': 'Visitez la page des souvenirs.',
 
   // Activités
-  'activities.title': 'Activités',
+  'activities.title': 'Événements',
   'activities.description':
-    'Le calendrier des activités de Nepsis Suisse : événements à venir et archives des événements passés.',
-  'activities.intro': 'Nous vous attendons avec joie à nos prochaines activités.',
+    'Le calendrier des événements de Nepsis Suisse : événements à venir et archives des événements passés.',
+  'activities.intro': 'Nous vous attendons avec joie à nos prochains événements.',
   'activities.upcoming': 'À venir',
   'activities.past': 'Événements passés',
   'activities.noUpcoming':
@@ -59,6 +59,7 @@ const fr: Partial<typeof ro> = {
     'Si vous voulez savoir à quoi nous ressemblons et ce que nous avons fait jusqu’à présent, vous êtes au bon endroit !',
   'memories.year': 'Année',
   'memories.onlyRo': 'Les souvenirs plus anciens ne sont disponibles qu’en roumain.',
+  'memories.back': 'Retour aux souvenirs',
 
   // Saint protecteur
   'patron.title': 'Saint Jean Cassien',

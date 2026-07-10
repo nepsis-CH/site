@@ -7,7 +7,7 @@ const en: Partial<typeof ro> = {
 
   // Menu
   'nav.home': 'Home',
-  'nav.activities': 'Activities',
+  'nav.activities': 'Events',
   'nav.memories': 'Memories',
   'nav.patron': 'Patron Saint',
   'nav.members': 'Members',
@@ -28,17 +28,17 @@ const en: Partial<typeof ro> = {
   'home.latestEvent': 'Most recent event',
   'home.noUpcoming':
     'No new event is announced at the moment. Subscribe to the newsletter or write to us to hear about our upcoming activities.',
-  'home.allActivities': 'All activities',
+  'home.allActivities': 'All events',
   'home.seeMemories': 'See our memories',
   'home.contactUs': 'Contact us',
   'home.moreAbout': 'Would you like to know more about who we are and what we do?',
   'home.moreAboutLink': 'Visit the memories page.',
 
   // Activities
-  'activities.title': 'Activities',
+  'activities.title': 'Events',
   'activities.description':
-    'The Nepsis Switzerland activity calendar: upcoming events and the archive of past ones.',
-  'activities.intro': 'We warmly look forward to seeing you at our upcoming activities.',
+    'The Nepsis Switzerland events calendar: upcoming events and the archive of past ones.',
+  'activities.intro': 'We warmly look forward to seeing you at our upcoming events.',
   'activities.upcoming': 'Upcoming',
   'activities.past': 'Past events',
   'activities.noUpcoming':
@@ -58,6 +58,7 @@ const en: Partial<typeof ro> = {
   'memories.intro': 'If you want to know what we look like and what we have done so far, this is the right place!',
   'memories.year': 'Year',
   'memories.onlyRo': 'Older memories are available in Romanian only.',
+  'memories.back': 'Back to memories',
 
   // Patron Saint
   'patron.title': 'Saint John Cassian',

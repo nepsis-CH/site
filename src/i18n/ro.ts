@@ -5,7 +5,7 @@ export default {
 
   // Meniu
   'nav.home': 'Acasă',
-  'nav.activities': 'Activități',
+  'nav.activities': 'Evenimente',
   'nav.memories': 'Amintiri',
   'nav.patron': 'Ocrotitorul',
   'nav.members': 'Membri',
@@ -26,17 +26,17 @@ export default {
   'home.latestEvent': 'Cel mai recent eveniment',
   'home.noUpcoming':
     'Momentan nu avem un eveniment nou anunțat. Abonează-te la newsletter sau scrie-ne ca să fii la curent cu următoarele activități.',
-  'home.allActivities': 'Toate activitățile',
+  'home.allActivities': 'Toate evenimentele',
   'home.seeMemories': 'Vezi amintirile noastre',
   'home.contactUs': 'Contactează-ne',
   'home.moreAbout': 'Vrei să afli mai multe despre cine suntem și ce facem?',
   'home.moreAboutLink': 'Intră pe pagina cu amintiri.',
 
   // Activități
-  'activities.title': 'Activități',
+  'activities.title': 'Evenimente',
   'activities.description':
-    'Calendarul activităților Nepsis Elveția: evenimente viitoare și arhiva celor trecute.',
-  'activities.intro': 'Vă așteptăm cu drag la următoarele noastre activități.',
+    'Calendarul evenimentelor Nepsis Elveția: evenimente viitoare și arhiva celor trecute.',
+  'activities.intro': 'Vă așteptăm cu drag la următoarele noastre evenimente.',
   'activities.upcoming': 'Urmează',
   'activities.past': 'Evenimente trecute',
   'activities.noUpcoming':
@@ -56,6 +56,7 @@ export default {
   'memories.intro': 'Dacă vrei să știi cum arătăm și ce am făcut până acum, aici este locul potrivit!',
   'memories.year': 'Anul',
   'memories.onlyRo': 'Amintirile mai vechi sunt disponibile doar în limba română.',
+  'memories.back': 'Înapoi la amintiri',
 
   // Ocrotitorul
   'patron.title': 'Sfântul Ioan Casian',

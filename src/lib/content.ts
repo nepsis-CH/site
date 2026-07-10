@@ -1,29 +1,35 @@
 import { getCollection, getEntry, render, type CollectionEntry } from 'astro:content';
 import { defaultLocale, type Locale } from '../i18n';
 
-/**
- * Alege, pentru fiecare `translationKey`, varianta în limba cerută;
- * dacă nu există traducere, cade pe română (fallback).
- */
-function pickByLocale<T extends { data: { lang: Locale; translationKey: string } }>(
-  entries: T[],
-  locale: Locale
-): T[] {
+type Translatable = { data: { lang: Locale; translationKey: string } };
+
+/** Grupează intrările după `translationKey` (o traducere per limbă). */
+export function groupByTranslationKey<T extends Translatable>(entries: T[]): Map<string, T[]> {
   const byKey = new Map<string, T[]>();
   for (const entry of entries) {
     const group = byKey.get(entry.data.translationKey) ?? [];
     group.push(entry);
     byKey.set(entry.data.translationKey, group);
   }
-  const picked: T[] = [];
-  for (const group of byKey.values()) {
-    const found =
-      group.find((e) => e.data.lang === locale) ??
-      group.find((e) => e.data.lang === defaultLocale) ??
-      group[0];
-    if (found) picked.push(found);
-  }
-  return picked;
+  return byKey;
+}
+
+/** Varianta canonică (românească) a unui grup de traduceri. */
+export function canonicalOf<T extends Translatable>(group: T[]): T {
+  return group.find((e) => e.data.lang === defaultLocale) ?? group[0]!;
+}
+
+/** Varianta în limba cerută, cu fallback pe română. */
+export function localizedOf<T extends Translatable>(group: T[], locale: Locale): T {
+  return group.find((e) => e.data.lang === locale) ?? canonicalOf(group);
+}
+
+/**
+ * Alege, pentru fiecare `translationKey`, varianta în limba cerută;
+ * dacă nu există traducere, cade pe română (fallback).
+ */
+function pickByLocale<T extends Translatable>(entries: T[], locale: Locale): T[] {
+  return [...groupByTranslationKey(entries).values()].map((group) => localizedOf(group, locale));
 }
 
 /** Toate evenimentele în limba cerută (cu fallback pe română). */
@@ -47,15 +53,24 @@ export function splitEvents(events: CollectionEntry<'evenimente'>[], now = new D
   return { upcoming, past };
 }
 
-/** Amintirile în limba cerută, grupate pe ani (anii cei mai noi primii). */
+export type MemoryWithSlug = {
+  memory: CollectionEntry<'amintiri'>;
+  /** Slug-ul paginii proprii (/amintiri/<slug>/) — identic în toate limbile. */
+  slug: string;
+};
+
+/** Amintirile în limba cerută, grupate pe ani (anii cei mai noi primii), cu slug-ul paginii proprii. */
 export async function getMemoriesByYear(locale: Locale) {
   const all = await getCollection('amintiri');
-  const picked = pickByLocale(all, locale);
-  const byYear = new Map<number, CollectionEntry<'amintiri'>[]>();
-  for (const entry of picked) {
-    const group = byYear.get(entry.data.year) ?? [];
-    group.push(entry);
-    byYear.set(entry.data.year, group);
+  const withSlugs: MemoryWithSlug[] = [...groupByTranslationKey(all).values()].map((group) => ({
+    memory: localizedOf(group, locale),
+    slug: canonicalOf(group).id,
+  }));
+  const byYear = new Map<number, MemoryWithSlug[]>();
+  for (const item of withSlugs) {
+    const group = byYear.get(item.memory.data.year) ?? [];
+    group.push(item);
+    byYear.set(item.memory.data.year, group);
   }
   const sortKey = (e: CollectionEntry<'amintiri'>) =>
     e.data.date ? e.data.date.getTime() : e.data.order;
@@ -63,7 +78,7 @@ export async function getMemoriesByYear(locale: Locale) {
     .sort(([a], [b]) => b - a)
     .map(([year, entries]) => ({
       year,
-      entries: entries.sort((a, b) => sortKey(b) - sortKey(a)),
+      entries: entries.sort((a, b) => sortKey(b.memory) - sortKey(a.memory)),
     }));
 }
 

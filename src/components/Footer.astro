@@ -15,84 +15,25 @@ const year = new Date().getFullYear();
 ---
 
 <footer class="mt-16 border-t border-stone-200 bg-brand-950 text-stone-300">
-  <div class="mx-auto grid max-w-6xl gap-10 px-4 py-12 sm:grid-cols-2 lg:grid-cols-4">
-    <div>
-      <p class="flex items-center gap-3">
-        <Image
-          src={sigla}
-          alt=""
-          width="80"
-          height="80"
-          format="webp"
-          class="h-10 w-10 rounded bg-white object-contain p-1"
-          loading="lazy"
-        />
-        <span class="font-serif text-lg font-semibold text-white">{t('site.name')}</span>
-      </p>
-      <p class="mt-4 text-sm leading-relaxed">{t('footer.about')}</p>
-    </div>
+  <div class="mx-auto flex max-w-3xl flex-col items-center gap-6 px-4 py-14 text-center">
+    <a href={localePath(lang, '/')} class="flex flex-col items-center gap-4">
+      <span class="flex h-20 w-20 items-center justify-center rounded-full bg-white shadow-md">
+        <Image src={sigla} alt="" width="120" height="120" format="webp" class="h-14 w-14 object-contain" loading="lazy" />
+      </span>
+      <span class="font-serif text-2xl font-bold text-white">{t('site.name')}</span>
+    </a>
 
-    <div>
-      <h2 class="font-serif text-base font-semibold text-white">{t('footer.contact')}</h2>
-      <p class="mt-4 text-sm">
-        <ObfuscatedEmail class="text-brand-200 underline decoration-brand-700 underline-offset-2 hover:text-white" />
-      </p>
-      <p class="mt-3 text-sm">
-        <a href={localePath(lang, '/newsletter/')} class="underline decoration-brand-700 underline-offset-2 hover:text-white">
-          {t('contact.newsletterLink')}
-        </a>
-      </p>
-      <h2 class="mt-6 font-serif text-base font-semibold text-white">{t('footer.social')}</h2>
-      <SocialLinks class="mt-3 -ml-2 [&_a]:text-stone-400 [&_a:hover]:bg-brand-800 [&_a:hover]:text-white" />
-    </div>
+    <p class="max-w-md text-sm leading-relaxed text-stone-400">{t('home.tagline')}</p>
 
-    <div>
-      <h2 class="font-serif text-base font-semibold text-white">{t('footer.useful')}</h2>
-      <ul class="mt-4 space-y-2 text-sm">
-        <li>
-          <a href="http://www.nepsis.org/" target="_blank" rel="noopener" class="hover:text-white hover:underline">
-            {t('contact.useful.nepsis')}
-          </a>
-        </li>
-        <li>
-          <a href="http://www.mitropolia.eu/ro/" target="_blank" rel="noopener" class="hover:text-white hover:underline">
-            {t('contact.useful.mitropolia')}
-          </a>
-        </li>
-        <li>
-          <a href="http://www.mitropolia.eu/ro/site/172/" target="_blank" rel="noopener" class="hover:text-white hover:underline">
-            {t('contact.useful.parohii')}
-          </a>
-        </li>
-        <li>
-          <a href="http://monasteresuisse.mitropolia.eu/" target="_blank" rel="noopener" class="hover:text-white hover:underline">
-            {t('contact.useful.manastire')}
-          </a>
-        </li>
-        <li>
-          {t('contact.useful.pelerinaje')}
-          <ObfuscatedEmail x="pelerin" class="text-brand-200 underline decoration-brand-700 underline-offset-2 hover:text-white" />
-        </li>
-      </ul>
-    </div>
+    <SocialLinks class="justify-center gap-3 [&_a]:text-stone-400 [&_a:hover]:bg-brand-800 [&_a:hover]:text-white" />
 
-    <div>
-      <h2 class="font-serif text-base font-semibold text-white">{t('footer.bank')}</h2>
-      <dl class="mt-4 space-y-1 text-sm">
-        <div>
-          <dt class="inline font-semibold text-stone-100">IBAN:</dt>
-          <dd class="inline">CH95 0900 0000 1545 2680 8</dd>
-        </div>
-        <div>
-          <dt class="inline font-semibold text-stone-100">BIC:</dt>
-          <dd class="inline">POFICHBEXXX</dd>
-        </div>
-        <div>
-          <dt class="inline font-semibold text-stone-100">{t('contact.bank.holder')}:</dt>
-          <dd class="inline">Nepsis Elvetia</dd>
-        </div>
-      </dl>
-    </div>
+    <p class="text-sm">
+      <ObfuscatedEmail class="text-brand-200 underline decoration-brand-700 underline-offset-2 hover:text-white" />
+      <span class="mx-2 text-stone-600" aria-hidden="true">·</span>
+      <a href={localePath(lang, '/newsletter/')} class="underline decoration-brand-700 underline-offset-2 hover:text-white">
+        {t('contact.newsletterLink')}
+      </a>
+    </p>
   </div>
 
   <div class="border-t border-brand-900">

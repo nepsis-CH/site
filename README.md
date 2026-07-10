@@ -35,7 +35,7 @@ Aici scrii descrierea evenimentului: programul, ce trebuie adus, cine participă
 
 5. Apasă butonul verde **Commit changes** (poți lăsa mesajul propus).
 
-Gata! Evenimentul apare automat pe pagina **Activități**, la secțiunea „Urmează". Când data trece, el se mută **singur** la „Evenimente trecute" — nu trebuie să faci nimic.
+Gata! Evenimentul apare automat pe pagina **Evenimente**, la secțiunea „Urmează". Când data trece, el se mută **singur** la „Evenimente trecute" — nu trebuie să faci nimic.
 
 Observații:
 
@@ -71,7 +71,7 @@ Un paragraf nou = o linie goală.
 
 3. **Commit changes**.
 
-Amintirea apare automat pe pagina **Amintiri**, grupată la anul din câmpul `year` (anii cei mai noi sunt primii). Poți pune oricâte poze în lista `images`.
+Amintirea apare automat pe pagina **Amintiri**, grupată la anul din câmpul `year` (anii cei mai noi sunt primii). Poți pune oricâte poze în lista `images`. Fiecare amintire primește automat și propria pagină, la adresa `/amintiri/numele-fisierului/` (de ex. `/amintiri/2026-drumetie-grindelwald/`).
 
 ## Cum urc o poză
 

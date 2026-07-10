@@ -6,4 +6,4 @@ lang: ro
 translationKey: st-gallen-2025
 ---
 
-Vizită la St. Gallen. Cum a fost poți citi pe [pagina cu amintiri](/amintiri/).
+Vizită la St. Gallen. Cum a fost poți citi pe [pagina cu amintiri](/amintiri/2025-st-gallen/).

@@ -1,0 +1,99 @@
+---
+import { getCollection, render, type CollectionEntry } from 'astro:content';
+import Base from '../../../layouts/Base.astro';
+import {
+  locales,
+  defaultLocale,
+  localeFromParam,
+  localePath,
+  useTranslations,
+  formatDate,
+  type Locale,
+} from '../../../i18n';
+import { groupByTranslationKey, canonicalOf, localizedOf } from '../../../lib/content';
+
+// O pagină per amintire, în fiecare limbă (cu fallback pe română pentru text).
+// Slug-ul este numele fișierului variantei românești — identic în toate limbile.
+export async function getStaticPaths() {
+  const all = await getCollection('amintiri');
+  const paths = [];
+  for (const group of groupByTranslationKey(all).values()) {
+    const slug = canonicalOf(group).id;
+    for (const l of locales) {
+      paths.push({
+        params: { lang: l === defaultLocale ? undefined : l, slug },
+        props: { memory: localizedOf(group, l) },
+      });
+    }
+  }
+  return paths;
+}
+
+interface Props {
+  memory: CollectionEntry<'amintiri'>;
+}
+
+const { memory } = Astro.props;
+const lang = localeFromParam(Astro.params.lang);
+const t = useTranslations(lang);
+const { Content } = await render(memory);
+const images = memory.data.images;
+
+// Meta description: primul rând de text, fără marcaje Markdown/HTML.
+const description =
+  memory.body
+    ?.replace(/<[^>]+>/g, ' ')
+    .replace(/[#*_>\[\]]|\([^)]*\)/g, ' ')
+    .split('\n')
+    .map((l) => l.trim())
+    .find((l) => l.length > 40)
+    ?.slice(0, 160) ?? t('memories.description');
+---
+
+<Base
+  lang={lang}
+  title={`${memory.data.title} · ${t('site.name')}`}
+  description={description}
+  ogImage={images[0]?.src}
+>
+  <article class="mx-auto max-w-3xl px-4 py-10 sm:py-14">
+    <nav>
+      <a
+        href={localePath(lang, `/amintiri/#an${memory.data.year}`)}
+        class="text-sm font-semibold text-brand-700 underline decoration-brand-300 underline-offset-4 hover:text-brand-900"
+      >
+        ← {t('memories.back')}
+      </a>
+    </nav>
+
+    <header class="mt-6">
+      <p class="text-sm font-semibold uppercase tracking-widest text-brand-600">
+        {t('memories.year')} {memory.data.year}
+      </p>
+      <h1 class="mt-2 font-serif text-3xl font-bold text-brand-950 sm:text-4xl">{memory.data.title}</h1>
+      {
+        memory.data.date && memory.data.showDate && (
+          <p class="mt-2 text-stone-500">
+            <time datetime={memory.data.date.toISOString().slice(0, 10)}>
+              {formatDate(memory.data.date, lang)}
+            </time>
+          </p>
+        )
+      }
+    </header>
+
+    <div class="prose-md mt-8 text-stone-700">
+      <Content />
+    </div>
+
+    {
+      images.length > 0 && (
+        <div class:list={['mt-10 grid gap-4', images.length > 1 && 'sm:grid-cols-2']}>
+          {images.map((img) => (
+            <img src={img.src} alt={img.alt} loading="lazy" class="w-full rounded-xl object-cover shadow-sm" />
+          ))}
+        </div>
+      )
+    }
+  </article>
+</Base>
