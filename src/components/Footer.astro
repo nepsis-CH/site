@@ -1,7 +1,9 @@
 ---
+import { Image } from 'astro:assets';
 import { type Locale, useTranslations, localePath } from '../i18n';
 import ObfuscatedEmail from './ObfuscatedEmail.astro';
 import SocialLinks from './SocialLinks.astro';
+import sigla from '../assets/sigla-nepsis.png';
 
 interface Props {
   lang: Locale;
@@ -16,11 +18,12 @@ const year = new Date().getFullYear();
   <div class="mx-auto grid max-w-6xl gap-10 px-4 py-12 sm:grid-cols-2 lg:grid-cols-4">
     <div>
       <p class="flex items-center gap-3">
-        <img
-          src="/img/sigla-nepsis.png"
+        <Image
+          src={sigla}
           alt=""
-          width="40"
-          height="40"
+          width="80"
+          height="80"
+          format="webp"
           class="h-10 w-10 rounded bg-white object-contain p-1"
           loading="lazy"
         />

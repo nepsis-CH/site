@@ -8,9 +8,11 @@ interface Props {
   y?: string;
   z?: string;
   class?: string;
+  /** Nume accesibil generic (fără adresa reală, ca să nu fie citită de roboți). */
+  label?: string;
 }
 
-const { x = 'nepsis.ch', y = 'mitropolia', z = 'eu', class: extra = '' } = Astro.props;
+const { x = 'nepsis.ch', y = 'mitropolia', z = 'eu', class: extra = '', label = 'E-mail' } = Astro.props;
 ---
 
-<a href="#" class:list={['email-protejat', extra]} data-x={x} data-y={y} data-z={z}></a>
+<a href="#" class:list={['email-protejat', extra]} data-x={x} data-y={y} data-z={z}><span class="sr-only">{label}</span></a>

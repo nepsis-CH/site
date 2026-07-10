@@ -1,7 +1,9 @@
 ---
+import { Image } from 'astro:assets';
 import Base from '../../layouts/Base.astro';
 import { langStaticPaths, localeFromParam, useTranslations } from '../../i18n';
 import { getPage } from '../../lib/content';
+import psalticaLogo from '../../assets/nepsis_psaltica_logo.jpg';
 
 export function getStaticPaths() {
   return langStaticPaths();
@@ -23,9 +25,15 @@ const { entry, Content } = await getPage('psaltica', lang);
 
     <div class="mt-10 gap-10 lg:grid lg:grid-cols-2">
       <div>
-        <img
-          src="/psaltica/img/nepsis_psaltica_logo.jpg"
+        <Image
+          src={psalticaLogo}
           alt={t('psaltica.logoAlt')}
+          widths={[400, 700, 1000]}
+          sizes="(min-width: 640px) 28rem, 62vw"
+          format="webp"
+          quality={70}
+          fetchpriority="high"
+          decoding="async"
           class="w-full max-w-md rounded-xl border border-stone-200 shadow-sm"
         />
         <div class="prose-md mt-8 text-stone-700">
@@ -34,17 +42,48 @@ const { entry, Content } = await getPage('psaltica', lang);
       </div>
       <div class="mt-12 lg:mt-0">
         <h2 class="text-2xl font-bold text-brand-950">{t('psaltica.testimonials')}</h2>
-        <div class="mt-4 overflow-hidden rounded-xl border border-stone-200 shadow-sm">
-          <iframe
-            src="https://storymaps.arcgis.com/stories/e2f319110254454fad115d0c30b00d1f?cover=false"
-            width="100%"
-            height="500"
-            loading="lazy"
-            title={t('psaltica.testimonials')}
-            allowfullscreen
-            allow="geolocation"></iframe>
+        <!-- Harta interactivă (ArcGIS) se încarcă abia la click, ca pagina să rămână rapidă. -->
+        <div
+          id="marturii-fatada"
+          class="mt-4 flex h-[500px] items-center justify-center overflow-hidden rounded-xl border border-stone-200 bg-brand-50 shadow-sm"
+          data-src="https://storymaps.arcgis.com/stories/e2f319110254454fad115d0c30b00d1f?cover=false"
+          data-title={t('psaltica.testimonials')}
+        >
+          <button
+            type="button"
+            class="rounded-lg bg-brand-800 px-6 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-brand-700"
+          >
+            {t('psaltica.testimonials')} →
+          </button>
         </div>
+        <noscript>
+          <p class="mt-3">
+            <a
+              href="https://storymaps.arcgis.com/stories/e2f319110254454fad115d0c30b00d1f"
+              target="_blank"
+              rel="noopener"
+              class="text-brand-700 underline"
+            >
+              {t('psaltica.testimonials')}
+            </a>
+          </p>
+        </noscript>
       </div>
     </div>
   </div>
 </Base>
+
+<script>
+  // Înlocuiește fațada cu iframe-ul ArcGIS abia la click.
+  const fatada = document.getElementById('marturii-fatada');
+  fatada?.querySelector('button')?.addEventListener('click', () => {
+    const iframe = document.createElement('iframe');
+    iframe.src = fatada.dataset.src ?? '';
+    iframe.title = fatada.dataset.title ?? '';
+    iframe.width = '100%';
+    iframe.height = '500';
+    iframe.allowFullscreen = true;
+    iframe.allow = 'geolocation';
+    fatada.replaceChildren(iframe);
+  });
+</script>

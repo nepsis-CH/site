@@ -7,7 +7,9 @@ interface Props {
 
 const { lang } = Astro.props;
 const t = useTranslations(lang);
-const path = stripLocale(Astro.url.pathname);
+// Pagina 404 există doar în română — selectorul duce atunci la paginile principale.
+const rawPath = stripLocale(Astro.url.pathname);
+const path = rawPath.startsWith('/404') ? '/' : rawPath;
 const names: Record<Locale, string> = { ro: 'Română', fr: 'Français', en: 'English', de: 'Deutsch' };
 ---
 

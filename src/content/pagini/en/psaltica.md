@@ -5,7 +5,7 @@ description: "The Nepsis Switzerland Byzantine chant group offers online lessons
 
 Adrian holds remote Byzantine chant lessons, evening after evening (6 days a week), on Zoom. The lessons last 30–40 minutes and are open to the wider public from all over the world.
 
-If you are interested, send us an e-mail at <a href="#" class="email-protejat" data-x="nepsis.ch" data-y="mitropolia" data-z="eu"></a>, so that we can add you to the discussion group (Telegram) where the communications take place.
+If you are interested, send us an e-mail at <a href="#" class="email-protejat" data-x="nepsis.ch" data-y="mitropolia" data-z="eu"><span class="sr-only">E-mail</span></a>, so that we can add you to the discussion group (Telegram) where the communications take place.
 
 ## Rehearsal materials
 

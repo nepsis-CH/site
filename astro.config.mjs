@@ -8,6 +8,10 @@ export default defineConfig({
   site: 'https://ch.nepsis.org',
   output: 'static',
   trailingSlash: 'ignore',
+  build: {
+    // CSS-ul e mic; inliniat în HTML economisește un request blocant la randare.
+    inlineStylesheets: 'always',
+  },
   i18n: {
     defaultLocale: 'ro',
     locales: ['ro', 'fr', 'en', 'de'],

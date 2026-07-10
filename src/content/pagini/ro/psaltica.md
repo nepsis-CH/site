@@ -5,7 +5,7 @@ description: "Grupul de psaltică Nepsis Elveția oferă cursuri online."
 
 Adrian ține lecții de psaltică la distanță, seară de seară (6 zile pe săptămână), prin intermediul platformei Zoom. Lecțiile durează 30–40 de minute și sunt deschise publicului larg din toată lumea.
 
-Dacă ești interesat(ă), dă-ne un e-mail la <a href="#" class="email-protejat" data-x="nepsis.ch" data-y="mitropolia" data-z="eu"></a>, ca să te adăugăm la grupul de discuții (Telegram) unde au loc comunicările.
+Dacă ești interesat(ă), dă-ne un e-mail la <a href="#" class="email-protejat" data-x="nepsis.ch" data-y="mitropolia" data-z="eu"><span class="sr-only">E-mail</span></a>, ca să te adăugăm la grupul de discuții (Telegram) unde au loc comunicările.
 
 ## Materiale pentru repetiții
 

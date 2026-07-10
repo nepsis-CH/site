@@ -1,6 +1,8 @@
 ---
+import { Image } from 'astro:assets';
 import { type Locale, useTranslations, localePath, stripLocale } from '../i18n';
 import LangSwitcher from './LangSwitcher.astro';
+import logo from '../assets/logo-small.jpg';
 
 interface Props {
   lang: Locale;
@@ -26,12 +28,13 @@ const isActive = (href: string) =>
 
 <header class="sticky top-0 z-40 border-b border-stone-200 bg-paper/95 backdrop-blur">
   <div class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-2">
-    <a href={localePath(lang, '/')} class="flex shrink-0 items-center gap-3" aria-label={t('nav.home')}>
-      <img
-        src="/img/logo-small.jpg"
+    <a href={localePath(lang, '/')} class="flex shrink-0 items-center gap-3">
+      <Image
+        src={logo}
         alt="Nepsis Elveția"
-        width="44"
-        height="44"
+        width="88"
+        height="88"
+        format="webp"
         class="h-11 w-11 rounded-full border border-stone-200 object-cover"
       />
       <span class="font-serif text-lg font-semibold tracking-tight text-brand-900">{t('site.name')}</span>

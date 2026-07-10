@@ -1,8 +1,10 @@
 ---
+import { Image } from 'astro:assets';
 import Base from '../../layouts/Base.astro';
 import EventCard from '../../components/EventCard.astro';
 import { langStaticPaths, localeFromParam, localePath, useTranslations } from '../../i18n';
 import { getEvents, splitEvents } from '../../lib/content';
+import psalticaLogo from '../../assets/nepsis_psaltica_logo.jpg';
 
 export function getStaticPaths() {
   return langStaticPaths();
@@ -41,10 +43,15 @@ const { upcoming, past } = splitEvents(await getEvents(lang));
     <!-- Activitate permanentă -->
     <section class="mt-14" aria-labelledby="permanent">
       <div class="overflow-hidden rounded-xl border border-stone-200 bg-white shadow-sm md:grid md:grid-cols-3">
-        <img
-          src="/psaltica/img/nepsis_psaltica_logo.jpg"
+        <Image
+          src={psalticaLogo}
           alt={t('psaltica.logoAlt')}
+          widths={[400, 700, 1000]}
+          sizes="(min-width: 768px) 33vw, 62vw"
+          format="webp"
+          quality={70}
           loading="lazy"
+          decoding="async"
           class="h-full w-full object-cover"
         />
         <div class="p-6 md:col-span-2 md:p-8">

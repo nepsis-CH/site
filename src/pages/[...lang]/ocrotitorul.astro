@@ -1,7 +1,9 @@
 ---
+import { Image } from 'astro:assets';
 import Base from '../../layouts/Base.astro';
 import { langStaticPaths, localeFromParam, useTranslations } from '../../i18n';
 import { getPage } from '../../lib/content';
+import icoana from '../../assets/iconita-sf-Casian-fata.jpg';
 
 export function getStaticPaths() {
   return langStaticPaths();
@@ -24,9 +26,15 @@ const { entry, Content } = await getPage('ocrotitorul', lang);
       <p class="mt-2 text-lg text-stone-600">{t('patron.subtitle')}</p>
     </header>
     <div class="mt-10 gap-10 md:grid md:grid-cols-5">
-      <img
-        src="/img/iconita-sf-Casian-fata.jpg"
+      <Image
+        src={icoana}
         alt={t('patron.iconAlt')}
+        widths={[320, 640, 900]}
+        sizes="(min-width: 768px) 38vw, 20rem"
+        format="webp"
+        quality={70}
+        fetchpriority="high"
+        decoding="async"
         class="mx-auto w-full max-w-xs rounded-xl border border-stone-200 shadow-md md:col-span-2 md:max-w-none"
       />
       <div class="prose-md mt-8 text-stone-700 md:col-span-3 md:mt-0">
