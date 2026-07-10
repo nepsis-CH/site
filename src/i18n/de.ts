@@ -1,0 +1,140 @@
+import type ro from './ro';
+
+const de: Partial<typeof ro> = {
+  'site.name': 'Nepsis Schweiz',
+  'site.description':
+    'Offizielle Website der jungen orthodoxen Christen der Bruderschaft Nepsis Schweiz, Rumänisch-Orthodoxe Metropolie von West- und Südeuropa, Rumänisch-Orthodoxe Kirche.',
+
+  // Menü
+  'nav.home': 'Startseite',
+  'nav.activities': 'Aktivitäten',
+  'nav.memories': 'Erinnerungen',
+  'nav.patron': 'Schutzpatron',
+  'nav.members': 'Mitglieder',
+  'nav.psaltica': 'Byzantinischer Gesang',
+  'nav.newsletter': 'Newsletter',
+  'nav.contact': 'Kontakt',
+  'nav.menu': 'Menü',
+  'nav.openMenu': 'Menü öffnen',
+  'nav.closeMenu': 'Menü schließen',
+  'nav.language': 'Sprache',
+  'nav.skipToContent': 'Zum Inhalt springen',
+
+  // Startseite
+  'home.heroAlt': 'Fotocollage von den Treffen von Nepsis Schweiz',
+  'home.tagline': 'Die jungen rumänisch-orthodoxen Christen in der Schweiz',
+  'home.about.title': 'Über Nepsis Schweiz',
+  'home.nextEvent': 'Nächste Veranstaltung',
+  'home.latestEvent': 'Jüngste Veranstaltung',
+  'home.noUpcoming':
+    'Zurzeit ist keine neue Veranstaltung angekündigt. Abonnieren Sie den Newsletter oder schreiben Sie uns, um über die nächsten Aktivitäten informiert zu werden.',
+  'home.allActivities': 'Alle Aktivitäten',
+  'home.seeMemories': 'Unsere Erinnerungen ansehen',
+  'home.contactUs': 'Kontaktieren Sie uns',
+  'home.moreAbout': 'Möchten Sie mehr darüber erfahren, wer wir sind und was wir tun?',
+  'home.moreAboutLink': 'Besuchen Sie die Erinnerungsseite.',
+
+  // Aktivitäten
+  'activities.title': 'Aktivitäten',
+  'activities.description':
+    'Der Veranstaltungskalender von Nepsis Schweiz: kommende Veranstaltungen und das Archiv der vergangenen.',
+  'activities.intro': 'Wir freuen uns, Sie bei unseren nächsten Aktivitäten begrüßen zu dürfen.',
+  'activities.upcoming': 'Demnächst',
+  'activities.past': 'Vergangene Veranstaltungen',
+  'activities.noUpcoming':
+    'Zurzeit ist keine neue Veranstaltung angekündigt. Wir kommunizieren häufig über unsere internen Telegram- und WhatsApp-Gruppen — schreiben Sie uns, um aufgenommen zu werden, oder abonnieren Sie den Newsletter.',
+  'activities.permanent': 'Ständige Aktivität: Online-Unterricht in byzantinischem Gesang',
+  'activities.permanentText':
+    'Abend für Abend, sechs Tage die Woche, halten wir über Zoom Unterricht in byzantinischem Gesang — offen für alle.',
+  'activities.permanentLink': 'Details auf der Seite Byzantinischer Gesang',
+  'activities.register': 'Details und Anmeldung',
+  'activities.moreInMemories': 'Über unsere früheren Veranstaltungen können Sie lesen auf',
+  'activities.memoriesPage': 'der Erinnerungsseite',
+
+  // Erinnerungen
+  'memories.title': 'Erinnerungen',
+  'memories.description':
+    'Erinnerungen an die Veranstaltungen von Nepsis Schweiz, nach Jahren geordnet: Wallfahrten, Wanderungen, Vigilien, Kongresse und Treffen der jungen orthodoxen Christen in der Schweiz.',
+  'memories.intro':
+    'Wenn Sie wissen möchten, wie wir aussehen und was wir bisher unternommen haben, sind Sie hier genau richtig!',
+  'memories.year': 'Jahr',
+  'memories.onlyRo': 'Ältere Erinnerungen sind nur auf Rumänisch verfügbar.',
+
+  // Schutzpatron
+  'patron.title': 'Heiliger Johannes Cassian',
+  'patron.subtitle': 'Schutzpatron der Bruderschaft Nepsis Schweiz',
+  'patron.description': 'Der heilige Johannes Cassian, Schutzpatron von Nepsis Schweiz.',
+  'patron.iconAlt': 'Ikone des heiligen Johannes Cassian',
+
+  // Mitglieder
+  'members.title': 'Mitglieder',
+  'members.heading': 'Der Vorstand und die Mitglieder von Nepsis Schweiz',
+  'members.subtitle': 'Wir freuen uns über die gemeinsame Zeit!',
+  'members.description':
+    'Der Vorstand und die Mitglieder von Nepsis Schweiz — die jungen Menschen, die die Aktivitäten der Bruderschaft organisieren.',
+  'members.role.presedinte': 'Vorsitzender des Vorstands',
+  'members.role.consiliu': 'Vorstandsmitglied',
+  'members.role.coordonator': 'Koordinator / Koordinatorin',
+  'members.role.webadmin': 'Web-Administrator',
+  'members.parish': 'Pfarrei',
+  'members.missingPhoto': 'Foto zurzeit nicht verfügbar',
+  'members.more': 'Weitere Fotos folgen — bis dahin finden Sie die Mitglieder auf',
+  'members.morePage': 'der Erinnerungsseite',
+
+  // Byzantinischer Gesang
+  'psaltica.title': 'Gruppe für byzantinischen Gesang',
+  'psaltica.description':
+    'Die Gruppe für byzantinischen Gesang von Nepsis Schweiz bietet Online-Unterricht in liturgischer Musik an.',
+  'psaltica.logoAlt': 'Logo der Gruppe für byzantinischen Gesang von Nepsis Schweiz',
+  'psaltica.materials': 'Materialien für die Proben',
+  'psaltica.testimonials': 'Zeugnisse aus dem Jahr 2020',
+
+  // Newsletter
+  'newsletter.title': 'Newsletter',
+  'newsletter.description': 'Abonnieren Sie den Newsletter von Nepsis Schweiz!',
+  'newsletter.heading': 'Newsletter abonnieren',
+  'newsletter.text':
+    'Von Zeit zu Zeit versenden wir per E-Mail Neuigkeiten über die Aktivitäten von Nepsis Schweiz. Füllen Sie das untenstehende Formular aus, um sie ebenfalls zu erhalten.',
+  'newsletter.fallback': 'Falls das Formular nicht lädt, können Sie es direkt hier öffnen:',
+  'newsletter.openForm': 'Anmeldeformular öffnen',
+
+  // Kontakt
+  'contact.title': 'Kontakt',
+  'contact.description':
+    'Kontaktieren Sie Nepsis Schweiz: E-Mail, Telegram- und WhatsApp-Gruppen, soziale Netzwerke und Bankverbindung.',
+  'contact.writeUs': 'Schreiben Sie uns',
+  'contact.emailIntro': 'Sie können uns jederzeit schreiben an:',
+  'contact.emailButton': 'Senden Sie uns eine E-Mail',
+  'contact.groups': 'Unsere Gruppen',
+  'contact.groupsText':
+    'Wir kommunizieren häufig über unsere internen Telegram- und WhatsApp-Gruppen — wenn Sie aufgenommen werden möchten, senden Sie uns eine E-Mail.',
+  'contact.social': 'Soziale Netzwerke',
+  'contact.bank': 'Bankverbindung von Nepsis Schweiz',
+  'contact.bank.holder': 'Kontoinhaber',
+  'contact.useful': 'Weitere nützliche Adressen',
+  'contact.useful.nepsis': 'nepsis.org — Nepsis international',
+  'contact.useful.mitropolia': 'Rumänisch-Orthodoxe Metropolie von West- und Südeuropa',
+  'contact.useful.parohii': 'Liste der rumänisch-orthodoxen Pfarreien in der Schweiz',
+  'contact.useful.manastire': 'Rumänisches Kloster „Schutz der Gottesmutter“ in der Schweiz',
+  'contact.useful.pelerinaje': 'Adresse des Pilgerzentrums der Metropolie:',
+  'contact.newsletterLink': 'Newsletter abonnieren',
+
+  // Fußzeile
+  'footer.contact': 'Kontakt',
+  'footer.social': 'Sie finden uns auch auf',
+  'footer.useful': 'Nützliche Adressen',
+  'footer.bank': 'Bankkonto',
+  'footer.rights': 'Alle Rechte vorbehalten.',
+  'footer.about':
+    'Nepsis Schweiz — die Bruderschaft der jungen rumänisch-orthodoxen Christen in der Schweiz, unter dem Omophorion der Rumänisch-Orthodoxen Metropolie von West- und Südeuropa.',
+
+  // Sonstiges
+  'event.date': 'Datum der Veranstaltung',
+  'event.location': 'Ort',
+  'event.pastNotice': 'Diese Veranstaltung hat bereits stattgefunden.',
+  'notFound.title': 'Seite nicht gefunden',
+  'notFound.text': 'Die gesuchte Seite existiert leider nicht (oder wurde verschoben).',
+  'notFound.home': 'Zurück zur Startseite',
+};
+
+export default de;

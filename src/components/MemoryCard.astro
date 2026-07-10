@@ -1,0 +1,43 @@
+---
+import { render, type CollectionEntry } from 'astro:content';
+import { type Locale, formatDate } from '../i18n';
+
+/** O amintire: text (din Markdown) + galerie de fotografii (din frontmatter). */
+interface Props {
+  memory: CollectionEntry<'amintiri'>;
+  lang: Locale;
+}
+
+const { memory, lang } = Astro.props;
+const { Content } = await render(memory);
+const images = memory.data.images;
+---
+
+<article class="rounded-xl border border-stone-200 bg-white p-6 shadow-sm sm:p-8">
+  <header>
+    <h3 class="text-xl font-semibold text-brand-900 sm:text-2xl">{memory.data.title}</h3>
+    {
+      memory.data.date && memory.data.showDate && (
+        <p class="mt-1 text-sm text-stone-500">
+          <time datetime={memory.data.date.toISOString().slice(0, 10)}>
+            {formatDate(memory.data.date, lang)}
+          </time>
+        </p>
+      )
+    }
+  </header>
+  <div class:list={['mt-5 gap-8', images.length > 0 && 'md:grid md:grid-cols-2']}>
+    <div class="prose-md text-stone-700">
+      <Content />
+    </div>
+    {
+      images.length > 0 && (
+        <div class:list={['mt-6 grid content-start gap-3 md:mt-0', images.length > 1 && 'sm:grid-cols-2']}>
+          {images.map((img) => (
+            <img src={img.src} alt={img.alt} loading="lazy" class="w-full rounded-lg object-cover" />
+          ))}
+        </div>
+      )
+    }
+  </div>
+</article>

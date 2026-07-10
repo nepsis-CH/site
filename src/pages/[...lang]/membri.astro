@@ -1,0 +1,56 @@
+---
+import Base from '../../layouts/Base.astro';
+import { langStaticPaths, localeFromParam, localePath, useTranslations, type UIKey } from '../../i18n';
+import { getMembers } from '../../lib/content';
+
+export function getStaticPaths() {
+  return langStaticPaths();
+}
+
+const lang = localeFromParam(Astro.params.lang);
+const t = useTranslations(lang);
+const members = await getMembers();
+---
+
+<Base lang={lang} title={`${t('members.title')} · ${t('site.name')}`} description={t('members.description')}>
+  <div class="mx-auto max-w-6xl px-4 py-10 sm:py-14">
+    <header class="text-center">
+      <h1 class="font-serif text-3xl font-bold text-brand-950 sm:text-4xl">{t('members.heading')}</h1>
+      <p class="mt-2 text-lg text-stone-600">{t('members.subtitle')}</p>
+    </header>
+
+    <ul class="mt-12 grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-3 lg:grid-cols-4">
+      {
+        members.map((member) => (
+          <li class="text-center">
+            <img
+              src={member.data.photo ?? '/img/membri/placeholder.png'}
+              alt={member.data.photo ? member.data.name : t('members.missingPhoto')}
+              loading="lazy"
+              width="240"
+              height="240"
+              class="mx-auto aspect-square w-36 rounded-full border border-stone-200 object-cover shadow-sm sm:w-44"
+            />
+            <h2 class="mt-4 font-serif text-lg font-semibold text-brand-950">{member.data.name}</h2>
+            <p class="mt-0.5 text-sm font-medium text-brand-700">
+              {t(`members.role.${member.data.role}` as UIKey)}
+            </p>
+            <p class="text-sm text-stone-500">
+              {t('members.parish')} {member.data.parish}
+            </p>
+          </li>
+        ))
+      }
+    </ul>
+
+    <p class="mt-12 text-center text-stone-600">
+      {t('members.more')}
+      <a
+        href={localePath(lang, '/amintiri/')}
+        class="font-semibold text-brand-700 underline decoration-brand-300 underline-offset-4 hover:text-brand-900"
+      >
+        {t('members.morePage')}</a
+      >.
+    </p>
+  </div>
+</Base>

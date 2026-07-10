@@ -1,0 +1,50 @@
+---
+import Base from '../../layouts/Base.astro';
+import { langStaticPaths, localeFromParam, useTranslations } from '../../i18n';
+import { getPage } from '../../lib/content';
+
+export function getStaticPaths() {
+  return langStaticPaths();
+}
+
+const lang = localeFromParam(Astro.params.lang);
+const t = useTranslations(lang);
+const { entry, Content } = await getPage('psaltica', lang);
+---
+
+<Base
+  lang={lang}
+  title={`${t('psaltica.title')} · ${t('site.name')}`}
+  description={entry.data.description ?? t('psaltica.description')}
+  ogImage="/psaltica/img/nepsis_psaltica_logo.jpg"
+>
+  <div class="mx-auto max-w-6xl px-4 py-10 sm:py-14">
+    <h1 class="font-serif text-3xl font-bold text-brand-950 sm:text-4xl">{t('psaltica.title')}</h1>
+
+    <div class="mt-10 gap-10 lg:grid lg:grid-cols-2">
+      <div>
+        <img
+          src="/psaltica/img/nepsis_psaltica_logo.jpg"
+          alt={t('psaltica.logoAlt')}
+          class="w-full max-w-md rounded-xl border border-stone-200 shadow-sm"
+        />
+        <div class="prose-md mt-8 text-stone-700">
+          <Content />
+        </div>
+      </div>
+      <div class="mt-12 lg:mt-0">
+        <h2 class="text-2xl font-bold text-brand-950">{t('psaltica.testimonials')}</h2>
+        <div class="mt-4 overflow-hidden rounded-xl border border-stone-200 shadow-sm">
+          <iframe
+            src="https://storymaps.arcgis.com/stories/e2f319110254454fad115d0c30b00d1f?cover=false"
+            width="100%"
+            height="500"
+            loading="lazy"
+            title={t('psaltica.testimonials')}
+            allowfullscreen
+            allow="geolocation"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</Base>

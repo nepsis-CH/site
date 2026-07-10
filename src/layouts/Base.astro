@@ -1,0 +1,73 @@
+---
+import '@fontsource-variable/inter';
+import '@fontsource-variable/source-serif-4';
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { type Locale, useTranslations, localePath, stripLocale, locales } from '../i18n';
+
+interface Props {
+  lang: Locale;
+  title: string;
+  description: string;
+  ogImage?: string;
+}
+
+const { lang, title, description, ogImage = '/img/logo-small.jpg' } = Astro.props;
+const t = useTranslations(lang);
+const pathNoLocale = stripLocale(Astro.url.pathname);
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const ogLocales: Record<Locale, string> = { ro: 'ro_RO', fr: 'fr_CH', en: 'en_GB', de: 'de_CH' };
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical.href} />
+    <link rel="icon" href="/img/sigla-nepsis.png" type="image/png" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <meta name="generator" content={Astro.generator} />
+    {
+      locales.map((l) => (
+        <link rel="alternate" hreflang={l} href={new URL(localePath(l, pathNoLocale), Astro.site).href} />
+      ))
+    }
+    <link rel="alternate" hreflang="x-default" href={new URL(pathNoLocale, Astro.site).href} />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content={ogLocales[lang]} />
+    <meta property="og:site_name" content={t('site.name')} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={new URL(ogImage, Astro.site).href} />
+    <meta property="og:url" content={canonical.href} />
+    <meta name="twitter:card" content="summary_large_image" />
+  </head>
+  <body class="flex min-h-screen flex-col">
+    <a
+      href="#continut"
+      class="sr-only focus:not-sr-only focus:absolute focus:left-2 focus:top-2 focus:z-50 focus:rounded focus:bg-brand-900 focus:px-4 focus:py-2 focus:text-white"
+    >
+      {t('nav.skipToContent')}
+    </a>
+    <Header lang={lang} />
+    <main id="continut" class="flex-1">
+      <slot />
+    </main>
+    <Footer lang={lang} />
+    <script>
+      // Asamblează adresele de e-mail protejate abia la click (anti-spam):
+      // adresa nu apare nicăieri în HTML în clar.
+      document.addEventListener('click', (ev) => {
+        const el = (ev.target as HTMLElement | null)?.closest<HTMLAnchorElement>('a.email-protejat');
+        if (!el) return;
+        ev.preventDefault();
+        const { x, y, z } = el.dataset;
+        window.location.href = `mailto:${x}@${y}.${z}`;
+      });
+    </script>
+  </body>
+</html>

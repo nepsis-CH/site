@@ -63,3 +63,10 @@ fabric.properties
 # Editor-based Rest Client
 .idea/httpRequests
 
+
+# Astro / Node
+node_modules/
+dist/
+.astro/
+npm-debug.log*
+.DS_Store

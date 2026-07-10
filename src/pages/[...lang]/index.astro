@@ -1,0 +1,104 @@
+---
+import Base from '../../layouts/Base.astro';
+import EventCard from '../../components/EventCard.astro';
+import { langStaticPaths, localeFromParam, localePath, useTranslations } from '../../i18n';
+import { getEvents, splitEvents, getPage } from '../../lib/content';
+
+export function getStaticPaths() {
+  return langStaticPaths();
+}
+
+const lang = localeFromParam(Astro.params.lang);
+const t = useTranslations(lang);
+
+const { upcoming, past } = splitEvents(await getEvents(lang));
+const featured = upcoming[0] ?? past[0];
+const featuredLabel = upcoming[0] ? t('home.nextEvent') : t('home.latestEvent');
+
+const { Content: Despre } = await getPage('despre', lang);
+---
+
+<Base lang={lang} title={t('site.name')} description={t('site.description')}>
+  <!-- Hero -->
+  <section class="border-b border-stone-200 bg-white">
+    <div class="mx-auto grid max-w-6xl items-center gap-10 px-4 py-12 sm:py-16 md:grid-cols-2">
+      <div>
+        <p class="text-sm font-semibold uppercase tracking-widest text-brand-600">Nepsis · MOREOM</p>
+        <h1 class="mt-3 font-serif text-4xl font-bold leading-tight text-brand-950 sm:text-5xl">
+          {t('site.name')}
+        </h1>
+        <p class="mt-4 max-w-prose text-lg leading-relaxed text-stone-600">{t('home.tagline')}</p>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a
+            href={localePath(lang, '/activitati/')}
+            class="rounded-lg bg-brand-800 px-5 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-brand-700"
+          >
+            {t('home.allActivities')}
+          </a>
+          <a
+            href={localePath(lang, '/amintiri/')}
+            class="rounded-lg border border-brand-300 bg-white px-5 py-3 text-sm font-semibold text-brand-800 transition-colors hover:bg-brand-50"
+          >
+            {t('home.seeMemories')}
+          </a>
+          <a
+            href={localePath(lang, '/contact/')}
+            class="rounded-lg border border-brand-300 bg-white px-5 py-3 text-sm font-semibold text-brand-800 transition-colors hover:bg-brand-50"
+          >
+            {t('home.contactUs')}
+          </a>
+        </div>
+      </div>
+      <img
+        src="/img/nepsis-elvetia.jpg"
+        alt={t('home.heroAlt')}
+        width="1200"
+        height="900"
+        fetchpriority="high"
+        class="w-full rounded-xl border border-stone-200 shadow-md"
+      />
+    </div>
+  </section>
+
+  <!-- Evenimentul evidențiat -->
+  <section class="mx-auto max-w-6xl px-4 py-12 sm:py-16" aria-labelledby="eveniment-evidentiat">
+    <h2 id="eveniment-evidentiat" class="text-2xl font-bold text-brand-950 sm:text-3xl">
+      {featuredLabel}
+    </h2>
+    {upcoming.length === 0 && <p class="mt-3 max-w-prose text-stone-600">{t('home.noUpcoming')}</p>}
+    {featured && (
+      <div class="mt-6">
+        <EventCard event={featured} lang={lang} detailed headingLevel="h3" />
+      </div>
+    )}
+    <p class="mt-6">
+      <a
+        href={localePath(lang, '/activitati/')}
+        class="font-semibold text-brand-700 underline decoration-brand-300 underline-offset-4 hover:text-brand-900"
+      >
+        {t('home.allActivities')} →
+      </a>
+    </p>
+  </section>
+
+  <!-- Despre -->
+  <section class="border-t border-stone-200 bg-white" aria-labelledby="despre-titlu">
+    <div class="mx-auto max-w-3xl px-4 py-12 text-center sm:py-16">
+      <h2 id="despre-titlu" class="text-2xl font-bold text-brand-950 sm:text-3xl">
+        {t('home.about.title')}
+      </h2>
+      <div class="prose-md mt-6 text-left text-stone-700 sm:text-center">
+        <Despre />
+      </div>
+      <p class="mt-8 text-stone-600">
+        {t('home.moreAbout')}
+        <a
+          href={localePath(lang, '/amintiri/')}
+          class="font-semibold text-brand-700 underline decoration-brand-300 underline-offset-4 hover:text-brand-900"
+        >
+          {t('home.moreAboutLink')}
+        </a>
+      </p>
+    </div>
+  </section>
+</Base>

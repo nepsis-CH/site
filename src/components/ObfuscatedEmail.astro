@@ -1,0 +1,16 @@
+---
+/**
+ * Adresă de e-mail protejată anti-spam: nu apare nicăieri în HTML în clar,
+ * ci este afișată din atributele data-* (CSS) și asamblată la click (JS).
+ */
+interface Props {
+  x?: string;
+  y?: string;
+  z?: string;
+  class?: string;
+}
+
+const { x = 'nepsis.ch', y = 'mitropolia', z = 'eu', class: extra = '' } = Astro.props;
+---
+
+<a href="#" class:list={['email-protejat', extra]} data-x={x} data-y={y} data-z={z}></a>
