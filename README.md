@@ -71,7 +71,13 @@ Un paragraf nou = o linie goală.
 
 3. **Commit changes**.
 
-Amintirea apare automat pe pagina **Amintiri**, grupată la anul din câmpul `year` (anii cei mai noi sunt primii). Poți pune oricâte poze în lista `images`. Fiecare amintire primește automat și propria pagină, la adresa `/amintiri/numele-fisierului/` (de ex. `/amintiri/2026-drumetie-grindelwald/`).
+Amintirea apare automat pe pagina **Amintiri**, grupată la anul din câmpul `year` (anii cei mai noi sunt primii). Poți pune oricâte poze în lista `images`. Fiecare amintire primește automat și propria pagină, la adresa `/amintiri/numele-fisierului/` (de ex. `/amintiri/2026-drumetie-grindelwald/`), unde pozele rulează într-un carusel.
+
+**Bonus:** prima poză din lista `images` a fiecărei amintiri apare automat și în caruselul de pe prima pagină.
+
+## Cum actualizez calendarul anual
+
+Pe pagina **Evenimente** există o secțiune „Calendarul evenimentelor" — un simplu tabel. Îl editezi în fișierul [`src/content/pagini/ro/calendar.md`](src/content/pagini/ro/calendar.md): adaugi câte un rând în tabel pentru fiecare eveniment (dată, nume, link de detalii). Un model complet este în [`src/content/_templates/calendar.md`](src/content/_templates/calendar.md).
 
 ## Cum urc o poză
 
@@ -91,7 +97,7 @@ Sfaturi:
 1. Navighează pe GitHub până la fișierul cu textul respectiv:
    - Evenimente → `src/content/evenimente/`
    - Amintiri → `src/content/amintiri/`
-   - Textul „Despre Nepsis Elveția", pagina Ocrotitorul, pagina Psaltică → `src/content/pagini/ro/` (traducerile sunt în `fr/`, `en/`, `de/`)
+   - Textul „Despre Nepsis Elveția", paginile Ocrotitorul, Psaltică, Devino membru și calendarul anual → `src/content/pagini/ro/` (traducerile sunt în `fr/`, `en/`, `de/`)
    - Membrii → `src/content/membri/`
 2. Deschide fișierul și apasă pe **creionul** din dreapta sus (Edit this file).
 3. Modifică textul și apasă **Commit changes**.

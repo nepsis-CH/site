@@ -125,6 +125,23 @@ export default {
   'footer.about':
     'Nepsis Elveția — frăția tinerilor creștini ortodocși români din Elveția, sub omoforul Mitropoliei Ortodoxe Române a Europei Occidentale și Meridionale.',
 
+  // Devino membru + banner MOREOM + carusel
+  'nav.join': 'Devino membru',
+  'home.moreomTitle':
+    'Nepsis Elveția este membră a frățiilor Nepsis din Mitropolia Ortodoxă Română a Europei Occidentale și Meridionale',
+  'home.moreomAlt': 'Stema Mitropoliei Ortodoxe Române a Europei Occidentale și Meridionale',
+  'home.carouselTitle': 'Momente din viața frăției',
+  'carousel.label': 'Galerie de imagini',
+  'carousel.prev': 'Imaginea anterioară',
+  'carousel.next': 'Imaginea următoare',
+  'join.title': 'Devino membru',
+  'join.description': 'Cum te poți alătura frăției tinerilor ortodocși Nepsis Elveția.',
+  'join.cta': 'Scrie-ne un e-mail',
+  'contact.intro': 'Ne bucurăm să te cunoaștem — alege calea care ți-e cea mai la îndemână.',
+  'contact.joinTitle': 'Vrei să te alături frăției?',
+  'contact.joinText': 'Ești tânăr(ă) și vrei să faci parte din Nepsis Elveția? Primul pas e simplu.',
+  'contact.joinLink': 'Devino membru',
+
   // Diverse
   'event.date': 'Data evenimentului',
   'event.location': 'Locația',

@@ -2,9 +2,11 @@
 import { Image } from 'astro:assets';
 import Base from '../../layouts/Base.astro';
 import EventCard from '../../components/EventCard.astro';
+import Carousel from '../../components/Carousel.astro';
 import { langStaticPaths, localeFromParam, localePath, useTranslations, formatDate } from '../../i18n';
-import { getEvents, splitEvents, getPage } from '../../lib/content';
+import { getEvents, splitEvents, getPage, getMemoriesByYear } from '../../lib/content';
 import colaj from '../../assets/nepsis-elvetia.jpg';
+import stema from '../../assets/stema-mitropolia.png';
 
 export function getStaticPaths() {
   return langStaticPaths();
@@ -18,6 +20,17 @@ const featured = upcoming[0] ?? past[0];
 const featuredLabel = upcoming[0] ? t('home.nextEvent') : t('home.latestEvent');
 
 const { Content: Despre } = await getPage('despre', lang);
+
+// Caruselul de pe prima pagină: prima fotografie a fiecărei amintiri, cele mai noi primele.
+const carouselImages = (await getMemoriesByYear(lang))
+  .flatMap(({ entries }) => entries)
+  .filter(({ memory }) => memory.data.images.length > 0)
+  .map(({ memory, slug }) => ({
+    src: memory.data.images[0]!.src,
+    alt: memory.data.images[0]!.alt,
+    href: localePath(lang, `/amintiri/${slug}/`),
+    caption: memory.data.title,
+  }));
 ---
 
 <Base lang={lang} title={t('site.name')} description={t('site.description')}>
@@ -66,6 +79,16 @@ const { Content: Despre } = await getPage('despre', lang);
     </div>
   </section>
 
+  <!-- Apartenența la Mitropolie -->
+  <section class="border-b border-stone-200 bg-brand-50" aria-labelledby="moreom-titlu">
+    <div class="mx-auto flex max-w-4xl flex-col items-center gap-6 px-4 py-12 text-center sm:flex-row sm:gap-10 sm:text-left">
+      <Image src={stema} alt={t('home.moreomAlt')} width="130" height="143" format="webp" class="h-28 w-auto shrink-0 sm:h-32" loading="lazy" />
+      <h2 id="moreom-titlu" class="font-serif text-2xl font-bold leading-snug text-brand-950 sm:text-3xl">
+        {t('home.moreomTitle')}
+      </h2>
+    </div>
+  </section>
+
   <!-- Evenimentul evidențiat -->
   <section class="mx-auto max-w-6xl px-4 py-12 sm:py-16" aria-labelledby="eveniment-evidentiat">
     <h2 id="eveniment-evidentiat" class="text-2xl font-bold text-brand-950 sm:text-3xl">
@@ -103,6 +126,24 @@ const { Content: Despre } = await getPage('despre', lang);
         {t('home.allActivities')} →
       </a>
     </p>
+  </section>
+
+  <!-- Carusel cu momente din toate evenimentele -->
+  <section class="border-t border-stone-200 bg-white" aria-labelledby="carusel-titlu">
+    <div class="mx-auto max-w-4xl px-4 py-12 sm:py-16">
+      <h2 id="carusel-titlu" class="text-center text-2xl font-bold text-brand-950 sm:text-3xl">
+        {t('home.carouselTitle')}
+      </h2>
+      <Carousel images={carouselImages} lang={lang} class="mt-8" />
+      <p class="mt-6 text-center">
+        <a
+          href={localePath(lang, '/amintiri/')}
+          class="font-semibold text-brand-700 underline decoration-brand-300 underline-offset-4 hover:text-brand-900"
+        >
+          {t('home.seeMemories')} →
+        </a>
+      </p>
+    </div>
   </section>
 
   <!-- Despre -->

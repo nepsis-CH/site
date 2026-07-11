@@ -129,6 +129,23 @@ const fr: Partial<typeof ro> = {
   'footer.about':
     'Nepsis Suisse — la fraternité des jeunes chrétiens orthodoxes roumains de Suisse, sous l’omophore de la Métropole Orthodoxe Roumaine d’Europe Occidentale et Méridionale.',
 
+  // Devenir membre + bannière MOREOM + carrousel
+  'nav.join': 'Devenir membre',
+  'home.moreomTitle':
+    'Nepsis Suisse est membre des fraternités Nepsis de la Métropole Orthodoxe Roumaine d’Europe Occidentale et Méridionale',
+  'home.moreomAlt': 'Armoiries de la Métropole Orthodoxe Roumaine d’Europe Occidentale et Méridionale',
+  'home.carouselTitle': 'Moments de la vie de la fraternité',
+  'carousel.label': 'Galerie d’images',
+  'carousel.prev': 'Image précédente',
+  'carousel.next': 'Image suivante',
+  'join.title': 'Devenir membre',
+  'join.description': 'Comment rejoindre la fraternité des jeunes orthodoxes Nepsis Suisse.',
+  'join.cta': 'Écrivez-nous un e-mail',
+  'contact.intro': 'Nous serons heureux de faire votre connaissance — choisissez la voie qui vous convient.',
+  'contact.joinTitle': 'Envie de rejoindre la fraternité ?',
+  'contact.joinText': 'Vous êtes jeune et souhaitez faire partie de Nepsis Suisse ? Le premier pas est simple.',
+  'contact.joinLink': 'Devenir membre',
+
   // Divers
   'event.date': 'Date de l’événement',
   'event.location': 'Lieu',

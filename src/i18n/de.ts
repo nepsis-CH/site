@@ -129,6 +129,23 @@ const de: Partial<typeof ro> = {
   'footer.about':
     'Nepsis Schweiz — die Bruderschaft der jungen rumänisch-orthodoxen Christen in der Schweiz, unter dem Omophorion der Rumänisch-Orthodoxen Metropolie von West- und Südeuropa.',
 
+  // Mitglied werden + MOREOM-Banner + Karussell
+  'nav.join': 'Mitglied werden',
+  'home.moreomTitle':
+    'Nepsis Schweiz ist Mitglied der Nepsis-Bruderschaften der Rumänisch-Orthodoxen Metropolie von West- und Südeuropa',
+  'home.moreomAlt': 'Wappen der Rumänisch-Orthodoxen Metropolie von West- und Südeuropa',
+  'home.carouselTitle': 'Momente aus dem Leben der Bruderschaft',
+  'carousel.label': 'Bildergalerie',
+  'carousel.prev': 'Vorheriges Bild',
+  'carousel.next': 'Nächstes Bild',
+  'join.title': 'Mitglied werden',
+  'join.description': 'Wie Sie der Bruderschaft der jungen Orthodoxen Nepsis Schweiz beitreten können.',
+  'join.cta': 'Schreiben Sie uns eine E-Mail',
+  'contact.intro': 'Wir freuen uns, Sie kennenzulernen — wählen Sie den Weg, der Ihnen am besten passt.',
+  'contact.joinTitle': 'Möchten Sie der Bruderschaft beitreten?',
+  'contact.joinText': 'Sie sind jung und möchten Teil von Nepsis Schweiz sein? Der erste Schritt ist einfach.',
+  'contact.joinLink': 'Mitglied werden',
+
   // Sonstiges
   'event.date': 'Datum der Veranstaltung',
   'event.location': 'Ort',

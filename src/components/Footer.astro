@@ -3,7 +3,7 @@ import { Image } from 'astro:assets';
 import { type Locale, useTranslations, localePath } from '../i18n';
 import ObfuscatedEmail from './ObfuscatedEmail.astro';
 import SocialLinks from './SocialLinks.astro';
-import sigla from '../assets/sigla-nepsis.png';
+import logo from '../assets/logo-small.jpg';
 
 interface Props {
   lang: Locale;
@@ -17,9 +17,15 @@ const year = new Date().getFullYear();
 <footer class="mt-16 border-t border-stone-200 bg-brand-950 text-stone-300">
   <div class="mx-auto flex max-w-3xl flex-col items-center gap-6 px-4 py-14 text-center">
     <a href={localePath(lang, '/')} class="flex flex-col items-center gap-4">
-      <span class="flex h-20 w-20 items-center justify-center rounded-full bg-white shadow-md">
-        <Image src={sigla} alt="" width="120" height="120" format="webp" class="h-14 w-14 object-contain" loading="lazy" />
-      </span>
+      <Image
+        src={logo}
+        alt=""
+        width="160"
+        height="160"
+        format="webp"
+        class="h-20 w-20 rounded-full border-2 border-white/20 object-cover shadow-md"
+        loading="lazy"
+      />
       <span class="font-serif text-2xl font-bold text-white">{t('site.name')}</span>
     </a>
 

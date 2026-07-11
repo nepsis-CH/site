@@ -128,6 +128,23 @@ const en: Partial<typeof ro> = {
   'footer.about':
     'Nepsis Switzerland — the fellowship of young Romanian Orthodox Christians in Switzerland, under the omophorion of the Romanian Orthodox Metropolis of Western and Southern Europe.',
 
+  // Become a member + MOREOM banner + carousel
+  'nav.join': 'Become a member',
+  'home.moreomTitle':
+    'Nepsis Switzerland is a member of the Nepsis fellowships of the Romanian Orthodox Metropolis of Western and Southern Europe',
+  'home.moreomAlt': 'Coat of arms of the Romanian Orthodox Metropolis of Western and Southern Europe',
+  'home.carouselTitle': 'Moments from the life of the fellowship',
+  'carousel.label': 'Image gallery',
+  'carousel.prev': 'Previous image',
+  'carousel.next': 'Next image',
+  'join.title': 'Become a member',
+  'join.description': 'How to join the Nepsis Switzerland fellowship of young Orthodox Christians.',
+  'join.cta': 'Write us an e-mail',
+  'contact.intro': 'We would love to meet you — choose whichever way suits you best.',
+  'contact.joinTitle': 'Would you like to join the fellowship?',
+  'contact.joinText': 'Are you young and would like to be part of Nepsis Switzerland? The first step is simple.',
+  'contact.joinLink': 'Become a member',
+
   // Misc
   'event.date': 'Event date',
   'event.location': 'Location',

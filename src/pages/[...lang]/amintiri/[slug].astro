@@ -1,6 +1,7 @@
 ---
 import { getCollection, render, type CollectionEntry } from 'astro:content';
 import Base from '../../../layouts/Base.astro';
+import Carousel from '../../../components/Carousel.astro';
 import {
   locales,
   defaultLocale,
@@ -86,14 +87,6 @@ const description =
       <Content />
     </div>
 
-    {
-      images.length > 0 && (
-        <div class:list={['mt-10 grid gap-4', images.length > 1 && 'sm:grid-cols-2']}>
-          {images.map((img) => (
-            <img src={img.src} alt={img.alt} loading="lazy" class="w-full rounded-xl object-cover shadow-sm" />
-          ))}
-        </div>
-      )
-    }
+    <Carousel images={images} lang={lang} class="mt-10" />
   </article>
 </Base>

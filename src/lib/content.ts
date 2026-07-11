@@ -1,4 +1,4 @@
-import { getCollection, getEntry, render, type CollectionEntry } from 'astro:content';
+import { getCollection, render, type CollectionEntry } from 'astro:content';
 import { defaultLocale, type Locale } from '../i18n';
 
 type Translatable = { data: { lang: Locale; translationKey: string } };
@@ -84,9 +84,17 @@ export async function getMemoriesByYear(locale: Locale) {
 
 /** Conținutul unei pagini statice în limba cerută, cu fallback pe română. */
 export async function getPage(id: string, locale: Locale) {
+  const page = await getOptionalPage(id, locale);
+  if (!page) throw new Error(`Pagina „${id}” nu există în src/content/pagini/`);
+  return page;
+}
+
+/** Ca `getPage`, dar întoarce `null` dacă pagina nu există (ex. calendarul anual). */
+export async function getOptionalPage(id: string, locale: Locale) {
+  const all = await getCollection('pagini');
   const entry =
-    (await getEntry('pagini', `${locale}/${id}`)) ?? (await getEntry('pagini', `${defaultLocale}/${id}`));
-  if (!entry) throw new Error(`Pagina „${id}” nu există în src/content/pagini/`);
+    all.find((e) => e.id === `${locale}/${id}`) ?? all.find((e) => e.id === `${defaultLocale}/${id}`);
+  if (!entry) return null;
   const { Content } = await render(entry);
   return { entry, Content };
 }

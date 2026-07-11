@@ -59,7 +59,13 @@ const isActive = (href: string) =>
       }
     </nav>
 
-    <div class="hidden lg:block">
+    <div class="hidden items-center gap-3 lg:flex">
+      <a
+        href={localePath(lang, '/devino-membru/')}
+        class="rounded-lg bg-brand-800 px-3.5 py-2 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-brand-700"
+      >
+        {t('nav.join')}
+      </a>
       <LangSwitcher lang={lang} />
     </div>
 
@@ -98,6 +104,12 @@ const isActive = (href: string) =>
         ))
       }
     </ul>
+    <a
+      href={localePath(lang, '/devino-membru/')}
+      class="mb-3 block rounded-lg bg-brand-800 px-3.5 py-2.5 text-center text-base font-semibold text-white shadow-sm transition-colors hover:bg-brand-700"
+    >
+      {t('nav.join')}
+    </a>
     <div class="border-t border-stone-200 pt-3">
       <LangSwitcher lang={lang} />
     </div>
