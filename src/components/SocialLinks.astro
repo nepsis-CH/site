@@ -2,10 +2,12 @@
 /** Link-urile sociale Nepsis Elveția, cu pictograme SVG inline (fără librării externe). */
 interface Props {
   class?: string;
+  /** Pune `false` ca să ascunzi Google Groups (ex. în footer). */
+  showGroups?: boolean;
 }
-const { class: extra = '' } = Astro.props;
+const { class: extra = '', showGroups = true } = Astro.props;
 
-const links = [
+const allLinks = [
   {
     href: 'https://www.facebook.com/Nepsis.Elvetia/',
     label: 'Facebook',
@@ -32,6 +34,7 @@ const links = [
     path: 'M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm0 2c-2.7 0-8 1.3-8 4v2h16v-2c0-2.7-5.3-4-8-4Z',
   },
 ];
+const links = showGroups ? allLinks : allLinks.filter((l) => l.label !== 'Google Groups');
 ---
 
 <ul class:list={['flex items-center gap-2', extra]}>

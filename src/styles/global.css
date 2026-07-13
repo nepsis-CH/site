@@ -27,22 +27,22 @@
   --font-serif: 'Cardo', 'Cardo Fallback', Georgia, 'Times New Roman', serif;
   --font-sans: 'Inter Variable', 'Inter', 'Inter Fallback', Arial, ui-sans-serif, system-ui, sans-serif;
 
-  /* Albastru bizantin profund — singura culoare de accent, derivată din tonul demn al siglei. */
-  --color-brand-50: #f2f6fa;
-  --color-brand-100: #e2ebf3;
-  --color-brand-200: #c3d6e6;
-  --color-brand-300: #97b6d1;
-  --color-brand-400: #6591b8;
-  --color-brand-500: #44749f;
-  --color-brand-600: #345d85;
-  --color-brand-700: #2c4c6c;
-  --color-brand-800: #28405a;
-  --color-brand-900: #1e3048;
-  --color-brand-950: #142033;
+  /* Alb + roșu, ca stema Elveției — roșul elvețian (~#d52b1e) e singura culoare de accent. */
+  --color-brand-50: #fdf3f2;
+  --color-brand-100: #fce4e2;
+  --color-brand-200: #facdc9;
+  --color-brand-300: #f5a9a2;
+  --color-brand-400: #ed766b;
+  --color-brand-500: #e04b3c;
+  --color-brand-600: #d02d1e;
+  --color-brand-700: #ae2416;
+  --color-brand-800: #902115;
+  --color-brand-900: #772017;
+  --color-brand-950: #400c06;
 
-  /* Neutre calde (hârtie veche, nu gri corporatist). */
-  --color-paper: #faf8f5;
-  --color-ink: #2b2b28;
+  /* Fond alb (abia perceptibil cald, ca să existe alternanță între secțiuni). */
+  --color-paper: #fbf8f7;
+  --color-ink: #2b2827;
 }
 
 html {

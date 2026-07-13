@@ -37,8 +37,8 @@ export default {
   'activities.description':
     'Calendarul evenimentelor Nepsis Elveția: evenimente viitoare și arhiva celor trecute.',
   'activities.intro': 'Vă așteptăm cu drag la următoarele noastre evenimente.',
-  'activities.upcoming': 'Urmează',
-  'activities.past': 'Evenimente trecute',
+  'activities.upcoming': 'Următorul eveniment',
+  'activities.past': 'Evenimente recente',
   'activities.noUpcoming':
     'Momentan nu avem un eveniment nou anunțat. Comunicăm des pe grupurile interne Telegram și WhatsApp — scrie-ne ca să fii adăugat(ă), sau abonează-te la newsletter.',
   'activities.permanent': 'Activitate permanentă: lecții online de muzică psaltică',
@@ -127,6 +127,8 @@ export default {
 
   // Devino membru + banner MOREOM + carusel
   'nav.join': 'Devino membru',
+  'home.eyebrow': 'Asociația Tinerilor Ortodocși Nepsis Elveția',
+  'footer.tagline': 'Tinerii creștini ortodocși din Elveția',
   'home.moreomTitle':
     'Nepsis Elveția este membră a frățiilor Nepsis din Mitropolia Ortodoxă Română a Europei Occidentale și Meridionale',
   'home.moreomAlt': 'Stema Mitropoliei Ortodoxe Române a Europei Occidentale și Meridionale',

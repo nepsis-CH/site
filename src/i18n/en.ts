@@ -39,8 +39,8 @@ const en: Partial<typeof ro> = {
   'activities.description':
     'The Nepsis Switzerland events calendar: upcoming events and the archive of past ones.',
   'activities.intro': 'We warmly look forward to seeing you at our upcoming events.',
-  'activities.upcoming': 'Upcoming',
-  'activities.past': 'Past events',
+  'activities.upcoming': 'Next event',
+  'activities.past': 'Recent events',
   'activities.noUpcoming':
     'No new event is announced at the moment. We communicate often on our internal Telegram and WhatsApp groups — write to us to be added, or subscribe to the newsletter.',
   'activities.permanent': 'Ongoing activity: online Byzantine chant lessons',
@@ -130,6 +130,8 @@ const en: Partial<typeof ro> = {
 
   // Become a member + MOREOM banner + carousel
   'nav.join': 'Become a member',
+  'home.eyebrow': 'The Young Orthodox Association Nepsis Switzerland',
+  'footer.tagline': 'The young Orthodox Christians in Switzerland',
   'home.moreomTitle':
     'Nepsis Switzerland is a member of the Nepsis fellowships of the Romanian Orthodox Metropolis of Western and Southern Europe',
   'home.moreomAlt': 'Coat of arms of the Romanian Orthodox Metropolis of Western and Southern Europe',

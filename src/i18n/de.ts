@@ -39,8 +39,8 @@ const de: Partial<typeof ro> = {
   'activities.description':
     'Der Veranstaltungskalender von Nepsis Schweiz: kommende Veranstaltungen und das Archiv der vergangenen.',
   'activities.intro': 'Wir freuen uns, Sie bei unseren nächsten Veranstaltungen begrüßen zu dürfen.',
-  'activities.upcoming': 'Demnächst',
-  'activities.past': 'Vergangene Veranstaltungen',
+  'activities.upcoming': 'Nächste Veranstaltung',
+  'activities.past': 'Neueste Veranstaltungen',
   'activities.noUpcoming':
     'Zurzeit ist keine neue Veranstaltung angekündigt. Wir kommunizieren häufig über unsere internen Telegram- und WhatsApp-Gruppen — schreiben Sie uns, um aufgenommen zu werden, oder abonnieren Sie den Newsletter.',
   'activities.permanent': 'Ständige Aktivität: Online-Unterricht in byzantinischem Gesang',
@@ -131,6 +131,8 @@ const de: Partial<typeof ro> = {
 
   // Mitglied werden + MOREOM-Banner + Karussell
   'nav.join': 'Mitglied werden',
+  'home.eyebrow': 'Der Verein der Orthodoxen Jugend Nepsis Schweiz',
+  'footer.tagline': 'Die jungen orthodoxen Christen in der Schweiz',
   'home.moreomTitle':
     'Nepsis Schweiz ist Mitglied der Nepsis-Bruderschaften der Rumänisch-Orthodoxen Metropolie von West- und Südeuropa',
   'home.moreomAlt': 'Wappen der Rumänisch-Orthodoxen Metropolie von West- und Südeuropa',
