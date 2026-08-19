@@ -7,6 +7,25 @@ export const locales = ['ro', 'fr', 'en', 'de'] as const;
 export type Locale = (typeof locales)[number];
 export const defaultLocale: Locale = 'ro';
 
+/**
+ * Subdirectorul în care e găzduit site-ul: gol pe domeniul propriu
+ * (ch.nepsis.org), „/nepsis” pe o găzduire secundară de tip GitHub Pages.
+ */
+const base = (import.meta.env.BASE_URL ?? '/').replace(/\/$/, '');
+
+/** Prefixează o cale internă absolută cu subdirectorul de găzduire. */
+export function withBase(path: string): string {
+  if (!base || !path.startsWith('/') || path.startsWith('//')) return path;
+  return `${base}${path}`;
+}
+
+/** Elimină prefixul subdirectorului dintr-o cale (inversul lui `withBase`). */
+function stripBase(pathname: string): string {
+  if (!base) return pathname;
+  if (pathname === base) return '/';
+  return pathname.startsWith(`${base}/`) ? pathname.slice(base.length) : pathname;
+}
+
 export type UIDict = typeof ro;
 export type UIKey = keyof UIDict;
 
@@ -28,20 +47,25 @@ export function useTranslations(locale: Locale) {
   };
 }
 
-/** Prefixează o cale cu locale-ul (româna rămâne la rădăcină). */
+/** Prefixează o cale cu locale-ul (româna rămâne la rădăcină) și cu subdirectorul de găzduire. */
 export function localePath(locale: Locale, path: string): string {
   const clean = path.startsWith('/') ? path : `/${path}`;
-  return locale === defaultLocale ? clean : `/${locale}${clean === '/' ? '/' : clean}`;
+  const withLocale = locale === defaultLocale ? clean : `/${locale}${clean === '/' ? '/' : clean}`;
+  return withBase(withLocale);
 }
 
-/** Elimină prefixul de limbă dintr-o cale (pentru selectorul de limbă). */
+/**
+ * Elimină prefixul de limbă (și pe cel al subdirectorului) dintr-o cale,
+ * pentru selectorul de limbă. Rezultatul se dă mai departe lui `localePath`.
+ */
 export function stripLocale(pathname: string): string {
+  const path = stripBase(pathname);
   for (const l of locales) {
     if (l === defaultLocale) continue;
-    if (pathname === `/${l}` || pathname === `/${l}/`) return '/';
-    if (pathname.startsWith(`/${l}/`)) return pathname.slice(l.length + 1);
+    if (path === `/${l}` || path === `/${l}/`) return '/';
+    if (path.startsWith(`/${l}/`)) return path.slice(l.length + 1);
   }
-  return pathname || '/';
+  return path || '/';
 }
 
 /** Căile statice pentru rutele `[...lang]`: /, /fr, /en, /de. */

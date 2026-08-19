@@ -1,6 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
-import { langStaticPaths, localeFromParam, localePath, useTranslations, type UIKey } from '../../i18n';
+import { langStaticPaths, localeFromParam, localePath, useTranslations, withBase, type UIKey } from '../../i18n';
 import { getMembers } from '../../lib/content';
 
 export function getStaticPaths() {
@@ -24,7 +24,7 @@ const members = await getMembers();
         members.map((member) => (
           <li class="text-center">
             <img
-              src={member.data.photo ?? '/img/membri/placeholder.png'}
+              src={withBase(member.data.photo ?? '/img/membri/placeholder.png')}
               alt={member.data.photo ? member.data.name : t('members.missingPhoto')}
               loading="lazy"
               width="240"

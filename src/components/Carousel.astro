@@ -1,5 +1,5 @@
 ---
-import { type Locale, useTranslations } from '../i18n';
+import { type Locale, useTranslations, withBase } from '../i18n';
 
 /**
  * Carusel de imagini care rulează singur (se oprește la hover/atingere și
@@ -33,7 +33,7 @@ const t = useTranslations(lang);
             {img.href ? (
               <a href={img.href}>
                 <img
-                  src={img.src}
+                  src={withBase(img.src)}
                   alt={img.alt}
                   loading={i === 0 ? 'eager' : 'lazy'}
                   decoding="async"
@@ -42,7 +42,7 @@ const t = useTranslations(lang);
               </a>
             ) : (
               <img
-                src={img.src}
+                src={withBase(img.src)}
                 alt={img.alt}
                 loading={i === 0 ? 'eager' : 'lazy'}
                 decoding="async"

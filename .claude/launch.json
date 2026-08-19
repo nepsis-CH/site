@@ -6,6 +6,12 @@
       "runtimeExecutable": "npm",
       "runtimeArgs": ["run", "preview"],
       "port": 4321
+    },
+    {
+      "name": "preview-mirror",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "preview:mirror"],
+      "port": 4322
     }
   ]
 }

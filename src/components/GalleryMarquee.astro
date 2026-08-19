@@ -1,5 +1,5 @@
 ---
-import { type Locale, useTranslations } from '../i18n';
+import { type Locale, useTranslations, withBase } from '../i18n';
 
 /**
  * Bandă de imagini pe toată lățimea paginii, care rulează non-stop
@@ -28,7 +28,7 @@ const durata = Math.max(30, images.length * 5);
                 {img.href && !clone ? (
                   <a href={img.href} class="block h-full" title={img.alt}>
                     <img
-                      src={img.src}
+                      src={withBase(img.src)}
                       alt={img.alt}
                       loading="lazy"
                       decoding="async"
@@ -37,7 +37,7 @@ const durata = Math.max(30, images.length * 5);
                   </a>
                 ) : (
                   <img
-                    src={img.src}
+                    src={withBase(img.src)}
                     alt={clone ? '' : img.alt}
                     loading="lazy"
                     decoding="async"
