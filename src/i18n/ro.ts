@@ -20,12 +20,11 @@ export default {
 
   // Acasă
   'home.heroAlt': 'Colaj cu fotografii de la întâlnirile Nepsis Elveția',
-  'home.tagline': 'Tinerii creștini ortodocși români din Elveția',
+  'home.tagline': 'Tineri creștini ortodocși din Elveția',
   'home.about.title': 'Despre Nepsis Elveția',
   'home.nextEvent': 'Următorul eveniment',
-  'home.latestEvent': 'Cel mai recent eveniment',
   'home.noUpcoming':
-    'Momentan nu avem un eveniment nou anunțat. Abonează-te la newsletter sau scrie-ne ca să fii la curent cu următoarele activități.',
+    'Abonează-te la newsletter sau scrie-ne ca să fii adăugat pe grupurile noastre de WhatsApp sau paginile de social media, pentru a fi la curent cu următoarele activități.',
   'home.allActivities': 'Toate evenimentele',
   'home.seeMemories': 'Vezi amintirile noastre',
   'home.contactUs': 'Contactează-ne',
@@ -57,6 +56,7 @@ export default {
   'memories.year': 'Anul',
   'memories.onlyRo': 'Amintirile mai vechi sunt disponibile doar în limba română.',
   'memories.back': 'Înapoi la amintiri',
+  'memories.readMore': 'Citește mai mult',
 
   // Ocrotitorul
   'patron.title': 'Sfântul Ioan Casian',

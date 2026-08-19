@@ -22,12 +22,11 @@ const en: Partial<typeof ro> = {
 
   // Home
   'home.heroAlt': 'Photo collage from Nepsis Switzerland gatherings',
-  'home.tagline': 'The young Romanian Orthodox Christians in Switzerland',
+  'home.tagline': 'Young Orthodox Christians in Switzerland',
   'home.about.title': 'About Nepsis Switzerland',
   'home.nextEvent': 'Next event',
-  'home.latestEvent': 'Most recent event',
   'home.noUpcoming':
-    'No new event is announced at the moment. Subscribe to the newsletter or write to us to hear about our upcoming activities.',
+    'Subscribe to the newsletter or write to us to be added to our WhatsApp groups or social media pages, so you stay up to date with our upcoming activities.',
   'home.allActivities': 'All events',
   'home.seeMemories': 'See our memories',
   'home.contactUs': 'Contact us',
@@ -59,6 +58,7 @@ const en: Partial<typeof ro> = {
   'memories.year': 'Year',
   'memories.onlyRo': 'Older memories are available in Romanian only.',
   'memories.back': 'Back to memories',
+  'memories.readMore': 'Read more',
 
   // Patron Saint
   'patron.title': 'Saint John Cassian',

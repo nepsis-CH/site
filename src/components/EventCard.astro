@@ -1,6 +1,6 @@
 ---
 import { render, type CollectionEntry } from 'astro:content';
-import { type Locale, useTranslations, formatDate } from '../i18n';
+import { type Locale, useTranslations, formatDate, withBase } from '../i18n';
 
 /**
  * Card de eveniment. `detailed` afișează și descrierea completă (folosit la
@@ -23,11 +23,11 @@ const Heading = headingLevel;
   id={`eveniment-${event.data.translationKey}`}
   class="overflow-hidden rounded-xl border border-stone-200 bg-white shadow-sm"
 >
-  <div class:list={[detailed && 'md:grid md:grid-cols-2']}>
+  <div class:list={[detailed && event.data.image && 'md:grid md:grid-cols-2']}>
     {
       event.data.image && (
         <img
-          src={event.data.image}
+          src={withBase(event.data.image)}
           alt={event.data.imageAlt ?? event.data.title}
           loading="lazy"
           class:list={['h-full w-full object-cover', detailed ? 'max-h-[34rem]' : 'aspect-[4/3]']}

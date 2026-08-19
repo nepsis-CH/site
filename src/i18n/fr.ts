@@ -22,12 +22,11 @@ const fr: Partial<typeof ro> = {
 
   // Accueil
   'home.heroAlt': 'Collage de photos des rencontres de Nepsis Suisse',
-  'home.tagline': 'Les jeunes chrétiens orthodoxes roumains de Suisse',
+  'home.tagline': 'Jeunes chrétiens orthodoxes de Suisse',
   'home.about.title': 'À propos de Nepsis Suisse',
   'home.nextEvent': 'Prochain événement',
-  'home.latestEvent': 'Événement le plus récent',
   'home.noUpcoming':
-    'Aucun nouvel événement n’est annoncé pour le moment. Abonnez-vous à la newsletter ou écrivez-nous pour être informé(e) des prochaines activités.',
+    'Abonnez-vous à la newsletter ou écrivez-nous pour être ajouté(e) à nos groupes WhatsApp ou à nos pages de réseaux sociaux, afin de rester informé(e) des prochaines activités.',
   'home.allActivities': 'Tous les événements',
   'home.seeMemories': 'Voir nos souvenirs',
   'home.contactUs': 'Contactez-nous',
@@ -60,6 +59,7 @@ const fr: Partial<typeof ro> = {
   'memories.year': 'Année',
   'memories.onlyRo': 'Les souvenirs plus anciens ne sont disponibles qu’en roumain.',
   'memories.back': 'Retour aux souvenirs',
+  'memories.readMore': 'Lire la suite',
 
   // Saint protecteur
   'patron.title': 'Saint Jean Cassien',

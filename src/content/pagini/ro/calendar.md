@@ -8,6 +8,7 @@ description: "Calendarul pe scurt al evenimentelor Nepsis Elveția din anul cure
 | Dată | Eveniment | Detalii |
 | --- | --- | --- |
 | **28 februarie 2026** | **Hramul Nepsis** — Sfântul Ioan Casian, la Mănăstirea „Acoperământul Maicii Domnului", Les Sciernes d'Albeuve | [detalii](/amintiri/) |
+| **decembrie 2026** | **Colinde prin parohii** — vestim Nașterea Domnului prin parohiile românești din Elveția (data exactă va fi anunțată) | [detalii](/evenimente/) |
 
 </div>
 

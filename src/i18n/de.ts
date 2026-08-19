@@ -22,12 +22,11 @@ const de: Partial<typeof ro> = {
 
   // Startseite
   'home.heroAlt': 'Fotocollage von den Treffen von Nepsis Schweiz',
-  'home.tagline': 'Die jungen rumänisch-orthodoxen Christen in der Schweiz',
+  'home.tagline': 'Junge orthodoxe Christen in der Schweiz',
   'home.about.title': 'Über Nepsis Schweiz',
   'home.nextEvent': 'Nächste Veranstaltung',
-  'home.latestEvent': 'Jüngste Veranstaltung',
   'home.noUpcoming':
-    'Zurzeit ist keine neue Veranstaltung angekündigt. Abonnieren Sie den Newsletter oder schreiben Sie uns, um über die nächsten Aktivitäten informiert zu werden.',
+    'Abonnieren Sie den Newsletter oder schreiben Sie uns, um in unsere WhatsApp-Gruppen aufgenommen zu werden oder unseren Social-Media-Seiten zu folgen und so über die nächsten Aktivitäten auf dem Laufenden zu bleiben.',
   'home.allActivities': 'Alle Veranstaltungen',
   'home.seeMemories': 'Unsere Erinnerungen ansehen',
   'home.contactUs': 'Kontaktieren Sie uns',
@@ -60,6 +59,7 @@ const de: Partial<typeof ro> = {
   'memories.year': 'Jahr',
   'memories.onlyRo': 'Ältere Erinnerungen sind nur auf Rumänisch verfügbar.',
   'memories.back': 'Zurück zu den Erinnerungen',
+  'memories.readMore': 'Weiterlesen',
 
   // Schutzpatron
   'patron.title': 'Heiliger Johannes Cassian',
