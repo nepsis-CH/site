@@ -41,6 +41,16 @@ export default defineConfig({
   site: SITE_URL,
   base: BASE_PATH || undefined,
   output: 'static',
+  /*
+   * Pagina „Membri” s-a redenumit „Echipa”. Adresa veche rămâne validă și
+   * trimite la cea nouă, ca legăturile date deja mai departe să nu se rupă.
+   */
+  redirects: {
+    '/membri': '/echipa',
+    '/fr/membri': '/fr/echipa',
+    '/en/membri': '/en/echipa',
+    '/de/membri': '/de/echipa',
+  },
   trailingSlash: 'ignore',
   build: {
     // CSS-ul e mic; inliniat în HTML economisește un request blocant la randare.

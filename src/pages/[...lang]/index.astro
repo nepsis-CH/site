@@ -45,13 +45,13 @@ const carouselImages = (await getMemoriesByYear(lang))
         <div class="urca urca-2 mt-8 flex flex-wrap gap-3">
           <a
             href={localePath(lang, '/evenimente/')}
-            class="rounded-lg bg-brand-800 px-5 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-brand-700"
+            class="rounded-lg border border-brand-300 bg-white px-5 py-3 text-sm font-semibold text-brand-800 transition-colors hover:bg-brand-50"
           >
             {t('home.nextEvent')}
           </a>
           <a
             href={localePath(lang, '/devino-membru/')}
-            class="rounded-lg border border-brand-300 bg-white px-5 py-3 text-sm font-semibold text-brand-800 transition-colors hover:bg-brand-50"
+            class="rounded-lg bg-brand-800 px-5 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-brand-700"
           >
             {t('nav.join')}
           </a>

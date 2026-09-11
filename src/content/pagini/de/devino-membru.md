@@ -1,5 +1,5 @@
 ---
-title: "Mitglied werden bei Nepsis Schweiz"
+title: "Komm zu uns!"
 description: "Wie Sie der Bruderschaft der jungen orthodoxen Christen Nepsis Schweiz beitreten: an Veranstaltungen teilnehmen, unseren Gruppen beitreten, sich engagieren."
 ---
 

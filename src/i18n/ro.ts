@@ -137,7 +137,7 @@ export default {
   'carousel.label': 'Galerie de imagini',
   'carousel.prev': 'Imaginea anterioară',
   'carousel.next': 'Imaginea următoare',
-  'join.title': 'Devino membru',
+  'join.title': 'Hai alături de noi!',
   'join.description': 'Cum te poți alătura frăției tinerilor ortodocși Nepsis Elveția.',
   'join.cta': 'Scrie-ne un e-mail',
   'contact.intro': 'Ne bucurăm să te cunoaștem — alege calea care ți-e cea mai la îndemână.',

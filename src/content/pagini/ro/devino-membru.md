@@ -1,5 +1,5 @@
 ---
-title: "Devino membru Nepsis Elveția"
+title: "Hai alături de noi!"
 description: "Cum te poți alătura frăției tinerilor creștini ortodocși Nepsis Elveția: participă la evenimente, intră în grupurile noastre, implică-te."
 ---
 

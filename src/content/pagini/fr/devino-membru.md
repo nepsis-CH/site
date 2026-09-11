@@ -1,5 +1,5 @@
 ---
-title: "Devenir membre de Nepsis Suisse"
+title: "Rejoins-nous !"
 description: "Comment rejoindre la fraternité des jeunes chrétiens orthodoxes Nepsis Suisse : participez aux événements, rejoignez nos groupes, engagez-vous."
 ---
 

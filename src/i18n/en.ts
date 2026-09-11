@@ -140,7 +140,7 @@ const en: Partial<typeof ro> = {
   'carousel.label': 'Image gallery',
   'carousel.prev': 'Previous image',
   'carousel.next': 'Next image',
-  'join.title': 'Become a member',
+  'join.title': 'Join us!',
   'join.description': 'How to join the Nepsis Switzerland fellowship of young Orthodox Christians.',
   'join.cta': 'Write us an e-mail',
   'contact.intro': 'We would love to meet you — choose whichever way suits you best.',

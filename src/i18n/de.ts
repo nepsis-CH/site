@@ -141,7 +141,7 @@ const de: Partial<typeof ro> = {
   'carousel.label': 'Bildergalerie',
   'carousel.prev': 'Vorheriges Bild',
   'carousel.next': 'Nächstes Bild',
-  'join.title': 'Mitglied werden',
+  'join.title': 'Komm zu uns!',
   'join.description': 'Wie Sie der Bruderschaft der jungen Orthodoxen Nepsis Schweiz beitreten können.',
   'join.cta': 'Schreiben Sie uns eine E-Mail',
   'contact.intro': 'Wir freuen uns, Sie kennenzulernen — wählen Sie den Weg, der Ihnen am besten passt.',

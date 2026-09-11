@@ -1,5 +1,5 @@
 ---
-title: "Become a member of Nepsis Switzerland"
+title: "Join us!"
 description: "How to join the Nepsis Switzerland fellowship of young Orthodox Christians: take part in events, join our groups, get involved."
 ---
 
