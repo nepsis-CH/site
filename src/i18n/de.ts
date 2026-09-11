@@ -10,7 +10,7 @@ const de: Partial<typeof ro> = {
   'nav.activities': 'Veranstaltungen',
   'nav.memories': 'Erinnerungen',
   'nav.patron': 'Schutzpatron',
-  'nav.members': 'Mitglieder',
+  'nav.members': 'Das Team',
   'nav.psaltica': 'Byzantinischer Gesang',
   'nav.newsletter': 'Newsletter',
   'nav.contact': 'Kontakt',
@@ -68,18 +68,19 @@ const de: Partial<typeof ro> = {
   'patron.iconAlt': 'Ikone des heiligen Johannes Cassian',
 
   // Mitglieder
-  'members.title': 'Mitglieder',
-  'members.heading': 'Der Vorstand und die Mitglieder von Nepsis Schweiz',
+  'members.title': 'Das Team',
+  'members.heading': 'Das Team von Nepsis Schweiz',
   'members.subtitle': 'Wir freuen uns über die gemeinsame Zeit!',
   'members.description':
     'Der Vorstand und die Mitglieder von Nepsis Schweiz — die jungen Menschen, die die Aktivitäten der Bruderschaft organisieren.',
+  'members.role.responsabil': 'Verantwortlicher für Nepsis Schweiz',
   'members.role.presedinte': 'Vorsitzender des Vorstands',
   'members.role.consiliu': 'Vorstandsmitglied',
   'members.role.coordonator': 'Koordinator / Koordinatorin',
   'members.role.webadmin': 'Web-Administrator',
   'members.parish': 'Pfarrei',
   'members.missingPhoto': 'Foto zurzeit nicht verfügbar',
-  'members.more': 'Weitere Fotos folgen — bis dahin finden Sie die Mitglieder auf',
+  'members.more': 'Wie wir aussehen und was wir tun, siehst du auf',
   'members.morePage': 'der Erinnerungsseite',
 
   // Byzantinischer Gesang
@@ -130,8 +131,8 @@ const de: Partial<typeof ro> = {
     'Nepsis Schweiz — die Bruderschaft der jungen rumänisch-orthodoxen Christen in der Schweiz, unter dem Omophorion der Rumänisch-Orthodoxen Metropolie von West- und Südeuropa.',
 
   // Mitglied werden + MOREOM-Banner + Karussell
-  'nav.join': 'Mitglied werden',
-  'home.eyebrow': 'Der Verein der Orthodoxen Jugend Nepsis Schweiz',
+  'nav.join': 'Komm zu uns!',
+  'home.eyebrow': 'Der Verein der Orthodoxen Jugend',
   'footer.tagline': 'Die jungen orthodoxen Christen in der Schweiz',
   'home.moreomTitle':
     'Nepsis Schweiz ist Mitglied der Nepsis-Bruderschaften der Rumänisch-Orthodoxen Metropolie von West- und Südeuropa',
@@ -146,7 +147,7 @@ const de: Partial<typeof ro> = {
   'contact.intro': 'Wir freuen uns, Sie kennenzulernen — wählen Sie den Weg, der Ihnen am besten passt.',
   'contact.joinTitle': 'Möchten Sie der Bruderschaft beitreten?',
   'contact.joinText': 'Sie sind jung und möchten Teil von Nepsis Schweiz sein? Der erste Schritt ist einfach.',
-  'contact.joinLink': 'Mitglied werden',
+  'contact.joinLink': 'Komm zu uns!',
 
   // Sonstiges
   'event.date': 'Datum der Veranstaltung',

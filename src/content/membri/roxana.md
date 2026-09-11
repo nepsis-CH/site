@@ -1,7 +1,6 @@
 ---
-name: "Monica"
+name: "Roxana"
 role: coordonator
 parish: "Lausanne"
-
-order: 10
+order: 4
 ---

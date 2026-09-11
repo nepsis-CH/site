@@ -10,7 +10,7 @@ const en: Partial<typeof ro> = {
   'nav.activities': 'Events',
   'nav.memories': 'Memories',
   'nav.patron': 'Patron Saint',
-  'nav.members': 'Members',
+  'nav.members': 'The team',
   'nav.psaltica': 'Byzantine Chant',
   'nav.newsletter': 'Newsletter',
   'nav.contact': 'Contact',
@@ -67,18 +67,19 @@ const en: Partial<typeof ro> = {
   'patron.iconAlt': 'Icon of Saint John Cassian',
 
   // Members
-  'members.title': 'Members',
-  'members.heading': 'The council and members of Nepsis Switzerland',
+  'members.title': 'The team',
+  'members.heading': 'The Nepsis Switzerland team',
   'members.subtitle': 'We rejoice in the time spent together!',
   'members.description':
     'The council and members of Nepsis Switzerland — the young people who organise the fellowship’s activities.',
+  'members.role.responsabil': 'Responsible for Nepsis Switzerland',
   'members.role.presedinte': 'President of the Council',
   'members.role.consiliu': 'Council Member',
   'members.role.coordonator': 'Coordinator',
   'members.role.webadmin': 'Web Administrator',
   'members.parish': 'Parish of',
   'members.missingPhoto': 'Photo currently unavailable',
-  'members.more': 'More photos of other members are coming — until then you can see them on',
+  'members.more': 'You can see what we look like and what we do on',
   'members.morePage': 'the memories page',
 
   // Byzantine Chant
@@ -129,8 +130,8 @@ const en: Partial<typeof ro> = {
     'Nepsis Switzerland — the fellowship of young Romanian Orthodox Christians in Switzerland, under the omophorion of the Romanian Orthodox Metropolis of Western and Southern Europe.',
 
   // Become a member + MOREOM banner + carousel
-  'nav.join': 'Become a member',
-  'home.eyebrow': 'The Young Orthodox Association Nepsis Switzerland',
+  'nav.join': 'Join us!',
+  'home.eyebrow': 'The Young Orthodox Association',
   'footer.tagline': 'The young Orthodox Christians in Switzerland',
   'home.moreomTitle':
     'Nepsis Switzerland is a member of the Nepsis fellowships of the Romanian Orthodox Metropolis of Western and Southern Europe',
@@ -145,7 +146,7 @@ const en: Partial<typeof ro> = {
   'contact.intro': 'We would love to meet you — choose whichever way suits you best.',
   'contact.joinTitle': 'Would you like to join the fellowship?',
   'contact.joinText': 'Are you young and would like to be part of Nepsis Switzerland? The first step is simple.',
-  'contact.joinLink': 'Become a member',
+  'contact.joinLink': 'Join us!',
 
   // Misc
   'event.date': 'Event date',

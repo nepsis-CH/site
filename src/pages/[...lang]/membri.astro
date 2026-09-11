@@ -1,6 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
-import { langStaticPaths, localeFromParam, localePath, useTranslations, withBase, type UIKey } from '../../i18n';
+import { langStaticPaths, localeFromParam, localePath, useTranslations, type UIKey } from '../../i18n';
 import { getMembers } from '../../lib/content';
 
 export function getStaticPaths() {
@@ -13,37 +13,44 @@ const members = await getMembers();
 ---
 
 <Base lang={lang} title={`${t('members.title')} · ${t('site.name')}`} description={t('members.description')}>
-  <div class="mx-auto max-w-6xl px-4 py-10 sm:py-14">
+  <div class="mx-auto max-w-5xl px-4 py-10 sm:py-14">
     <header class="text-center">
       <h1 class="font-serif text-3xl font-bold text-brand-950 sm:text-4xl">{t('members.heading')}</h1>
       <p class="mt-2 text-lg text-stone-600">{t('members.subtitle')}</p>
     </header>
 
-    <ul class="mt-12 grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-3 lg:grid-cols-4">
+    <!--
+      Fără fotografii: lista se citește ca un cuprins, cu numele purtând toată
+      greutatea. Linia roșie de deasupra ține coloanele aliniate acolo unde un
+      nume trece pe două rânduri.
+    -->
+    <ul class="mt-12 grid gap-x-8 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
       {
         members.map((member) => (
-          <li class="text-center">
-            <img
-              src={withBase(member.data.photo ?? '/img/membri/placeholder.png')}
-              alt={member.data.photo ? member.data.name : t('members.missingPhoto')}
-              loading="lazy"
-              width="240"
-              height="240"
-              class="mx-auto aspect-square w-36 rounded-full border border-stone-200 object-cover shadow-sm sm:w-44"
-            />
-            <h2 class="mt-4 font-serif text-lg font-semibold text-brand-950">{member.data.name}</h2>
-            <p class="mt-0.5 text-sm font-medium text-brand-700">
+          <li class="border-t-2 border-brand-700 pt-4">
+            <h2 class="font-serif text-xl font-bold leading-snug text-brand-950">{member.data.name}</h2>
+            <p class="mt-1 text-sm font-semibold text-brand-700">
               {t(`members.role.${member.data.role}` as UIKey)}
             </p>
-            <p class="text-sm text-stone-500">
-              {t('members.parish')} {member.data.parish}
-            </p>
+            {
+              member.data.parish && (
+                <p class="mt-0.5 text-sm text-stone-500">
+                  {/*
+                    Părintele răspunde de frăție la nivel de țară, nu de o parohie,
+                    deci la el nu punem prefixul „Parohia”.
+                  */}
+                  {member.data.role === 'responsabil'
+                    ? member.data.parish
+                    : `${t('members.parish')} ${member.data.parish}`}
+                </p>
+              )
+            }
           </li>
         ))
       }
     </ul>
 
-    <p class="mt-12 text-center text-stone-600">
+    <p class="mt-14 text-center text-stone-600">
       {t('members.more')}
       <a
         href={localePath(lang, '/amintiri/')}

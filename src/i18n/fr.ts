@@ -10,7 +10,7 @@ const fr: Partial<typeof ro> = {
   'nav.activities': 'Événements',
   'nav.memories': 'Souvenirs',
   'nav.patron': 'Saint protecteur',
-  'nav.members': 'Membres',
+  'nav.members': 'L’équipe',
   'nav.psaltica': 'Chant byzantin',
   'nav.newsletter': 'Newsletter',
   'nav.contact': 'Contact',
@@ -68,18 +68,19 @@ const fr: Partial<typeof ro> = {
   'patron.iconAlt': 'Icône de saint Jean Cassien',
 
   // Membres
-  'members.title': 'Membres',
-  'members.heading': 'Le conseil et les membres de Nepsis Suisse',
+  'members.title': 'L’équipe',
+  'members.heading': 'L’équipe de Nepsis Suisse',
   'members.subtitle': 'Nous nous réjouissons du temps passé ensemble !',
   'members.description':
     'Le conseil et les membres de Nepsis Suisse — les jeunes qui organisent les activités de la fraternité.',
+  'members.role.responsabil': 'Responsable de Nepsis Suisse',
   'members.role.presedinte': 'Président du Conseil',
   'members.role.consiliu': 'Membre du Conseil',
   'members.role.coordonator': 'Coordinateur / Coordinatrice',
   'members.role.webadmin': 'Administrateur web',
   'members.parish': 'Paroisse de',
   'members.missingPhoto': 'Photo momentanément indisponible',
-  'members.more': 'D’autres photos suivront — en attendant, vous pouvez les voir sur',
+  'members.more': 'Vous pouvez voir à quoi nous ressemblons et ce que nous faisons sur',
   'members.morePage': 'la page des souvenirs',
 
   // Chant byzantin
@@ -130,8 +131,8 @@ const fr: Partial<typeof ro> = {
     'Nepsis Suisse — la fraternité des jeunes chrétiens orthodoxes roumains de Suisse, sous l’omophore de la Métropole Orthodoxe Roumaine d’Europe Occidentale et Méridionale.',
 
   // Devenir membre + bannière MOREOM + carrousel
-  'nav.join': 'Devenir membre',
-  'home.eyebrow': 'L’Association des Jeunes Orthodoxes Nepsis Suisse',
+  'nav.join': 'Rejoins-nous !',
+  'home.eyebrow': 'L’Association des Jeunes Orthodoxes',
   'footer.tagline': 'Les jeunes chrétiens orthodoxes de Suisse',
   'home.moreomTitle':
     'Nepsis Suisse est membre des fraternités Nepsis de la Métropole Orthodoxe Roumaine d’Europe Occidentale et Méridionale',
@@ -146,7 +147,7 @@ const fr: Partial<typeof ro> = {
   'contact.intro': 'Nous serons heureux de faire votre connaissance — choisissez la voie qui vous convient.',
   'contact.joinTitle': 'Envie de rejoindre la fraternité ?',
   'contact.joinText': 'Vous êtes jeune et souhaitez faire partie de Nepsis Suisse ? Le premier pas est simple.',
-  'contact.joinLink': 'Devenir membre',
+  'contact.joinLink': 'Rejoins-nous !',
 
   // Divers
   'event.date': 'Date de l’événement',

@@ -1,7 +1,6 @@
 ---
-name: "Ștefan I."
+name: "Sânziana"
 role: coordonator
 parish: "Zurich"
-
-order: 8
+order: 2
 ---

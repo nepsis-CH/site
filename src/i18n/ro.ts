@@ -8,7 +8,7 @@ export default {
   'nav.activities': 'Evenimente',
   'nav.memories': 'Amintiri',
   'nav.patron': 'Ocrotitorul',
-  'nav.members': 'Membri',
+  'nav.members': 'Echipa',
   'nav.psaltica': 'Psaltică',
   'nav.newsletter': 'Newsletter',
   'nav.contact': 'Contact',
@@ -65,18 +65,19 @@ export default {
   'patron.iconAlt': 'Icoana Sfântului Ioan Casian',
 
   // Membri
-  'members.title': 'Membri',
-  'members.heading': 'Consiliul și membrii Nepsis Elveția',
+  'members.title': 'Echipa',
+  'members.heading': 'Echipa Nepsis Elveția',
   'members.subtitle': 'Ne bucurăm de timpul împreună!',
   'members.description':
     'Consiliul și membrii Nepsis Elveția — tinerii care organizează activitățile frăției.',
+  'members.role.responsabil': 'Responsabil Nepsis Elveția',
   'members.role.presedinte': 'Președintele Consiliului',
   'members.role.consiliu': 'Membru în Consiliu',
   'members.role.coordonator': 'Coordonator',
   'members.role.webadmin': 'Administrator web',
   'members.parish': 'Parohia',
   'members.missingPhoto': 'Fotografia lipsește momentan',
-  'members.more': 'Mai urmează poze cu alți membri — până atunci îi poți vedea pe',
+  'members.more': 'Cum arătăm și ce facem poți vedea pe',
   'members.morePage': 'pagina cu amintiri',
 
   // Psaltică
@@ -126,8 +127,8 @@ export default {
     'Nepsis Elveția — frăția tinerilor creștini ortodocși români din Elveția, sub omoforul Mitropoliei Ortodoxe Române a Europei Occidentale și Meridionale.',
 
   // Devino membru + banner MOREOM + carusel
-  'nav.join': 'Devino membru',
-  'home.eyebrow': 'Asociația Tinerilor Ortodocși Nepsis Elveția',
+  'nav.join': 'Hai alături de noi!',
+  'home.eyebrow': 'Asociația Tinerilor Ortodocși',
   'footer.tagline': 'Tinerii creștini ortodocși din Elveția',
   'home.moreomTitle':
     'Nepsis Elveția este membră a frățiilor Nepsis din Mitropolia Ortodoxă Română a Europei Occidentale și Meridionale',
@@ -142,7 +143,7 @@ export default {
   'contact.intro': 'Ne bucurăm să te cunoaștem — alege calea care ți-e cea mai la îndemână.',
   'contact.joinTitle': 'Vrei să te alături frăției?',
   'contact.joinText': 'Ești tânăr(ă) și vrei să faci parte din Nepsis Elveția? Primul pas e simplu.',
-  'contact.joinLink': 'Devino membru',
+  'contact.joinLink': 'Hai alături de noi!',
 
   // Diverse
   'event.date': 'Data evenimentului',

@@ -61,8 +61,11 @@ const membri = defineCollection({
   loader: glob({ pattern: '**/[^_]*.md', base: './src/content/membri' }),
   schema: z.object({
     name: z.string(),
-    role: z.enum(['presedinte', 'consiliu', 'coordonator', 'webadmin']),
-    parish: z.string(),
+    // `responsabil` e părintele care răspunde de frăție la nivel de țară; ceilalți
+    // sunt legați de o parohie anume.
+    role: z.enum(['responsabil', 'presedinte', 'consiliu', 'coordonator', 'webadmin']),
+    // Opțională: nu pentru toți e stabilită încă parohia.
+    parish: z.string().optional(),
     photo: z.string().optional(),
     // Poziția în listă: mai mic = mai în față.
     order: z.number().default(99),

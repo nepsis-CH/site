@@ -1,7 +1,6 @@
 ---
-name: "Bogdan"
+name: "Luca"
 role: coordonator
 parish: "Lausanne"
-
-order: 9
+order: 5
 ---
