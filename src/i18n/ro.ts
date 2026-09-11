@@ -21,6 +21,7 @@ export default {
   // Acasă
   'home.heroAlt': 'Colaj cu fotografii de la întâlnirile Nepsis Elveția',
   'home.tagline': 'Tineri creștini ortodocși din Elveția',
+  'home.ageRange': 'Nepsis Elveția se adresează tinerilor între 14 și 35 de ani.',
   'home.about.title': 'Despre Nepsis Elveția',
   'home.nextEvent': 'Următorul eveniment',
   'home.noUpcoming':
@@ -67,7 +68,7 @@ export default {
   // Membri
   'members.title': 'Echipa',
   'members.heading': 'Echipa Nepsis Elveția',
-  'members.subtitle': 'Ne bucurăm de timpul împreună!',
+  'members.subtitle': 'Hai alături de noi!',
   'members.description':
     'Consiliul și membrii Nepsis Elveția — tinerii care organizează activitățile frăției.',
   'members.role.responsabil': 'Responsabil Nepsis Elveția',
@@ -104,17 +105,13 @@ export default {
   'contact.emailIntro': 'Ne poți scrie oricând la adresa:',
   'contact.emailButton': 'Trimite-ne un e-mail',
   'contact.groups': 'Grupurile noastre',
-  'contact.groupsText':
-    'Comunicăm des pe grupurile interne Telegram și WhatsApp — dacă vrei să fii adăugat(ă) la aceste grupuri, dă-ne un e-mail.',
+  'contact.groupsText': 'Comunicăm des pe grupurile interne de WhatsApp. Dacă ești tânăr(ă), locuiești în Elveția, ai între 14 și 35 de ani și vrei să fii adăugat(ă) la aceste grupuri, dă-ne un e-mail.',
   'contact.social': 'Rețele sociale',
   'contact.bank': 'Detalii cont bancar Nepsis Elveția',
   'contact.bank.holder': 'Titular cont',
   'contact.useful': 'Alte adrese utile',
-  'contact.useful.nepsis': 'nepsis.org — Nepsis internațional',
+  'contact.useful.nepsis': 'Nepsis International',
   'contact.useful.mitropolia': 'Mitropolia Ortodoxă Română a Europei Occidentale și Meridionale',
-  'contact.useful.parohii': 'Lista parohiilor ortodoxe românești din Elveția',
-  'contact.useful.manastire': 'Mănăstirea românească „Acoperământul Maicii Domnului” din Elveția',
-  'contact.useful.pelerinaje': 'Adresa centrului de pelerinaje al Mitropoliei:',
   'contact.newsletterLink': 'Abonează-te la newsletter',
 
   // Subsol
@@ -140,7 +137,6 @@ export default {
   'join.title': 'Hai alături de noi!',
   'join.description': 'Cum te poți alătura frăției tinerilor ortodocși Nepsis Elveția.',
   'join.cta': 'Scrie-ne un e-mail',
-  'contact.intro': 'Ne bucurăm să te cunoaștem — alege calea care ți-e cea mai la îndemână.',
   'contact.joinTitle': 'Vrei să te alături frăției?',
   'contact.joinText': 'Ești tânăr(ă) și vrei să faci parte din Nepsis Elveția? Primul pas e simplu.',
   'contact.joinLink': 'Hai alături de noi!',

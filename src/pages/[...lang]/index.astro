@@ -138,6 +138,14 @@ const carouselImages = (await getMemoriesByYear(lang))
       <h2 id="despre-titlu" class="text-2xl font-bold text-brand-950 sm:text-3xl">
         {t('home.about.title')}
       </h2>
+      {/*
+        Intervalul de vârstă e informația pe care o caută cineva care se
+        întreabă dacă frăția i se adresează. De aceea stă separat, deasupra
+        textului, nu îngropat în el.
+      */}
+      <p class="mx-auto mt-4 max-w-prose text-lg font-semibold text-brand-700">
+        {t('home.ageRange')}
+      </p>
       <div class="prose-md mt-6 text-left text-stone-700 sm:text-center">
         <Despre />
       </div>

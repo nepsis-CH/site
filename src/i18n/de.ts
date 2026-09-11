@@ -23,6 +23,7 @@ const de: Partial<typeof ro> = {
   // Startseite
   'home.heroAlt': 'Fotocollage von den Treffen von Nepsis Schweiz',
   'home.tagline': 'Junge orthodoxe Christen in der Schweiz',
+  'home.ageRange': 'Nepsis Schweiz richtet sich an junge Menschen zwischen 14 und 35 Jahren.',
   'home.about.title': 'Über Nepsis Schweiz',
   'home.nextEvent': 'Nächste Veranstaltung',
   'home.noUpcoming':
@@ -70,7 +71,7 @@ const de: Partial<typeof ro> = {
   // Mitglieder
   'members.title': 'Das Team',
   'members.heading': 'Das Team von Nepsis Schweiz',
-  'members.subtitle': 'Wir freuen uns über die gemeinsame Zeit!',
+  'members.subtitle': 'Komm zu uns!',
   'members.description':
     'Der Vorstand und die Mitglieder von Nepsis Schweiz — die jungen Menschen, die die Aktivitäten der Bruderschaft organisieren.',
   'members.role.responsabil': 'Verantwortlicher für Nepsis Schweiz',
@@ -108,17 +109,13 @@ const de: Partial<typeof ro> = {
   'contact.emailIntro': 'Sie können uns jederzeit schreiben an:',
   'contact.emailButton': 'Senden Sie uns eine E-Mail',
   'contact.groups': 'Unsere Gruppen',
-  'contact.groupsText':
-    'Wir kommunizieren häufig über unsere internen Telegram- und WhatsApp-Gruppen — wenn Sie aufgenommen werden möchten, senden Sie uns eine E-Mail.',
+  'contact.groupsText': 'Wir tauschen uns oft in unseren internen WhatsApp-Gruppen aus. Wenn du jung bist, in der Schweiz lebst, zwischen 14 und 35 Jahre alt bist und zu diesen Gruppen hinzugefügt werden möchtest, schreib uns eine E-Mail.',
   'contact.social': 'Soziale Netzwerke',
   'contact.bank': 'Bankverbindung von Nepsis Schweiz',
   'contact.bank.holder': 'Kontoinhaber',
   'contact.useful': 'Weitere nützliche Adressen',
-  'contact.useful.nepsis': 'nepsis.org — Nepsis international',
+  'contact.useful.nepsis': 'Nepsis International',
   'contact.useful.mitropolia': 'Rumänisch-Orthodoxe Metropolie von West- und Südeuropa',
-  'contact.useful.parohii': 'Liste der rumänisch-orthodoxen Pfarreien in der Schweiz',
-  'contact.useful.manastire': 'Rumänisches Kloster „Schutz der Gottesmutter“ in der Schweiz',
-  'contact.useful.pelerinaje': 'Adresse des Pilgerzentrums der Metropolie:',
   'contact.newsletterLink': 'Newsletter abonnieren',
 
   // Fußzeile
@@ -144,7 +141,6 @@ const de: Partial<typeof ro> = {
   'join.title': 'Komm zu uns!',
   'join.description': 'Wie Sie der Bruderschaft der jungen Orthodoxen Nepsis Schweiz beitreten können.',
   'join.cta': 'Schreiben Sie uns eine E-Mail',
-  'contact.intro': 'Wir freuen uns, Sie kennenzulernen — wählen Sie den Weg, der Ihnen am besten passt.',
   'contact.joinTitle': 'Möchten Sie der Bruderschaft beitreten?',
   'contact.joinText': 'Sie sind jung und möchten Teil von Nepsis Schweiz sein? Der erste Schritt ist einfach.',
   'contact.joinLink': 'Komm zu uns!',

@@ -23,6 +23,7 @@ const en: Partial<typeof ro> = {
   // Home
   'home.heroAlt': 'Photo collage from Nepsis Switzerland gatherings',
   'home.tagline': 'Young Orthodox Christians in Switzerland',
+  'home.ageRange': 'Nepsis Switzerland is for young people between 14 and 35.',
   'home.about.title': 'About Nepsis Switzerland',
   'home.nextEvent': 'Next event',
   'home.noUpcoming':
@@ -69,7 +70,7 @@ const en: Partial<typeof ro> = {
   // Members
   'members.title': 'The team',
   'members.heading': 'The Nepsis Switzerland team',
-  'members.subtitle': 'We rejoice in the time spent together!',
+  'members.subtitle': 'Join us!',
   'members.description':
     'The council and members of Nepsis Switzerland — the young people who organise the fellowship’s activities.',
   'members.role.responsabil': 'Responsible for Nepsis Switzerland',
@@ -107,17 +108,13 @@ const en: Partial<typeof ro> = {
   'contact.emailIntro': 'You can write to us at any time at:',
   'contact.emailButton': 'Send us an e-mail',
   'contact.groups': 'Our groups',
-  'contact.groupsText':
-    'We communicate often on our internal Telegram and WhatsApp groups — if you would like to be added, send us an e-mail.',
+  'contact.groupsText': 'We are often in touch on our internal WhatsApp groups. If you are young, live in Switzerland, are between 14 and 35, and would like to be added to these groups, send us an e-mail.',
   'contact.social': 'Social media',
   'contact.bank': 'Nepsis Switzerland bank account details',
   'contact.bank.holder': 'Account holder',
   'contact.useful': 'Other useful addresses',
-  'contact.useful.nepsis': 'nepsis.org — Nepsis international',
+  'contact.useful.nepsis': 'Nepsis International',
   'contact.useful.mitropolia': 'Romanian Orthodox Metropolis of Western and Southern Europe',
-  'contact.useful.parohii': 'List of Romanian Orthodox parishes in Switzerland',
-  'contact.useful.manastire': 'Romanian monastery “Protection of the Mother of God” in Switzerland',
-  'contact.useful.pelerinaje': 'Address of the Metropolis’ pilgrimage centre:',
   'contact.newsletterLink': 'Subscribe to the newsletter',
 
   // Footer
@@ -143,7 +140,6 @@ const en: Partial<typeof ro> = {
   'join.title': 'Join us!',
   'join.description': 'How to join the Nepsis Switzerland fellowship of young Orthodox Christians.',
   'join.cta': 'Write us an e-mail',
-  'contact.intro': 'We would love to meet you — choose whichever way suits you best.',
   'contact.joinTitle': 'Would you like to join the fellowship?',
   'contact.joinText': 'Are you young and would like to be part of Nepsis Switzerland? The first step is simple.',
   'contact.joinLink': 'Join us!',

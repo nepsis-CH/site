@@ -23,6 +23,7 @@ const fr: Partial<typeof ro> = {
   // Accueil
   'home.heroAlt': 'Collage de photos des rencontres de Nepsis Suisse',
   'home.tagline': 'Jeunes chrétiens orthodoxes de Suisse',
+  'home.ageRange': 'Nepsis Suisse s’adresse aux jeunes de 14 à 35 ans.',
   'home.about.title': 'À propos de Nepsis Suisse',
   'home.nextEvent': 'Prochain événement',
   'home.noUpcoming':
@@ -70,7 +71,7 @@ const fr: Partial<typeof ro> = {
   // Membres
   'members.title': 'L’équipe',
   'members.heading': 'L’équipe de Nepsis Suisse',
-  'members.subtitle': 'Nous nous réjouissons du temps passé ensemble !',
+  'members.subtitle': 'Rejoins-nous !',
   'members.description':
     'Le conseil et les membres de Nepsis Suisse — les jeunes qui organisent les activités de la fraternité.',
   'members.role.responsabil': 'Responsable de Nepsis Suisse',
@@ -108,17 +109,13 @@ const fr: Partial<typeof ro> = {
   'contact.emailIntro': 'Vous pouvez nous écrire à tout moment à l’adresse :',
   'contact.emailButton': 'Envoyez-nous un e-mail',
   'contact.groups': 'Nos groupes',
-  'contact.groupsText':
-    'Nous communiquons souvent sur nos groupes internes Telegram et WhatsApp — si vous souhaitez y être ajouté(e), envoyez-nous un e-mail.',
+  'contact.groupsText': 'Nous communiquons souvent sur nos groupes WhatsApp internes. Si tu es jeune, que tu vis en Suisse, que tu as entre 14 et 35 ans et que tu souhaites être ajouté(e) à ces groupes, écris-nous un e-mail.',
   'contact.social': 'Réseaux sociaux',
   'contact.bank': 'Coordonnées bancaires de Nepsis Suisse',
   'contact.bank.holder': 'Titulaire du compte',
   'contact.useful': 'Autres adresses utiles',
-  'contact.useful.nepsis': 'nepsis.org — Nepsis international',
+  'contact.useful.nepsis': 'Nepsis International',
   'contact.useful.mitropolia': 'Métropole Orthodoxe Roumaine d’Europe Occidentale et Méridionale',
-  'contact.useful.parohii': 'Liste des paroisses orthodoxes roumaines de Suisse',
-  'contact.useful.manastire': 'Monastère roumain « Protection de la Mère de Dieu » en Suisse',
-  'contact.useful.pelerinaje': 'Adresse du centre de pèlerinages de la Métropole :',
   'contact.newsletterLink': 'S’abonner à la newsletter',
 
   // Pied de page
@@ -144,7 +141,6 @@ const fr: Partial<typeof ro> = {
   'join.title': 'Rejoins-nous !',
   'join.description': 'Comment rejoindre la fraternité des jeunes orthodoxes Nepsis Suisse.',
   'join.cta': 'Écrivez-nous un e-mail',
-  'contact.intro': 'Nous serons heureux de faire votre connaissance — choisissez la voie qui vous convient.',
   'contact.joinTitle': 'Envie de rejoindre la fraternité ?',
   'contact.joinText': 'Vous êtes jeune et souhaitez faire partie de Nepsis Suisse ? Le premier pas est simple.',
   'contact.joinLink': 'Rejoins-nous !',

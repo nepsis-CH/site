@@ -31,7 +31,12 @@ const ogLocales: Record<Locale, string> = { ro: 'ro_RO', fr: 'fr_CH', en: 'en_GB
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical.href} />
-    <link rel="icon" href={withBase('/img/sigla-nepsis.png')} type="image/png" />
+    {/* Sigla Nepsis, albă pe roșu — se distinge într-un rând de file mult mai bine
+        decât forma neagră pe alb. `favicon.ico` există ca să nu mai dea 404 la
+        cererea automată a browserului. */}
+    <link rel="icon" href={withBase('/favicon.ico')} sizes="32x32" />
+    <link rel="icon" href={withBase('/favicon-32.png')} type="image/png" sizes="32x32" />
+    <link rel="apple-touch-icon" href={withBase('/apple-touch-icon.png')} />
     <link rel="sitemap" href={withBase('/sitemap-index.xml')} />
     <meta name="generator" content={Astro.generator} />
     {
