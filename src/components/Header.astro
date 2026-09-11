@@ -22,12 +22,24 @@ const items = [
   { href: '/contact/', label: t('nav.contact') },
 ];
 
+/*
+ * Lățimea de care are nevoie meniul orizontal diferă mult de la o limbă la alta —
+ * măsurat pe pagina de contact, cu etichetele nerupte: ro 1142px, fr 1236px,
+ * de 1365px („Byzantinischer Gesang”, „Veranstaltungen”). Un prag unic ori taie
+ * româna prea devreme, ori lasă germana să se reverse peste selectorul de limbă.
+ * De aceea germana primește pragul următor. Clasele se scriu întregi, nu
+ * compuse din bucăți, altfel Tailwind nu le-ar genera.
+ */
+const navDesktop = lang === 'de' ? 'hidden items-center gap-0.5 2xl:flex' : 'hidden items-center gap-0.5 xl:flex';
+const actiuniDesktop = lang === 'de' ? 'hidden items-center gap-3 2xl:flex' : 'hidden items-center gap-3 xl:flex';
+const doarMobil = lang === 'de' ? '2xl:hidden' : 'xl:hidden';
+
 const isActive = (href: string) =>
   href === '/' ? path === '/' : path.startsWith(href.replace(/\/$/, ''));
 ---
 
 <header class="sticky top-0 z-40 border-b border-stone-200 bg-paper/95 backdrop-blur">
-  <div class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-2">
+  <div class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-2">
     <a href={localePath(lang, '/')} class="flex shrink-0 items-center gap-3">
       <Image
         src={logo}
@@ -40,14 +52,14 @@ const isActive = (href: string) =>
       <span class="font-serif text-lg font-semibold tracking-tight text-brand-900">{t('site.name')}</span>
     </a>
 
-    <nav class="hidden items-center gap-1 lg:flex" aria-label={t('nav.menu')}>
+    <nav class={navDesktop} aria-label={t('nav.menu')}>
       {
         items.map((item) => (
           <a
             href={localePath(lang, item.href)}
             aria-current={isActive(item.href) ? 'page' : undefined}
             class:list={[
-              'rounded-md px-3 py-2 text-sm font-medium transition-colors',
+              'whitespace-nowrap rounded-md px-2.5 py-2 text-sm font-medium transition-colors',
               isActive(item.href)
                 ? 'bg-brand-100 text-brand-900'
                 : 'text-stone-700 hover:bg-brand-50 hover:text-brand-900',
@@ -59,10 +71,10 @@ const isActive = (href: string) =>
       }
     </nav>
 
-    <div class="hidden items-center gap-3 lg:flex">
+    <div class={actiuniDesktop}>
       <a
         href={localePath(lang, '/devino-membru/')}
-        class="rounded-lg bg-brand-800 px-3.5 py-2 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-brand-700"
+        class="whitespace-nowrap rounded-lg bg-brand-800 px-3.5 py-2 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-brand-700"
       >
         {t('nav.join')}
       </a>
@@ -72,7 +84,7 @@ const isActive = (href: string) =>
     <button
       id="meniu-buton"
       type="button"
-      class="rounded-md border border-stone-300 p-2 text-stone-700 hover:bg-brand-50 lg:hidden"
+      class:list={["rounded-md border border-stone-300 p-2 text-stone-700 hover:bg-brand-50", doarMobil]}
       aria-expanded="false"
       aria-controls="meniu-mobil"
       aria-label={t('nav.openMenu')}
@@ -83,7 +95,7 @@ const isActive = (href: string) =>
     </button>
   </div>
 
-  <nav id="meniu-mobil" class="hidden border-t border-stone-200 px-4 pb-4 lg:hidden" aria-label={t('nav.menu')}>
+  <nav id="meniu-mobil" class:list={["hidden border-t border-stone-200 px-4 pb-4", doarMobil]} aria-label={t('nav.menu')}>
     <ul class="flex flex-col py-2">
       {
         items.map((item) => (

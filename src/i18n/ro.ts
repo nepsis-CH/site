@@ -111,6 +111,8 @@ export default {
   'contact.bank.holder': 'Titular cont',
   'contact.useful': 'Alte adrese utile',
   'contact.useful.nepsis': 'Nepsis International',
+  'contact.useful.parohii': 'Lista parohiilor ortodoxe românești din Elveția',
+  'contact.useful.manastire': 'Mănăstirea românească „Acoperământul Maicii Domnului” din Elveția',
   'contact.useful.mitropolia': 'Mitropolia Ortodoxă Română a Europei Occidentale și Meridionale',
   'contact.newsletterLink': 'Abonează-te la newsletter',
 

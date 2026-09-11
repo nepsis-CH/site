@@ -115,6 +115,8 @@ const de: Partial<typeof ro> = {
   'contact.bank.holder': 'Kontoinhaber',
   'contact.useful': 'Weitere nützliche Adressen',
   'contact.useful.nepsis': 'Nepsis International',
+  'contact.useful.parohii': 'Liste der rumänisch-orthodoxen Pfarreien in der Schweiz',
+  'contact.useful.manastire': 'Rumänisches Kloster „Schutz der Gottesmutter“ in der Schweiz',
   'contact.useful.mitropolia': 'Rumänisch-Orthodoxe Metropolie von West- und Südeuropa',
   'contact.newsletterLink': 'Newsletter abonnieren',
 

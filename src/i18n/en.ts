@@ -114,6 +114,8 @@ const en: Partial<typeof ro> = {
   'contact.bank.holder': 'Account holder',
   'contact.useful': 'Other useful addresses',
   'contact.useful.nepsis': 'Nepsis International',
+  'contact.useful.parohii': 'List of Romanian Orthodox parishes in Switzerland',
+  'contact.useful.manastire': 'Romanian monastery “Protection of the Mother of God” in Switzerland',
   'contact.useful.mitropolia': 'Romanian Orthodox Metropolis of Western and Southern Europe',
   'contact.newsletterLink': 'Subscribe to the newsletter',
 
