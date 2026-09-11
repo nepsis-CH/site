@@ -31,11 +31,13 @@ const ogLocales: Record<Locale, string> = { ro: 'ro_RO', fr: 'fr_CH', en: 'en_GB
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical.href} />
-    {/* Marca Nepsis — logoul rotund, nu sigla abstractă. Marginea albă în exces
-        e tăiată la generare, ca literele să umple pătratul: la 32px fiecare pixel
-        de contur contează. `favicon.ico` conține și 16px, și 32px, redimensionate
-        de noi, ca browserul să nu strivească singur varianta mică. */}
-    <link rel="icon" href={withBase('/favicon.ico')} sizes="16x16 32x32" />
+    {/* Marca Nepsis. `favicon.ico` are trei mărimi, iar cea mică e altă imagine:
+        la 16px — mărimea reală într-o filă de browser — cuvântul „NEPSIS” are șase
+        litere într-un pătrat de 16 pixeli și devine o pată, așa că acolo punem doar
+        steaua-cruce de sub el, decupată din logo. De la 32px încolo încape logoul
+        întreg. Marginea albă de prisos e tăiată la generare, ca marca să umple
+        pătratul. */}
+    <link rel="icon" href={withBase('/favicon.ico')} sizes="16x16 32x32 48x48" />
     <link rel="icon" href={withBase('/favicon-32.png')} type="image/png" sizes="32x32" />
     <link rel="apple-touch-icon" href={withBase('/apple-touch-icon.png')} />
     <link rel="sitemap" href={withBase('/sitemap-index.xml')} />
