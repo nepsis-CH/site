@@ -127,8 +127,12 @@ h1, h2, h3, h4 {
 
 /*
  * Deschiderea paginii principale, în felul celei de pe ascorbucuresti.com:
- * blocul de hero pornește puțin micșorat și transparent, apoi se dilată la
- * mărimea lui și apare. Elementele dinăuntru urcă pe rând, decalat.
+ * colajul pornește vizibil mic și crește până la locul lui, iar textul urcă
+ * după el, decalat. Ținem totul sub o secundă și jumătate — e o deschidere,
+ * nu o introducere.
+ *
+ * Prima variantă scala de la 0,96 la 1 și nu se vedea deloc; de aceea pornim
+ * acum de la 0,55, adică vizibil mai mic decât ținta.
  *
  * Totul stă într-un `prefers-reduced-motion: no-preference`: dacă utilizatorul
  * a cerut mai puțină mișcare, nicio regulă de aici nu se aplică și conținutul e
@@ -136,12 +140,15 @@ h1, h2, h3, h4 {
  * Fără JavaScript: animația pornește odată cu randarea.
  */
 @media (prefers-reduced-motion: no-preference) {
-  @keyframes nepsis-deschidere {
-    from {
+  @keyframes nepsis-creste {
+    0% {
       opacity: 0;
-      transform: scale(0.96);
+      transform: scale(0.55);
     }
-    to {
+    55% {
+      opacity: 1;
+    }
+    100% {
       opacity: 1;
       transform: scale(1);
     }
@@ -150,7 +157,7 @@ h1, h2, h3, h4 {
   @keyframes nepsis-urca {
     from {
       opacity: 0;
-      transform: translateY(0.75rem);
+      transform: translateY(0.85rem);
     }
     to {
       opacity: 1;
@@ -158,16 +165,18 @@ h1, h2, h3, h4 {
     }
   }
 
-  .deschidere {
-    animation: nepsis-deschidere 900ms cubic-bezier(0.22, 0.68, 0.3, 1) both;
+  /* Colajul: crește din centru până la locul lui. */
+  .creste {
+    animation: nepsis-creste 950ms cubic-bezier(0.16, 0.84, 0.28, 1) both;
+    transform-origin: center;
+    will-change: transform, opacity;
   }
 
   .urca {
-    animation: nepsis-urca 700ms cubic-bezier(0.22, 0.68, 0.3, 1) both;
+    animation: nepsis-urca 620ms cubic-bezier(0.22, 0.68, 0.3, 1) both;
   }
 
-  .urca-1 { animation-delay: 200ms; }
-  .urca-2 { animation-delay: 340ms; }
-  .urca-3 { animation-delay: 480ms; }
-  .urca-4 { animation-delay: 620ms; }
+  .urca-1 { animation-delay: 280ms; }
+  .urca-2 { animation-delay: 430ms; }
+  .urca-3 { animation-delay: 560ms; }
 }
