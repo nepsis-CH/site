@@ -103,9 +103,9 @@ export default {
     'Contactează Nepsis Elveția: e-mail, grupuri Telegram și WhatsApp, rețele sociale și detalii bancare.',
   'contact.writeUs': 'Scrie-ne',
   'contact.emailIntro': 'Ne poți scrie oricând la adresa:',
-  'contact.emailButton': 'Trimite-ne un e-mail',
+  'contact.emailButton': 'Trimite-ne un e-mail !',
   'contact.groups': 'Grupurile noastre',
-  'contact.groupsText': 'Comunicăm des pe grupurile interne de WhatsApp. Dacă ești tânăr(ă), locuiești în Elveția, ai între 14 și 35 de ani și vrei să fii adăugat(ă) la aceste grupuri, dă-ne un e-mail.',
+  'contact.groupsText': 'Comunicăm des pe grupurile interne de WhatsApp. Dacă ești tânăr(ă), locuiești în Elveția, ai între 14 și 35 de ani și vrei să fii adăugat(ă) la aceste grupuri, trimite-ne un e-mail.',
   'contact.social': 'Rețele sociale',
   'contact.bank': 'Detalii cont bancar Nepsis Elveția',
   'contact.bank.holder': 'Titular cont',
@@ -114,6 +114,7 @@ export default {
   'contact.useful.parohii': 'Lista parohiilor ortodoxe românești din Elveția',
   'contact.useful.manastire': 'Mănăstirea românească „Acoperământul Maicii Domnului” din Elveția',
   'contact.useful.mitropolia': 'Mitropolia Ortodoxă Română a Europei Occidentale și Meridionale',
+  'contact.newsletterButton': 'Abonează-te la newsletter !',
   'contact.newsletterLink': 'Abonează-te la newsletter',
 
   // Subsol

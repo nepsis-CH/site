@@ -106,7 +106,7 @@ const en: Partial<typeof ro> = {
     'Contact Nepsis Switzerland: e-mail, Telegram and WhatsApp groups, social media and bank details.',
   'contact.writeUs': 'Write to us',
   'contact.emailIntro': 'You can write to us at any time at:',
-  'contact.emailButton': 'Send us an e-mail',
+  'contact.emailButton': 'Send us an e-mail!',
   'contact.groups': 'Our groups',
   'contact.groupsText': 'We are often in touch on our internal WhatsApp groups. If you are young, live in Switzerland, are between 14 and 35, and would like to be added to these groups, send us an e-mail.',
   'contact.social': 'Social media',
@@ -117,6 +117,7 @@ const en: Partial<typeof ro> = {
   'contact.useful.parohii': 'List of Romanian Orthodox parishes in Switzerland',
   'contact.useful.manastire': 'Romanian monastery “Protection of the Mother of God” in Switzerland',
   'contact.useful.mitropolia': 'Romanian Orthodox Metropolis of Western and Southern Europe',
+  'contact.newsletterButton': 'Subscribe to the newsletter!',
   'contact.newsletterLink': 'Subscribe to the newsletter',
 
   // Footer

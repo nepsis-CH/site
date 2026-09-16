@@ -34,6 +34,6 @@ La fête patronale de Nepsis « Saint Jean Cassien » se déroule au monastère 
 - 3 personnes – 115 CHF
 - 4 personnes – 150 CHF
 
-La réservation se fait individuellement, selon les indications du site : [lapintedelys.ch](https://lapintedelys.ch/language/en/). Si vous précisez que vous faites partie du groupe du monastère, vous bénéficiez de 10 % de réduction 💸.
+La réservation se fait individuellement, selon les indications du site : [lapintedelys.ch](https://lapintedelys.ch/language/en/). Si tu précises que tu fais partie du groupe du monastère, tu bénéficies de 10 % de réduction 💸.
 
 ❗ Pour la bonne organisation, merci de remplir le formulaire d'inscription ci-dessous.

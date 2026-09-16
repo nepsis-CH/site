@@ -1,22 +1,22 @@
 ---
 title: "Rejoins-nous !"
-description: "Comment rejoindre la fraternité des jeunes chrétiens orthodoxes Nepsis Suisse : participez aux événements, rejoignez nos groupes, engagez-vous."
+description: "Comment rejoindre la fraternité des jeunes chrétiens orthodoxes Nepsis Suisse : viens aux événements, rejoins nos groupes, engage-toi."
 ---
 
-Nepsis Suisse est la fraternité des jeunes chrétiens orthodoxes roumains de Suisse, sous l'omophore de la Métropole Orthodoxe Roumaine d'Europe Occidentale et Méridionale. Aucune formalité n'est nécessaire pour faire notre connaissance : la porte est ouverte à tous les jeunes qui souhaitent vivre leur foi avec d'autres.
+Nepsis Suisse est la fraternité des jeunes chrétiens orthodoxes roumains de Suisse, sous l'omophore de la Métropole Orthodoxe Roumaine d'Europe Occidentale et Méridionale. Nous nous adressons aux jeunes de 14 à 35 ans. Aucune formalité n'est nécessaire pour faire notre connaissance : la porte est ouverte à tous ceux qui veulent vivre leur foi avec d'autres.
 
-## Premier pas : venez à une rencontre
+## Premier pas - viens à une rencontre Nepsis Suisse !
 
-La manière la plus naturelle de faire partie de la fraternité est de participer à nos activités — pèlerinages, randonnées avec catéchèse, vigiles, visites de paroisses et de monastères, soirées de discussion. Toutes sont ouvertes à chacun.
+La façon la plus simple d'entrer dans la fraternité, c'est de venir à ce que nous faisons : pèlerinages, randonnées avec catéchèse, vigiles, visites de paroisses et de monastères, soirées de discussion. Tout est ouvert à chacun.
 
-Jetez un œil à la [page des événements](/fr/evenimente/) pour voir ce qui arrive, ou à la [page des souvenirs](/fr/amintiri/) pour découvrir nos rencontres passées.
+Regarde la [page des événements](/fr/evenimente/) pour voir ce qui arrive, ou la [page des souvenirs](/fr/amintiri/) pour découvrir nos rencontres passées.
 
-## Restez en contact avec nous
+## Reste en contact avec nous
 
-- **Écrivez-nous un e-mail** à <a href="#" class="email-protejat" data-x="nepsis.ch" data-y="mitropolia" data-z="eu"><span class="sr-only">E-mail</span></a> et dites-nous quelques mots sur vous — nous vous ajouterons à nos groupes internes **Telegram et WhatsApp**, où toutes les activités sont annoncées.
-- [Abonnez-vous à la newsletter](/fr/newsletter/) pour recevoir les nouvelles importantes par e-mail.
-- Suivez-nous sur les réseaux sociaux — les liens se trouvent au bas de la page.
+- **Écris-nous un e-mail** à <a href="#" class="email-protejat" data-x="nepsis.ch" data-y="mitropolia" data-z="eu"><span class="sr-only">E-mail</span></a> et dis-nous quelques mots sur toi. Nous t'ajoutons à nos groupes internes **WhatsApp**, où toutes les activités sont annoncées.
+- [Abonne-toi à la newsletter](/fr/newsletter/) pour recevoir les nouvelles importantes par e-mail.
+- Suis-nous sur les réseaux sociaux ; tu trouveras les liens au bas de la page.
 
-## Engagez-vous
+## Engage-toi
 
-Si vous voulez faire plus que participer — aider à l'organisation des événements, chanter au chœur dans le [groupe de chant byzantin](/fr/psaltica/) ou vous engager comme bénévole — dites-le-nous. Il y a toujours de la place, et chacun est nécessaire.
+Tu veux faire plus que venir aux rencontres ? Nous avons besoin de bénévoles ! Tu peux nous aider à organiser les prochains événements et participer aux réunions de préparation. Dis-nous ce qui te plairait, il y a de la place pour tous ceux qui veulent mettre la main à la pâte.

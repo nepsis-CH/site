@@ -5,7 +5,7 @@ description: "Die Gruppe für byzantinischen Gesang von Nepsis Schweiz bietet On
 
 Adrian gibt Abend für Abend (6 Tage die Woche) Fernunterricht in byzantinischem Gesang über die Plattform Zoom. Die Lektionen dauern 30–40 Minuten und stehen der breiten Öffentlichkeit aus aller Welt offen.
 
-Bei Interesse senden Sie uns eine E-Mail an <a href="#" class="email-protejat" data-x="nepsis.ch" data-y="mitropolia" data-z="eu"><span class="sr-only">E-mail</span></a>, damit wir Sie in die Diskussionsgruppe (Telegram) aufnehmen, in der die Kommunikation stattfindet.
+Bei Interesse schreib uns eine E-Mail an <a href="#" class="email-protejat" data-x="nepsis.ch" data-y="mitropolia" data-z="eu"><span class="sr-only">E-mail</span></a>, damit wir dich in die Diskussionsgruppe (Telegram) aufnehmen, in der die Kommunikation stattfindet.
 
 ## Materialien für die Proben
 

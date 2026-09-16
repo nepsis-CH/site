@@ -26,37 +26,34 @@ const de: Partial<typeof ro> = {
   'home.ageRange': 'Nepsis Schweiz richtet sich an junge Menschen zwischen 14 und 35 Jahren.',
   'home.about.title': 'Über Nepsis Schweiz',
   'home.nextEvent': 'Nächste Veranstaltung',
-  'home.noUpcoming':
-    'Abonnieren Sie den Newsletter oder schreiben Sie uns, um in unsere WhatsApp-Gruppen aufgenommen zu werden oder unseren Social-Media-Seiten zu folgen und so über die nächsten Aktivitäten auf dem Laufenden zu bleiben.',
+  'home.noUpcoming': 'Abonniere den Newsletter oder schreib uns, um in unsere WhatsApp-Gruppen aufgenommen zu werden oder unseren Social-Media-Seiten zu folgen und so über die nächsten Aktivitäten auf dem Laufenden zu bleiben.',
   'home.allActivities': 'Alle Veranstaltungen',
   'home.seeMemories': 'Unsere Erinnerungen ansehen',
-  'home.contactUs': 'Kontaktieren Sie uns',
-  'home.moreAbout': 'Möchten Sie mehr darüber erfahren, wer wir sind und was wir tun?',
-  'home.moreAboutLink': 'Besuchen Sie die Erinnerungsseite.',
+  'home.contactUs': 'Schreib uns',
+  'home.moreAbout': 'Möchtest du mehr darüber erfahren, wer wir sind und was wir tun?',
+  'home.moreAboutLink': 'Besuch die Erinnerungsseite.',
 
   // Aktivitäten
   'activities.title': 'Veranstaltungen',
   'activities.description':
     'Der Veranstaltungskalender von Nepsis Schweiz: kommende Veranstaltungen und das Archiv der vergangenen.',
-  'activities.intro': 'Wir freuen uns, Sie bei unseren nächsten Veranstaltungen begrüßen zu dürfen.',
+  'activities.intro': 'Wir freuen uns, dich bei unseren nächsten Veranstaltungen zu sehen.',
   'activities.upcoming': 'Nächste Veranstaltung',
   'activities.past': 'Neueste Veranstaltungen',
-  'activities.noUpcoming':
-    'Zurzeit ist keine neue Veranstaltung angekündigt. Wir kommunizieren häufig über unsere internen Telegram- und WhatsApp-Gruppen — schreiben Sie uns, um aufgenommen zu werden, oder abonnieren Sie den Newsletter.',
+  'activities.noUpcoming': 'Zurzeit ist keine neue Veranstaltung angekündigt. Wir kommunizieren häufig über unsere internen WhatsApp-Gruppen: schreib uns, um aufgenommen zu werden, oder abonniere den Newsletter.',
   'activities.permanent': 'Ständige Aktivität: Online-Unterricht in byzantinischem Gesang',
   'activities.permanentText':
     'Abend für Abend, sechs Tage die Woche, halten wir über Zoom Unterricht in byzantinischem Gesang — offen für alle.',
   'activities.permanentLink': 'Details auf der Seite Byzantinischer Gesang',
   'activities.register': 'Details und Anmeldung',
-  'activities.moreInMemories': 'Über unsere früheren Veranstaltungen können Sie lesen auf',
+  'activities.moreInMemories': 'Über unsere früheren Veranstaltungen kannst du lesen auf',
   'activities.memoriesPage': 'der Erinnerungsseite',
 
   // Erinnerungen
   'memories.title': 'Erinnerungen',
   'memories.description':
     'Erinnerungen an die Veranstaltungen von Nepsis Schweiz, nach Jahren geordnet: Wallfahrten, Wanderungen, Vigilien, Kongresse und Treffen der jungen orthodoxen Christen in der Schweiz.',
-  'memories.intro':
-    'Wenn Sie wissen möchten, wie wir aussehen und was wir bisher unternommen haben, sind Sie hier genau richtig!',
+  'memories.intro': 'Wenn du wissen möchtest, wie wir aussehen und was wir bisher unternommen haben, bist du hier genau richtig!',
   'memories.year': 'Jahr',
   'memories.onlyRo': 'Ältere Erinnerungen sind nur auf Rumänisch verfügbar.',
   'memories.back': 'Zurück zu den Erinnerungen',
@@ -94,20 +91,18 @@ const de: Partial<typeof ro> = {
 
   // Newsletter
   'newsletter.title': 'Newsletter',
-  'newsletter.description': 'Abonnieren Sie den Newsletter von Nepsis Schweiz!',
-  'newsletter.heading': 'Newsletter abonnieren',
-  'newsletter.text':
-    'Von Zeit zu Zeit versenden wir per E-Mail Neuigkeiten über die Aktivitäten von Nepsis Schweiz. Füllen Sie das untenstehende Formular aus, um sie ebenfalls zu erhalten.',
-  'newsletter.fallback': 'Falls das Formular nicht lädt, können Sie es direkt hier öffnen:',
+  'newsletter.description': 'Abonniere den Newsletter von Nepsis Schweiz!',
+  'newsletter.heading': 'Abonniere den Newsletter',
+  'newsletter.text': 'Von Zeit zu Zeit versenden wir per E-Mail Neuigkeiten über die Aktivitäten von Nepsis Schweiz. Füll das untenstehende Formular aus, um sie ebenfalls zu erhalten.',
+  'newsletter.fallback': 'Falls das Formular nicht lädt, kannst du es direkt hier öffnen:',
   'newsletter.openForm': 'Anmeldeformular öffnen',
 
   // Kontakt
   'contact.title': 'Kontakt',
-  'contact.description':
-    'Kontaktieren Sie Nepsis Schweiz: E-Mail, Telegram- und WhatsApp-Gruppen, soziale Netzwerke und Bankverbindung.',
-  'contact.writeUs': 'Schreiben Sie uns',
-  'contact.emailIntro': 'Sie können uns jederzeit schreiben an:',
-  'contact.emailButton': 'Senden Sie uns eine E-Mail',
+  'contact.description': 'Kontaktiere Nepsis Schweiz: E-Mail, WhatsApp-Gruppen, soziale Netzwerke und Bankverbindung.',
+  'contact.writeUs': 'Schreib uns',
+  'contact.emailIntro': 'Du kannst uns jederzeit schreiben an:',
+  'contact.emailButton': 'Schreib uns eine E-Mail!',
   'contact.groups': 'Unsere Gruppen',
   'contact.groupsText': 'Wir tauschen uns oft in unseren internen WhatsApp-Gruppen aus. Wenn du jung bist, in der Schweiz lebst, zwischen 14 und 35 Jahre alt bist und zu diesen Gruppen hinzugefügt werden möchtest, schreib uns eine E-Mail.',
   'contact.social': 'Soziale Netzwerke',
@@ -118,11 +113,12 @@ const de: Partial<typeof ro> = {
   'contact.useful.parohii': 'Liste der rumänisch-orthodoxen Pfarreien in der Schweiz',
   'contact.useful.manastire': 'Rumänisches Kloster „Schutz der Gottesmutter“ in der Schweiz',
   'contact.useful.mitropolia': 'Rumänisch-Orthodoxe Metropolie von West- und Südeuropa',
+  'contact.newsletterButton': 'Abonniere den Newsletter!',
   'contact.newsletterLink': 'Newsletter abonnieren',
 
   // Fußzeile
   'footer.contact': 'Kontakt',
-  'footer.social': 'Sie finden uns auch auf',
+  'footer.social': 'Du findest uns auch auf',
   'footer.useful': 'Nützliche Adressen',
   'footer.bank': 'Bankkonto',
   'footer.rights': 'Alle Rechte vorbehalten.',
@@ -141,10 +137,10 @@ const de: Partial<typeof ro> = {
   'carousel.prev': 'Vorheriges Bild',
   'carousel.next': 'Nächstes Bild',
   'join.title': 'Komm zu uns!',
-  'join.description': 'Wie Sie der Bruderschaft der jungen Orthodoxen Nepsis Schweiz beitreten können.',
-  'join.cta': 'Schreiben Sie uns eine E-Mail',
-  'contact.joinTitle': 'Möchten Sie der Bruderschaft beitreten?',
-  'contact.joinText': 'Sie sind jung und möchten Teil von Nepsis Schweiz sein? Der erste Schritt ist einfach.',
+  'join.description': 'Wie du der Bruderschaft der jungen Orthodoxen Nepsis Schweiz beitreten kannst.',
+  'join.cta': 'Schreib uns eine E-Mail',
+  'contact.joinTitle': 'Möchtest du der Bruderschaft beitreten?',
+  'contact.joinText': 'Du bist jung und möchtest Teil von Nepsis Schweiz sein? Der erste Schritt ist einfach.',
   'contact.joinLink': 'Komm zu uns!',
 
   // Sonstiges
