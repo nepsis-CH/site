@@ -104,3 +104,23 @@ export async function getMembers() {
   const all = await getCollection('membri');
   return all.sort((a, b) => a.data.order - b.data.order);
 }
+
+/**
+ * Primele rânduri din textul unei amintiri, curățate de marcajele Markdown, ca să
+ * încapă în rezumatul de două rânduri de pe pagina de amintiri.
+ */
+export function rezumatText(body: string | undefined, limita = 220): string {
+  return (body ?? '')
+    .replace(/```[\s\S]*?```/g, ' ')
+    .replace(/!\[[^\]]*\]\([^)]*\)/g, ' ') // imagini
+    .replace(/\[([^\]]*)\]\([^)]*\)/g, '$1') // legături: păstrăm doar textul
+    .replace(/<[^>]+>/g, ' ')
+    .replace(/[#*_>`]/g, ' ')
+    .split('\n')
+    .map((r) => r.trim())
+    .filter(Boolean)
+    .join(' ')
+    .replace(/\s+/g, ' ')
+    .slice(0, limita)
+    .trim();
+}

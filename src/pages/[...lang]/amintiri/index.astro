@@ -2,7 +2,7 @@
 import Base from '../../../layouts/Base.astro';
 import MemoryCard from '../../../components/MemoryCard.astro';
 import { langStaticPaths, localeFromParam, localePath, useTranslations, defaultLocale } from '../../../i18n';
-import { getMemoriesByYear } from '../../../lib/content';
+import { getMemoriesByYear, rezumatText } from '../../../lib/content';
 
 export function getStaticPaths() {
   return langStaticPaths();
@@ -46,16 +46,31 @@ const years = await getMemoriesByYear(lang);
             >
               {t('memories.year')} {year}
             </h2>
-            <div class="relative mt-8 space-y-8 border-l-2 border-brand-100 pl-6 sm:pl-8 [&>article]:relative">
-              {entries.map(({ memory, slug }) => (
-                <div class="relative">
-                  <span
-                    class="absolute -left-6 top-8 h-3 w-3 -translate-x-[7px] rounded-full border-2 border-white bg-brand-500 sm:-left-8"
-                    aria-hidden="true"
-                  />
-                  <MemoryCard memory={memory} lang={lang} href={localePath(lang, `/amintiri/${slug}/`)} />
-                </div>
-              ))}
+
+            {/*
+              Firul din stânga curge pe măsură ce derulezi anul: cel palid e traseul
+              întreg, cel colorat arată cât ai parcurs.
+            */}
+            <div class="cronologie relative mt-8 pl-6 sm:pl-8" data-cronologie>
+              <span class="absolute top-0 left-0 h-full w-0.5 bg-brand-100" aria-hidden="true" />
+              <span class="cronologie__fir-plin absolute top-0 left-0 w-0.5 bg-brand-600" aria-hidden="true" />
+
+              <div class="space-y-8">
+                {entries.map(({ memory, slug }) => (
+                  <div class="amintire relative">
+                    <span
+                      class="punct absolute -left-[29px] top-8 h-3 w-3 rounded-full border-2 border-white bg-brand-500 sm:-left-[37px]"
+                      aria-hidden="true"
+                    />
+                    <MemoryCard
+                      memory={memory}
+                      lang={lang}
+                      href={localePath(lang, `/amintiri/${slug}/`)}
+                      rezumat={rezumatText(memory.body)}
+                    />
+                  </div>
+                ))}
+              </div>
             </div>
           </section>
         ))
@@ -63,3 +78,49 @@ const years = await getMemoriesByYear(lang);
     </div>
   </div>
 </Base>
+
+<script>
+  // Animația cronologiei. Se pornește numai dacă vizitatorul n-a cerut mai puțină
+  // mișcare — fără clasa asta, fișele sunt vizibile din primul cadru, deci pagina
+  // se citește la fel și dacă scriptul nu rulează deloc.
+  const containere = document.querySelectorAll<HTMLElement>('[data-cronologie]');
+  const miscareRedusa = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (containere.length > 0 && !miscareRedusa) {
+    containere.forEach((c) => c.classList.add('cronologie--vie'));
+
+    // Fișele apar pe rând, când intră în ecran.
+    const observator = new IntersectionObserver(
+      (intrari) => {
+        intrari.forEach((intrare) => {
+          if (!intrare.isIntersecting) return;
+          intrare.target.classList.add('vazuta');
+          observator.unobserve(intrare.target);
+        });
+      },
+      { rootMargin: '0px 0px -10% 0px', threshold: 0.15 },
+    );
+    document.querySelectorAll('.amintire').forEach((a) => observator.observe(a));
+
+    // Firul se umple urmărind poziția de citire, puțin înaintea ei.
+    let planificat = false;
+    const deseneaza = () => {
+      planificat = false;
+      const reper = window.innerHeight * 0.62;
+      containere.forEach((c) => {
+        const r = c.getBoundingClientRect();
+        const progres = Math.max(0, Math.min(1, (reper - r.top) / r.height));
+        c.style.setProperty('--progres', `${(progres * 100).toFixed(2)}%`);
+      });
+    };
+    const cere = () => {
+      if (planificat) return;
+      planificat = true;
+      requestAnimationFrame(deseneaza);
+    };
+
+    window.addEventListener('scroll', cere, { passive: true });
+    window.addEventListener('resize', cere);
+    deseneaza();
+  }
+</script>

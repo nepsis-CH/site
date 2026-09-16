@@ -32,7 +32,25 @@ const carouselImages = (await getMemoriesByYear(lang))
 ---
 
 <Base lang={lang} title={t('site.name')} description={t('site.description')}>
-  <!-- Hero: se deschide dilatându-se, iar elementele urcă pe rând -->
+  {/*
+    Deschiderea: colajul umple tot ecranul, apoi se retrage și rămâne pagina.
+    Voalul nu blochează derularea și dispare de tot la final.
+  */}
+  <div class="intro" aria-hidden="true">
+    <Image
+      src={colaj}
+      alt=""
+      widths={[800, 1400, 2000]}
+      sizes="100vw"
+      format="webp"
+      quality={68}
+      loading="eager"
+      fetchpriority="high"
+      decoding="async"
+    />
+  </div>
+
+  <!-- Hero: elementele urcă pe rând, în spatele voalului -->
   <section class="border-b border-stone-200 bg-white">
     <div class="mx-auto grid max-w-6xl items-center gap-10 px-4 py-12 sm:py-16 md:grid-cols-2">
       <div>
@@ -73,7 +91,7 @@ const carouselImages = (await getMemoriesByYear(lang))
         loading="eager"
         fetchpriority="high"
         decoding="async"
-        class="creste w-full rounded-xl border border-stone-200 shadow-md"
+        class="w-full rounded-xl border border-stone-200 shadow-md"
       />
     </div>
   </section>

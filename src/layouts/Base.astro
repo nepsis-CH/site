@@ -42,6 +42,17 @@ const ogLocales: Record<Locale, string> = { ro: 'ro_RO', fr: 'fr_CH', en: 'en_GB
     <link rel="apple-touch-icon" href={withBase('/apple-touch-icon.png')} />
     <link rel="sitemap" href={withBase('/sitemap-index.xml')} />
     <meta name="generator" content={Astro.generator} />
+    <script is:inline>
+      // Deschiderea de pe prima pagină se joacă o singură dată pe vizită. Marcajul se
+      // pune înainte să se deseneze pagina, ca la a doua vizualizare voalul să nu apară
+      // nici măcar o clipă.
+      try {
+        if (sessionStorage.getItem('nepsis-intro')) document.documentElement.classList.add('fara-intro');
+        else sessionStorage.setItem('nepsis-intro', '1');
+      } catch (e) {
+        /* modul privat sau cookie-uri blocate: deschiderea se joacă de fiecare dată */
+      }
+    </script>
     {
       hasAlternates &&
         locales.map((l) => (
