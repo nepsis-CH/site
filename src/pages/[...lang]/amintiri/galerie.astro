@@ -1,0 +1,326 @@
+---
+import Base from '../../../layouts/Base.astro';
+import AmintiriTabs from '../../../components/AmintiriTabs.astro';
+import {
+  defaultLocale,
+  langStaticPaths,
+  localeFromParam,
+  localePath,
+  useTranslations,
+  withBase,
+} from '../../../i18n';
+import { getMemoriesByYear } from '../../../lib/content';
+
+export function getStaticPaths() {
+  return langStaticPaths();
+}
+
+const lang = localeFromParam(Astro.params.lang);
+const t = useTranslations(lang);
+
+const ani = await getMemoriesByYear(lang);
+
+// O poză = o intrare. Păstrăm anul și amintirea de care ține, pentru filtre.
+const poze = ani.flatMap(({ year, entries }) =>
+  entries.flatMap(({ memory, slug }) =>
+    memory.data.images.map((img) => ({
+      src: img.src,
+      alt: img.alt,
+      an: year,
+      slug,
+      titlu: memory.data.title,
+      href: localePath(lang, `/amintiri/${slug}/`),
+    })),
+  ),
+);
+
+// Lista de evenimente pentru select, în aceeași ordine ca galeria.
+const evenimente: { slug: string; titlu: string; an: number }[] = [];
+for (const p of poze) {
+  if (!evenimente.some((e) => e.slug === p.slug)) {
+    evenimente.push({ slug: p.slug, titlu: p.titlu, an: p.an });
+  }
+}
+
+const listaAni = ani.filter(({ year }) => poze.some((p) => p.an === year)).map(({ year }) => year);
+
+const numar = (n: number) =>
+  n === 1 ? t('gallery.countOne') : t('gallery.countMany').replace('{n}', String(n));
+
+const stilFiltru =
+  'inline-flex min-h-11 items-center rounded-full border border-brand-200 px-4 text-sm font-semibold text-brand-800 hover:bg-brand-50 aria-pressed:border-brand-800 aria-pressed:bg-brand-800 aria-pressed:text-white aria-pressed:hover:bg-brand-700';
+const stilRotund =
+  'inline-flex h-11 w-11 items-center justify-center rounded-full bg-white/90 text-brand-900 hover:bg-white';
+---
+
+<Base
+  lang={lang}
+  title={`${t('gallery.title')} · ${t('memories.title')} · ${t('site.name')}`}
+  description={t('gallery.description')}
+>
+  <div class="mx-auto max-w-6xl px-4 py-10 sm:py-14" data-galerie>
+    <h1 class="font-serif text-3xl font-bold text-brand-950 sm:text-4xl">{t('memories.title')}</h1>
+    <p class="mt-3 max-w-prose text-lg text-stone-600">{t('memories.intro')}</p>
+    {lang !== defaultLocale && <p class="mt-2 text-sm italic text-stone-500">{t('memories.onlyRo')}</p>}
+
+    <AmintiriTabs lang={lang} activ="galerie" />
+
+    <p class="mt-6 max-w-prose text-stone-700">{t('gallery.intro')}</p>
+
+    {/* Filtrele apar doar cu JavaScript; fără el se vede toată galeria. */}
+    <div
+      data-filtre
+      hidden
+      data-count-one={t('gallery.countOne')}
+      data-count-many={t('gallery.countMany')}
+      class="mt-6 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between"
+    >
+      <div class="flex flex-col gap-4">
+        <div role="group" aria-label={t('gallery.filterYear')} class="flex flex-wrap gap-2">
+          <button type="button" data-an="" aria-pressed="true" class={stilFiltru}>{t('gallery.allYears')}</button>
+          {
+            listaAni.map((an) => (
+              <button type="button" data-an={String(an)} aria-pressed="false" class={stilFiltru}>
+                {an}
+              </button>
+            ))
+          }
+        </div>
+        <label class="flex flex-col gap-1 text-sm font-semibold text-stone-700">
+          {t('gallery.event')}
+          <select class="min-h-11 rounded-md border border-stone-300 bg-white px-3 text-base font-normal sm:max-w-md">
+            <option value="">{t('gallery.allEvents')}</option>
+            {
+              evenimente.map((e) => (
+                <option value={e.slug} data-year={String(e.an)}>
+                  {e.titlu} ({e.an})
+                </option>
+              ))
+            }
+          </select>
+        </label>
+      </div>
+      <p aria-live="polite" class="text-sm text-stone-600" data-numar>{numar(poze.length)}</p>
+    </div>
+
+    <ul data-lightbox-group class="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
+      {
+        poze.map((p) => (
+          <li data-year={String(p.an)} data-memory={p.slug}>
+            <figure>
+              <a
+                data-lightbox-item
+                href={withBase(p.src)}
+                data-caption={p.titlu}
+                data-memory-href={p.href}
+                data-lang={lang}
+                class="block overflow-hidden rounded-lg"
+              >
+                <img
+                  src={withBase(p.src)}
+                  alt={p.alt}
+                  width="480"
+                  height="360"
+                  loading="lazy"
+                  decoding="async"
+                  sizes="(min-width:1024px) 23vw, (min-width:640px) 31vw, 48vw"
+                  class="aspect-[4/3] w-full bg-brand-50 object-cover transition-transform hover:scale-[1.02]"
+                />
+              </a>
+              <figcaption class="mt-1 line-clamp-1 text-xs text-stone-600">{p.titlu}</figcaption>
+            </figure>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+
+  {/* Poza mărită. `<dialog>` aduce singur focus-trap, Escape și fundalul. */}
+  <dialog
+    id="lightbox"
+    aria-label={t('gallery.lightboxLabel')}
+    data-position={t('gallery.position')}
+    class="m-0 h-full max-h-none w-full max-w-none bg-transparent p-4 backdrop:bg-black/85"
+  >
+    <figure class="flex h-full flex-col items-center justify-center gap-3" data-lb-figure>
+      <figcaption class="text-center text-sm text-white" data-lb-figcaption>
+        <span class="block font-semibold" data-lb-caption></span>
+        <span class="block text-white/80" aria-live="polite" data-lb-position></span>
+        <a class="mt-1 inline-flex min-h-11 items-center underline decoration-white underline-offset-4" data-lb-memory hidden>
+          {t('gallery.readMemory')}
+        </a>
+      </figcaption>
+    </figure>
+    <button type="button" data-lb-close aria-label={t('gallery.close')} class:list={[stilRotund, 'absolute right-3 top-3']}>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+        <path stroke-linecap="round" d="M6 6l12 12M18 6 6 18" />
+      </svg>
+    </button>
+    <button type="button" data-lb-prev aria-label={t('carousel.prev')} class:list={[stilRotund, 'absolute left-3 top-1/2 -translate-y-1/2']}>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+      </svg>
+    </button>
+    <button type="button" data-lb-next aria-label={t('carousel.next')} class:list={[stilRotund, 'absolute right-3 top-1/2 -translate-y-1/2']}>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+      </svg>
+    </button>
+  </dialog>
+</Base>
+
+<script>
+  // ---------- Filtrele (an + eveniment) ----------
+  const zona = document.querySelector<HTMLElement>('[data-galerie]');
+  const filtre = zona?.querySelector<HTMLElement>('[data-filtre]');
+  const grila = zona?.querySelector<HTMLElement>('[data-lightbox-group]');
+
+  if (zona && filtre && grila) {
+    // Se arată abia acum: fără script, galeria întreagă rămâne vizibilă.
+    filtre.hidden = false;
+
+    const butoane = [...filtre.querySelectorAll<HTMLButtonElement>('button[data-an]')];
+    const select = filtre.querySelector<HTMLSelectElement>('select')!;
+    const contor = filtre.querySelector<HTMLElement>('[data-numar]')!;
+    const optiuni = [...select.options];
+    const plăci = [...grila.querySelectorAll<HTMLElement>('li')];
+
+    const unaSingura = filtre.dataset.countOne ?? '1';
+    const maiMulte = filtre.dataset.countMany ?? '{n}';
+
+    let an = '';
+    let eveniment = '';
+
+    const aplica = () => {
+      let vizibile = 0;
+      for (const placa of plăci) {
+        const potrivit =
+          (an === '' || placa.dataset.year === an) &&
+          (eveniment === '' || placa.dataset.memory === eveniment);
+        placa.hidden = !potrivit;
+        if (potrivit) vizibile++;
+      }
+      contor.textContent = vizibile === 1 ? unaSingura : maiMulte.replace('{n}', String(vizibile));
+
+      // Lista de evenimente arată numai ce există în anul ales.
+      for (const opt of optiuni) {
+        if (!opt.value) continue;
+        opt.hidden = an !== '' && opt.dataset.year !== an;
+      }
+    };
+
+    for (const buton of butoane) {
+      buton.addEventListener('click', () => {
+        an = buton.dataset.an ?? '';
+        for (const b of butoane) b.setAttribute('aria-pressed', String(b === buton));
+        // Dacă evenimentul ales nu e din anul acesta, ne întoarcem la „toate”.
+        const alesul = optiuni.find((o) => o.value === eveniment);
+        if (alesul && an !== '' && alesul.dataset.year !== an) {
+          eveniment = '';
+          select.value = '';
+        }
+        aplica();
+      });
+    }
+
+    select.addEventListener('change', () => {
+      eveniment = select.value;
+      aplica();
+    });
+
+    aplica();
+  }
+</script>
+
+<script>
+  // ---------- Poza mărită ----------
+  const dialog = document.getElementById('lightbox') as HTMLDialogElement | null;
+  const cauta = <T extends Element>(sel: string) => dialog?.querySelector<T>(sel) ?? null;
+
+  if (dialog) {
+    const poza = document.createElement('img');
+    poza.className = 'max-h-[80vh] w-auto max-w-full object-contain';
+
+    const figura = cauta<HTMLElement>('[data-lb-figure]');
+    const legenda = cauta<HTMLElement>('[data-lb-caption]');
+    const pozitie = cauta<HTMLElement>('[data-lb-position]');
+    const linkAmintire = cauta<HTMLAnchorElement>('[data-lb-memory]');
+    const inchide = cauta<HTMLButtonElement>('[data-lb-close]');
+    const inainte = cauta<HTMLButtonElement>('[data-lb-prev]');
+    const inapoi = cauta<HTMLButtonElement>('[data-lb-next]');
+
+    let lista: HTMLAnchorElement[] = [];
+    let index = 0;
+    let deUndeAmVenit: HTMLElement | null = null;
+
+    const arata = (i: number) => {
+      if (lista.length === 0) return;
+      if (!poza.isConnected) figura?.prepend(poza);
+      index = (i + lista.length) % lista.length;
+      const item = lista[index]!;
+      poza.removeAttribute('src');
+      poza.src = item.href;
+      poza.alt = item.querySelector('img')?.alt ?? '';
+      if (legenda) legenda.textContent = item.dataset.caption ?? '';
+      if (pozitie) {
+        pozitie.textContent = (dialog.dataset.position ?? '')
+          .replace('{i}', String(index + 1))
+          .replace('{total}', String(lista.length));
+      }
+      if (linkAmintire) {
+        const href = item.dataset.memoryHref;
+        linkAmintire.hidden = !href;
+        if (href) linkAmintire.href = href;
+      }
+    };
+
+    document.addEventListener('click', (ev) => {
+      // Lăsăm în pace click-urile care vor să deschidă în filă nouă.
+      if (ev.defaultPrevented || ev.button !== 0 || ev.metaKey || ev.ctrlKey || ev.shiftKey || ev.altKey) return;
+      const item = (ev.target as Element | null)?.closest<HTMLAnchorElement>('a[data-lightbox-item]');
+      const grup = item?.closest<HTMLElement>('[data-lightbox-group]');
+      if (!item || !grup) return;
+      ev.preventDefault();
+      // Numai pozele rămase după filtrare intră în navigare.
+      lista = [...grup.querySelectorAll<HTMLAnchorElement>('a[data-lightbox-item]')].filter(
+        (a) => !a.closest('[hidden]'),
+      );
+      deUndeAmVenit = item;
+      const maiMulte = lista.length > 1;
+      if (inainte) inainte.hidden = !maiMulte;
+      if (inapoi) inapoi.hidden = !maiMulte;
+      arata(Math.max(0, lista.indexOf(item)));
+      document.documentElement.style.overflow = 'hidden';
+      dialog.showModal();
+      inchide?.focus();
+    });
+
+    inainte?.addEventListener('click', () => arata(index - 1));
+    inapoi?.addEventListener('click', () => arata(index + 1));
+    inchide?.addEventListener('click', () => dialog.close());
+
+    dialog.addEventListener('keydown', (ev) => {
+      if (lista.length < 2) return;
+      if (ev.key === 'ArrowLeft') {
+        ev.preventDefault();
+        arata(index - 1);
+      } else if (ev.key === 'ArrowRight') {
+        ev.preventDefault();
+        arata(index + 1);
+      }
+    });
+
+    // Click pe fundal închide.
+    dialog.addEventListener('click', (ev) => {
+      if (ev.target === dialog || ev.target === figura) dialog.close();
+    });
+
+    dialog.addEventListener('close', () => {
+      document.documentElement.style.overflow = '';
+      poza.removeAttribute('src');
+      poza.remove();
+      deUndeAmVenit?.focus();
+      deUndeAmVenit = null;
+    });
+  }
+</script>

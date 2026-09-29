@@ -94,3 +94,19 @@ export function formatDate(date: Date, locale: Locale): string {
     timeZone: 'UTC',
   }).format(date);
 }
+
+/** Ziua din lună, ca număr (pentru blocul de dată din calendar). */
+export function formatDay(date: Date, locale: Locale): string {
+  return new Intl.DateTimeFormat(dateLocales[locale], { day: 'numeric', timeZone: 'UTC' }).format(date);
+}
+
+/** Luna prescurtată, fără punct final (ex. „feb”, „déc”, „Dez”). */
+export function formatMonthShort(date: Date, locale: Locale): string {
+  const luna = new Intl.DateTimeFormat(dateLocales[locale], { month: 'short', timeZone: 'UTC' }).format(date);
+  return luna.replace(/\.$/, '');
+}
+
+/** Numele lunii, întreg (ex. „februarie”, „février”, „Februar”). */
+export function formatMonthLong(date: Date, locale: Locale): string {
+  return new Intl.DateTimeFormat(dateLocales[locale], { month: 'long', timeZone: 'UTC' }).format(date);
+}

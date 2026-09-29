@@ -62,8 +62,14 @@ const membri = defineCollection({
   schema: z.object({
     name: z.string(),
     // `responsabil` e părintele care răspunde de frăție la nivel de țară; ceilalți
-    // sunt legați de o parohie anume.
-    role: z.enum(['responsabil', 'presedinte', 'consiliu', 'coordonator', 'webadmin']),
+    // sunt legați de o parohie anume. La alumni rolul e opțional: pentru cei mai
+    // mulți contează doar parohia din care au venit.
+    role: z.enum(['responsabil', 'presedinte', 'consiliu', 'coordonator', 'webadmin', 'diacon']).optional(),
+    /*
+      Secțiunea din pagina Echipa. Ordinea de afișare e fixată în pagină, nu aici:
+      coordonatorii, apoi responsabilul, apoi foștii coordonatori.
+    */
+    group: z.enum(['coordonatori', 'responsabil', 'alumni']).default('coordonatori'),
     // Opțională: nu pentru toți e stabilită încă parohia.
     parish: z.string().optional(),
     photo: z.string().optional(),

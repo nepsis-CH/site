@@ -5,6 +5,12 @@ import { type Locale, useTranslations, withBase } from '../i18n';
  * Bandă de imagini pe toată lățimea paginii, care rulează non-stop
  * (animație CSS, fără JavaScript). Se oprește la hover; pentru vizitatorii
  * cu `prefers-reduced-motion` devine o listă derulabilă manual.
+ *
+ * Fiecare placă are dimensiune fixă, iar asta nu e o alegere estetică: înainte
+ * imaginile aveau `w-auto` și se încărcau leneș, deci până soseau ocupau zero
+ * lățime. Banda rămânea goală — o dungă albă peste care animația rula în van.
+ * Cu lățimea scrisă în CSS, locul e rezervat din primul cadru, indiferent când
+ * ajung fotografiile.
  */
 interface Props {
   images: { src: string; alt: string; href?: string }[];
@@ -23,25 +29,25 @@ const durata = Math.max(30, images.length * 5);
       <div class="marquee-track flex w-max" style={`--durata: ${durata}s`}>
         {[false, true].map((clone) => (
           <ul class="flex shrink-0 gap-3 pr-3" aria-hidden={clone ? 'true' : undefined}>
-            {images.map((img) => (
-              <li class="h-52 shrink-0 sm:h-64">
+            {images.map((img, i) => (
+              <li class="h-52 w-72 shrink-0 sm:h-64 sm:w-88">
                 {img.href && !clone ? (
-                  <a href={img.href} class="block h-full" title={img.alt}>
+                  <a href={img.href} class="block h-full w-full" title={img.alt}>
                     <img
                       src={withBase(img.src)}
                       alt={img.alt}
-                      loading="lazy"
+                      loading={!clone && i < 3 ? 'eager' : 'lazy'}
                       decoding="async"
-                      class="h-full w-auto rounded-lg object-cover"
+                      class="h-full w-full rounded-lg bg-brand-50 object-cover"
                     />
                   </a>
                 ) : (
                   <img
                     src={withBase(img.src)}
                     alt={clone ? '' : img.alt}
-                    loading="lazy"
+                    loading={!clone && i < 3 ? 'eager' : 'lazy'}
                     decoding="async"
-                    class="h-full w-auto rounded-lg object-cover"
+                    class="h-full w-full rounded-lg bg-brand-50 object-cover"
                   />
                 )}
               </li>

@@ -12,6 +12,15 @@ export function getStaticPaths() {
 const lang = localeFromParam(Astro.params.lang);
 const t = useTranslations(lang);
 const { entry, Content } = await getPage('psaltica', lang);
+const { Content: Materiale } = await getPage('psaltica-materiale', lang);
+
+// Programul, ca patru câmpuri scurte: se citește dintr-o privire.
+const program = [
+  { eticheta: t('psaltica.when'), valoare: t('psaltica.whenText') },
+  { eticheta: t('psaltica.where'), valoare: t('psaltica.whereText') },
+  { eticheta: t('psaltica.duration'), valoare: t('psaltica.durationText') },
+  { eticheta: t('psaltica.forWhom'), valoare: t('psaltica.forWhomText') },
+];
 ---
 
 <Base
@@ -40,50 +49,62 @@ const { entry, Content } = await getPage('psaltica', lang);
           <Content />
         </div>
       </div>
-      <div class="mt-12 lg:mt-0">
-        <h2 class="text-2xl font-bold text-brand-950">{t('psaltica.testimonials')}</h2>
-        <!-- Harta interactivă (ArcGIS) se încarcă abia la click, ca pagina să rămână rapidă. -->
-        <div
-          id="marturii-fatada"
-          class="mt-4 flex h-[500px] items-center justify-center overflow-hidden rounded-xl border border-stone-200 bg-brand-50 shadow-sm"
-          data-src="https://storymaps.arcgis.com/stories/e2f319110254454fad115d0c30b00d1f?cover=false"
-          data-title={t('psaltica.testimonials')}
-        >
-          <button
-            type="button"
-            class="rounded-lg bg-brand-800 px-6 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-brand-700"
-          >
-            {t('psaltica.testimonials')} →
-          </button>
-        </div>
-        <noscript>
-          <p class="mt-3">
+
+      <div class="mt-10 lg:mt-0">
+        <!-- Programul lecțiilor -->
+        <section aria-labelledby="program">
+          <h2 id="program" class="text-2xl font-bold text-brand-950">{t('psaltica.schedule')}</h2>
+          <dl class="mt-4 divide-y divide-stone-200 overflow-hidden rounded-xl border border-stone-200 bg-white shadow-sm">
+            {
+              program.map((rand) => (
+                <div class="flex flex-col gap-0.5 p-4 sm:flex-row sm:items-baseline sm:gap-4">
+                  <dt class="shrink-0 text-sm font-semibold uppercase tracking-wide text-brand-600 sm:w-32">
+                    {rand.eticheta}
+                  </dt>
+                  <dd class="text-stone-800">{rand.valoare}</dd>
+                </div>
+              ))
+            }
+          </dl>
+        </section>
+
+        <!-- Invitația de a participa -->
+        <section class="mt-10" aria-labelledby="participi">
+          <h2 id="participi" class="text-2xl font-bold text-brand-950">{t('psaltica.join')}</h2>
+          <p class="mt-3 text-stone-700">{t('psaltica.joinText')}</p>
+          <p class="mt-5">
+            <!-- Butonul asamblează adresa la click — nu există „mailto:” în clar în HTML. -->
             <a
-              href="https://storymaps.arcgis.com/stories/e2f319110254454fad115d0c30b00d1f"
-              target="_blank"
-              rel="noopener"
-              class="text-brand-700 underline"
+              href="#"
+              class="email-protejat-buton inline-block rounded-lg bg-brand-800 px-5 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-brand-700"
+              data-x="nepsis.ch"
+              data-y="mitropolia"
+              data-z="eu"
             >
-              {t('psaltica.testimonials')}
+              {t('psaltica.emailButton')}
             </a>
           </p>
-        </noscript>
+        </section>
       </div>
     </div>
+
+    <!-- Materiale pentru repetiții -->
+    <section class="mt-14" aria-labelledby="materiale">
+      <h2 id="materiale" class="text-2xl font-bold text-brand-950">{t('psaltica.materials')}</h2>
+      <div class="prose-md mt-4 text-stone-700">
+        <Materiale />
+      </div>
+    </section>
   </div>
 </Base>
 
 <script>
-  // Înlocuiește fațada cu iframe-ul ArcGIS abia la click.
-  const fatada = document.getElementById('marturii-fatada');
-  fatada?.querySelector('button')?.addEventListener('click', () => {
-    const iframe = document.createElement('iframe');
-    iframe.src = fatada.dataset.src ?? '';
-    iframe.title = fatada.dataset.title ?? '';
-    iframe.width = '100%';
-    iframe.height = '500';
-    iframe.allowFullscreen = true;
-    iframe.allow = 'geolocation';
-    fatada.replaceChildren(iframe);
+  // Același mecanism anti-spam ca pe pagina de contact.
+  document.querySelectorAll<HTMLAnchorElement>('.email-protejat-buton').forEach((el) => {
+    el.addEventListener('click', (ev) => {
+      ev.preventDefault();
+      const { x, y, z } = el.dataset;
+      window.location.href = `mailto:${x}@${y}.${z}`;
+    });
   });
 </script>

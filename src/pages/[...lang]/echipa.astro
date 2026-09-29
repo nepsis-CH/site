@@ -10,6 +10,28 @@ export function getStaticPaths() {
 const lang = localeFromParam(Astro.params.lang);
 const t = useTranslations(lang);
 const members = await getMembers();
+
+/*
+  Secțiunile, în ordinea cerută: coordonatorii care duc activitatea acum,
+  apoi părintele responsabil, iar la final foștii coordonatori.
+*/
+const sectiuni = [
+  { grup: 'coordonatori' as const, titlu: t('members.section.coordinators') },
+  { grup: 'responsabil' as const, titlu: t('members.section.responsabil') },
+  { grup: 'alumni' as const, titlu: t('members.section.alumni') },
+]
+  .map((s) => ({ ...s, oameni: members.filter((m) => m.data.group === s.grup) }))
+  .filter((s) => s.oameni.length > 0);
+
+/**
+ * Iniţiala pentru cercul celor fără fotografie. Titulatura („Părintele”) nu
+ * spune nimic despre persoană, așa că o sărim: „Părintele Ștefan I.” → „Ș”.
+ */
+const titulaturi = ['părintele', 'pr.', 'père', 'le père', 'father', 'vater', 'diac.'];
+function initiala(nume: string): string {
+  const cuvinte = nume.split(/\s+/).filter((c) => !titulaturi.includes(c.toLowerCase()));
+  return (cuvinte[0] ?? nume).charAt(0).toUpperCase();
+}
 ---
 
 <Base lang={lang} title={`${t('members.title')} · ${t('site.name')}`} description={t('members.description')}>
@@ -19,44 +41,63 @@ const members = await getMembers();
       <p class="mt-2 text-lg text-stone-600">{t('members.subtitle')}</p>
     </header>
 
-    <!--
-      Locul fotografiei rămâne rotund și rezervat chiar dacă deocamdată nimeni
-      n-are poză: când se adaugă un câmp `photo` în fișierul persoanei, imaginea
-      intră direct în cerc, fără altă modificare.
-    -->
-    <ul class="mt-12 grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-3 lg:grid-cols-4">
-      {
-        members.map((member) => (
-          <li class="text-center">
-            <img
-              src={withBase(member.data.photo ?? '/img/membri/placeholder.png')}
-              alt={member.data.photo ? member.data.name : t('members.missingPhoto')}
-              loading="lazy"
-              width="240"
-              height="240"
-              class="mx-auto aspect-square w-32 rounded-full border border-stone-200 object-cover shadow-sm sm:w-40"
-            />
-            <h2 class="mt-4 font-serif text-lg font-semibold text-brand-950">{member.data.name}</h2>
-            <p class="mt-0.5 text-sm font-medium text-brand-700">
-              {t(`members.role.${member.data.role}` as UIKey)}
-            </p>
-            {
-              member.data.parish && (
-                <p class="text-sm text-stone-500">
-                  {/*
-                    Părintele răspunde de frăție la nivel de țară, nu de o parohie,
-                    deci la el nu punem prefixul „Parohia”.
-                  */}
-                  {member.data.role === 'responsabil'
-                    ? member.data.parish
-                    : `${t('members.parish')} ${member.data.parish}`}
-                </p>
-              )
-            }
-          </li>
-        ))
-      }
-    </ul>
+    {
+      sectiuni.map((sectiune) => (
+        <section class="mt-14" aria-labelledby={`echipa-${sectiune.grup}`}>
+          <h2
+            id={`echipa-${sectiune.grup}`}
+            class="border-b border-stone-200 pb-2 text-sm font-bold uppercase tracking-widest text-brand-600"
+          >
+            {sectiune.titlu}
+          </h2>
+          <ul class="mt-8 grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-3 lg:grid-cols-4">
+            {sectiune.oameni.map((member) => (
+              <li class="text-center">
+                {/*
+                  Cine nu are încă fotografie primește un cerc cu iniţiala, nu o
+                  poză goală: locul rămâne la fel de mare, deci rândul nu sare.
+                */}
+                {member.data.photo ? (
+                  <img
+                    src={withBase(member.data.photo)}
+                    alt={member.data.name}
+                    loading="lazy"
+                    width="240"
+                    height="240"
+                    class="mx-auto aspect-square w-32 rounded-full border border-stone-200 object-cover shadow-sm sm:w-40"
+                  />
+                ) : (
+                  <span
+                    class="mx-auto flex aspect-square w-32 items-center justify-center rounded-full border border-brand-100 bg-brand-50 font-serif text-4xl font-bold text-brand-300 shadow-sm sm:w-40 sm:text-5xl"
+                    role="img"
+                    aria-label={t('members.missingPhoto')}
+                  >
+                    {initiala(member.data.name)}
+                  </span>
+                )}
+                <h3 class="mt-4 font-serif text-lg font-semibold text-brand-950">{member.data.name}</h3>
+                {member.data.role && (
+                  <p class="mt-0.5 text-sm font-medium text-brand-700">
+                    {t(`members.role.${member.data.role}` as UIKey)}
+                  </p>
+                )}
+                {member.data.parish && (
+                  <p class="text-sm text-stone-500">
+                    {/*
+                      Părintele răspunde de frăție la nivel de țară, nu de o parohie,
+                      deci la el nu punem prefixul „Parohia”.
+                    */}
+                    {member.data.role === 'responsabil'
+                      ? member.data.parish
+                      : `${t('members.parish')} ${member.data.parish}`}
+                  </p>
+                )}
+              </li>
+            ))}
+          </ul>
+        </section>
+      ))
+    }
 
     <p class="mt-14 text-center text-stone-600">
       {t('members.more')}

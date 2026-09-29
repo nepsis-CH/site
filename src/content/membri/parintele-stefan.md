@@ -1,6 +1,8 @@
 ---
 name: "Părintele Ștefan"
-role: responsabil
+role: "responsabil"
+group: "responsabil"
 parish: "Elveția"
-order: 8
+photo: "/img/echipa/responsabil/pr-stefan.webp"
+order: 10
 ---

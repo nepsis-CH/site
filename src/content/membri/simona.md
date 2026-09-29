@@ -1,6 +1,7 @@
 ---
 name: "Simona"
-role: coordonator
+role: "coordonator"
+group: "coordonatori"
 parish: "St. Gallen"
-order: 3
+order: 6
 ---

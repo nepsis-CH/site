@@ -1,6 +1,8 @@
 ---
 name: "Luca"
-role: coordonator
+role: "coordonator"
+group: "coordonatori"
 parish: "Lausanne"
-order: 5
+photo: "/img/echipa/coordonatori/luca.webp"
+order: 1
 ---

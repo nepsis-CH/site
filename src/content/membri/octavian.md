@@ -1,6 +1,7 @@
 ---
 name: "Octavian"
-role: coordonator
+role: "coordonator"
+group: "coordonatori"
 parish: "Baden"
-order: 6
+order: 3
 ---

@@ -1,0 +1,36 @@
+---
+import { type Locale, localePath, useTranslations } from '../i18n';
+
+/** Cele două feluri de a privi amintirile: pe evenimente sau toate pozele la grămadă. */
+interface Props {
+  lang: Locale;
+  activ: 'evenimente' | 'galerie';
+}
+
+const { lang, activ } = Astro.props;
+const t = useTranslations(lang);
+
+const taburi = [
+  { cheie: 'evenimente' as const, eticheta: t('gallery.tabEvents'), href: localePath(lang, '/amintiri/') },
+  { cheie: 'galerie' as const, eticheta: t('gallery.title'), href: localePath(lang, '/amintiri/galerie/') },
+];
+---
+
+<nav aria-label={t('gallery.sections')} class="mt-6 flex gap-6 border-b border-stone-200">
+  {
+    taburi.map((tab) => (
+      <a
+        href={tab.href}
+        aria-current={tab.cheie === activ ? 'page' : undefined}
+        class:list={[
+          '-mb-px inline-flex min-h-11 items-center border-b-2 px-1 text-base font-semibold',
+          tab.cheie === activ
+            ? 'border-brand-800 text-brand-900'
+            : 'border-transparent text-stone-600 hover:text-brand-900',
+        ]}
+      >
+        {tab.eticheta}
+      </a>
+    ))
+  }
+</nav>

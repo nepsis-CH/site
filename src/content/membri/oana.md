@@ -1,6 +1,8 @@
 ---
 name: "Oana"
-role: coordonator
+role: "coordonator"
+group: "coordonatori"
 parish: "Geneva"
-order: 7
+photo: "/img/echipa/coordonatori/oana.webp"
+order: 2
 ---

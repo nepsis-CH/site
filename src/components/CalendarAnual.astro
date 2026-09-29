@@ -1,0 +1,141 @@
+---
+import { type CollectionEntry } from 'astro:content';
+import {
+  type Locale,
+  formatDate,
+  formatDay,
+  formatMonthLong,
+  formatMonthShort,
+  useTranslations,
+} from '../i18n';
+
+/**
+ * Calendarul anual, ca agendă pe luni.
+ *
+ * Înlocuiește tabelul scris de mână din Markdown: se construiește direct din
+ * evenimentele din `src/content/evenimente/`, deci nu mai există două locuri de
+ * actualizat. Cine adaugă un eveniment îl vede și în calendar.
+ *
+ * Luna e antet, iar fiecare eveniment are o plăcuță de dată în stânga — se
+ * citește la fel de repede pe telefon ca pe laptop, fără derulare laterală.
+ */
+interface Props {
+  events: CollectionEntry<'evenimente'>[];
+  lang: Locale;
+  /** Data de referință pentru „a avut loc” / „urmează” (injectabilă la teste). */
+  now?: Date;
+  /** `translationKey`-urile evenimentelor care au card pe pagină, deci ancoră validă. */
+  anchors?: Set<string>;
+}
+
+const { events, lang, now = new Date(), anchors = new Set<string>() } = Astro.props;
+const t = useTranslations(lang);
+
+const azi = Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate());
+
+const inOrdine = [...events].sort((a, b) => a.data.date.getTime() - b.data.date.getTime());
+
+// Primul eveniment care nu a trecut încă primește accentul „Următorul”.
+const idUrmator = inOrdine.find((e) => e.data.date.getTime() >= azi)?.id;
+
+// Grupare pe luni, păstrând ordinea cronologică.
+const luni: { cheie: number; nume: string; evenimente: CollectionEntry<'evenimente'>[] }[] = [];
+for (const ev of inOrdine) {
+  const cheie = ev.data.date.getUTCMonth();
+  let grup = luni.at(-1);
+  if (!grup || grup.cheie !== cheie) {
+    grup = { cheie, nume: formatMonthLong(ev.data.date, lang), evenimente: [] };
+    luni.push(grup);
+  }
+  grup.evenimente.push(ev);
+}
+---
+
+{
+  luni.length === 0 ? (
+    <p class="mt-6 max-w-prose rounded-lg border border-brand-100 bg-brand-50 p-5 text-stone-700">
+      {t('activities.calendarEmpty')}
+    </p>
+  ) : (
+    <div class="mt-8">
+      {luni.map((luna) => (
+        <section class="relative pb-2 pl-6 sm:pl-8">
+          {/* Firul anului, continuu de la o lună la alta */}
+          <span class="absolute top-0 bottom-0 left-0 w-0.5 bg-brand-100" aria-hidden="true" />
+          <h3 class="text-sm font-bold uppercase tracking-widest text-brand-600">
+            <span
+              class="absolute -left-[5px] mt-1.5 h-3 w-3 rounded-full border-2 border-white bg-brand-500"
+              aria-hidden="true"
+            />
+            {luna.nume}
+          </h3>
+          <ul class="mt-4 space-y-3 pb-8">
+            {luna.evenimente.map((ev) => {
+              const trecut = ev.data.date.getTime() < azi;
+              const urmator = ev.id === idUrmator;
+              const areAncora = anchors.has(ev.data.translationKey);
+              const Rand = areAncora ? 'a' : 'div';
+              return (
+                <li>
+                  <Rand
+                    href={areAncora ? `#eveniment-${ev.data.translationKey}` : undefined}
+                    class:list={[
+                      'flex items-center gap-4 rounded-xl border bg-white p-3 shadow-sm sm:p-4',
+                      urmator ? 'border-brand-300 ring-1 ring-brand-200' : 'border-stone-200',
+                      areAncora && 'transition-colors hover:border-brand-400',
+                    ]}
+                  >
+                    {/* Plăcuța de dată: ziua mare, luna mică — ca o foaie de calendar */}
+                    <span
+                      class:list={[
+                        'flex h-14 w-14 shrink-0 flex-col items-center justify-center rounded-lg leading-none',
+                        trecut ? 'bg-stone-100 text-stone-500' : 'bg-brand-700 text-white',
+                      ]}
+                      aria-hidden="true"
+                    >
+                      <span class="text-xl font-bold">{formatDay(ev.data.date, lang)}</span>
+                      <span class="mt-0.5 text-[0.65rem] font-semibold uppercase tracking-wide">
+                        {formatMonthShort(ev.data.date, lang)}
+                      </span>
+                    </span>
+                    <span class="min-w-0 flex-1">
+                      <span
+                        class:list={[
+                          'block font-semibold',
+                          trecut ? 'text-stone-600' : 'text-brand-900',
+                        ]}
+                      >
+                        {ev.data.title}
+                      </span>
+                      {/* Data completă rămâne citibilă de cititoarele de ecran */}
+                      <span class="sr-only">{formatDate(ev.data.date, lang)}</span>
+                      {ev.data.location && (
+                        <span class="mt-0.5 block truncate text-sm text-stone-500">{ev.data.location}</span>
+                      )}
+                    </span>
+                    <span
+                      class:list={[
+                        'shrink-0 rounded-full px-2.5 py-1 text-xs font-semibold whitespace-nowrap',
+                        urmator
+                          ? 'bg-brand-100 text-brand-800'
+                          : trecut
+                            ? 'bg-stone-100 text-stone-500'
+                            : 'bg-brand-50 text-brand-700',
+                      ]}
+                    >
+                      {urmator
+                        ? t('activities.statusNext')
+                        : trecut
+                          ? t('activities.statusPast')
+                          : t('activities.statusUpcoming')}
+                    </span>
+                  </Rand>
+                </li>
+              );
+            })}
+          </ul>
+        </section>
+      ))}
+    </div>
+  )
+}

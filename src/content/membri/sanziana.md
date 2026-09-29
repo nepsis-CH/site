@@ -1,6 +1,8 @@
 ---
 name: "Sânziana"
-role: coordonator
-parish: "Zurich"
-order: 2
+role: "coordonator"
+group: "coordonatori"
+parish: "Zürich"
+photo: "/img/echipa/coordonatori/sanziana.webp"
+order: 5
 ---

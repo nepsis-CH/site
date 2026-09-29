@@ -39,11 +39,11 @@ const de: Partial<typeof ro> = {
     'Der Veranstaltungskalender von Nepsis Schweiz: kommende Veranstaltungen und das Archiv der vergangenen.',
   'activities.intro': 'Wir freuen uns, dich bei unseren nächsten Veranstaltungen zu sehen.',
   'activities.upcoming': 'Nächste Veranstaltung',
-  'activities.past': 'Neueste Veranstaltungen',
+  'activities.past': 'Aktuelle Veranstaltungen',
   'activities.noUpcoming': 'Zurzeit ist keine neue Veranstaltung angekündigt. Wir kommunizieren häufig über unsere internen WhatsApp-Gruppen: schreib uns, um aufgenommen zu werden, oder abonniere den Newsletter.',
   'activities.permanent': 'Ständige Aktivität: Online-Unterricht in byzantinischem Gesang',
   'activities.permanentText':
-    'Abend für Abend, sechs Tage die Woche, halten wir über Zoom Unterricht in byzantinischem Gesang — offen für alle.',
+    'Von Montag bis Samstag halten wir Unterricht in byzantinischem Gesang über Zoom, offen für alle jungen Menschen der Metropolie MOREOM.',
   'activities.permanentLink': 'Details auf der Seite Byzantinischer Gesang',
   'activities.register': 'Details und Anmeldung',
   'activities.moreInMemories': 'Über unsere früheren Veranstaltungen kannst du lesen auf',
@@ -150,6 +150,65 @@ const de: Partial<typeof ro> = {
   'notFound.title': 'Seite nicht gefunden',
   'notFound.text': 'Die gesuchte Seite existiert leider nicht (oder wurde verschoben).',
   'notFound.home': 'Zurück zur Startseite',
+
+  // --- v10: pagina principală, calendar, galerie foto, psaltică ---
+  'home.subtitle': 'die Gemeinschaft der jungen Orthodoxen in der Schweiz',
+  'home.lead':
+    'Wir organisieren Treffen, Wallfahrten und kulturelle wie geistliche Aktivitäten, bei denen junge Menschen einander kennenlernen und gemeinsam wachsen können.',
+  'home.activities.title': 'Unsere Aktivitäten',
+  'home.activities.meetings': 'Treffen und Wallfahrten',
+  'home.activities.meetingsText':
+    'Wallfahrten zu Klöstern, Wanderungen mit Katechese und Besuche in den rumänischen Pfarreien der Schweiz.',
+  'home.activities.spiritual': 'Geistliches Leben',
+  'home.activities.spiritualText':
+    'Vigilien, gemeinsame Göttliche Liturgie und Gespräche mit Priestern und Bischöfen.',
+  'home.activities.culture': 'Kultur und byzantinischer Gesang',
+  'home.activities.cultureText':
+    'Online-Unterricht in byzantinischem Gesang, Besuche in Museen und Bibliotheken, Filmvorführungen.',
+  'home.activities.more': 'Erfahre, wer wir sind',
+  'activities.calendarTitle': 'Veranstaltungskalender {year}',
+  'activities.calendarIntro': 'Alles, was wir für dieses Jahr geplant haben, Monat für Monat.',
+  'activities.calendarEmpty': 'Der Kalender dieses Jahres hat noch keine angekündigten Veranstaltungen.',
+  'activities.calendarNote': 'Der Kalender füllt sich im Laufe des Jahres.',
+  'activities.statusUpcoming': 'Demnächst',
+  'activities.statusPast': 'Hat stattgefunden',
+  'activities.statusNext': 'Als Nächstes',
+  'gallery.title': 'Fotogalerie',
+  'gallery.description':
+    'Alle Fotos aus den Erinnerungen von Nepsis Schweiz, filterbar nach Jahr und Veranstaltung.',
+  'gallery.sections': 'Bereiche Erinnerungen',
+  'gallery.tabEvents': 'Veranstaltungen',
+  'gallery.intro':
+    'Alle Fotos aus unseren Erinnerungen. Wähle ein Jahr oder eine Veranstaltung und öffne ein Foto, um es grösser zu sehen.',
+  'gallery.filterYear': 'Nach Jahr filtern',
+  'gallery.allYears': 'Alle Jahre',
+  'gallery.event': 'Veranstaltung',
+  'gallery.allEvents': 'Alle Veranstaltungen',
+  'gallery.countOne': '1 Foto',
+  'gallery.countMany': '{n} Fotos',
+  'gallery.lightboxLabel': 'Vergrössertes Foto',
+  'gallery.position': '{i} von {total}',
+  'gallery.readMemory': 'Erinnerung lesen',
+  'gallery.close': 'Schliessen',
+  'psaltica.schedule': 'Unterrichtsplan',
+  'psaltica.when': 'Wann',
+  'psaltica.whenText': 'Montag bis Samstag',
+  'psaltica.where': 'Wo',
+  'psaltica.whereText': 'Online, auf Zoom',
+  'psaltica.duration': 'Dauer',
+  'psaltica.durationText': '30–40 Minuten',
+  'psaltica.forWhom': 'Für wen',
+  'psaltica.forWhomText': 'Alle jungen Menschen der Metropolie MOREOM',
+  'psaltica.join': 'Willst du mitmachen?',
+  'psaltica.joinText':
+    'Schreib uns eine E-Mail und wir nehmen dich in die Telegram-Diskussionsgruppe auf, in der wir alles zum Unterricht mitteilen.',
+  'psaltica.emailButton': 'Schreib uns eine E-Mail !',
+  // --- v10: secțiunile paginii Echipa ---
+  'members.intro': 'Die Menschen, die die Aktivitäten von Nepsis Schweiz organisieren.',
+  'members.section.coordinators': 'Die Koordinatoren',
+  'members.section.responsabil': 'Verantwortlicher',
+  'members.section.alumni': 'Alumni / ehemalige Koordinatoren',
+  'members.role.diacon': 'Diakon',
 };
 
 export default de;

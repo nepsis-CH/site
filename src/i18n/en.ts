@@ -39,13 +39,13 @@ const en: Partial<typeof ro> = {
   'activities.description':
     'The Nepsis Switzerland events calendar: upcoming events and the archive of past ones.',
   'activities.intro': 'We warmly look forward to seeing you at our upcoming events.',
-  'activities.upcoming': 'Next event',
-  'activities.past': 'Recent events',
+  'activities.upcoming': 'Next Event',
+  'activities.past': 'Recent Events',
   'activities.noUpcoming':
-    'No new event is announced at the moment. We communicate often on our internal Telegram and WhatsApp groups — write to us to be added, or subscribe to the newsletter.',
+    'No new event is announced at the moment. We communicate often on our WhatsApp groups — write to us to be added, or subscribe to the newsletter.',
   'activities.permanent': 'Ongoing activity: online Byzantine chant lessons',
   'activities.permanentText':
-    'Evening after evening, six days a week, we hold Byzantine chant lessons on Zoom, open to everyone.',
+    'From Monday to Saturday we hold Byzantine chant lessons on Zoom, open to all young people of the MOREOM Metropolis.',
   'activities.permanentLink': 'Details on the Byzantine Chant page',
   'activities.register': 'Details and registration',
   'activities.moreInMemories': 'You can read about our older events on',
@@ -154,6 +154,65 @@ const en: Partial<typeof ro> = {
   'notFound.title': 'Page not found',
   'notFound.text': 'Sorry, the page you are looking for does not exist (or has been moved).',
   'notFound.home': 'Back to the home page',
+
+  // --- v10: pagina principală, calendar, galerie foto, psaltică ---
+  'home.subtitle': 'the community of young Orthodox Christians in Switzerland',
+  'home.lead':
+    'We organise gatherings, pilgrimages and cultural and spiritual activities where young people can get to know one another and grow together.',
+  'home.activities.title': 'Our activities',
+  'home.activities.meetings': 'Gatherings and pilgrimages',
+  'home.activities.meetingsText':
+    'Pilgrimages to monasteries, hikes with catechesis and visits to the Romanian parishes in Switzerland.',
+  'home.activities.spiritual': 'Spiritual life',
+  'home.activities.spiritualText':
+    'Vigils, the Divine Liturgy together, and conversations with priests and bishops.',
+  'home.activities.culture': 'Culture and Byzantine chant',
+  'home.activities.cultureText':
+    'Online Byzantine chant lessons, visits to museums and libraries, film screenings.',
+  'home.activities.more': 'Find out who we are',
+  'activities.calendarTitle': 'Calendar of events {year}',
+  'activities.calendarIntro': 'Everything we have planned for this year, month by month.',
+  'activities.calendarEmpty': 'This year’s calendar has no announced events yet.',
+  'activities.calendarNote': 'The calendar fills up as the year goes on.',
+  'activities.statusUpcoming': 'Upcoming',
+  'activities.statusPast': 'Took place',
+  'activities.statusNext': 'Next',
+  'gallery.title': 'Photo gallery',
+  'gallery.description':
+    'All the photos from the Nepsis Switzerland memories, filterable by year and event.',
+  'gallery.sections': 'Memories sections',
+  'gallery.tabEvents': 'Events',
+  'gallery.intro':
+    'All the photos from our memories. Pick a year or an event and open any photo to see it larger.',
+  'gallery.filterYear': 'Filter by year',
+  'gallery.allYears': 'All years',
+  'gallery.event': 'Event',
+  'gallery.allEvents': 'All events',
+  'gallery.countOne': '1 photo',
+  'gallery.countMany': '{n} photos',
+  'gallery.lightboxLabel': 'Enlarged photo',
+  'gallery.position': '{i} of {total}',
+  'gallery.readMemory': 'Read the memory',
+  'gallery.close': 'Close',
+  'psaltica.schedule': 'Lesson schedule',
+  'psaltica.when': 'When',
+  'psaltica.whenText': 'Monday to Saturday',
+  'psaltica.where': 'Where',
+  'psaltica.whereText': 'Online, on Zoom',
+  'psaltica.duration': 'Duration',
+  'psaltica.durationText': '30–40 minutes',
+  'psaltica.forWhom': 'For whom',
+  'psaltica.forWhomText': 'All young people of the MOREOM Metropolis',
+  'psaltica.join': 'Do you want to join?',
+  'psaltica.joinText':
+    'Send us an e-mail and we will add you to the Telegram discussion group, where we share everything about the lessons.',
+  'psaltica.emailButton': 'Send us an email !',
+  // --- v10: secțiunile paginii Echipa ---
+  'members.intro': 'The people who organise the Nepsis Switzerland activities.',
+  'members.section.coordinators': 'The coordinators',
+  'members.section.responsabil': 'Coordinator in charge',
+  'members.section.alumni': 'Alumni / former coordinators',
+  'members.role.diacon': 'Deacon',
 };
 
 export default en;
