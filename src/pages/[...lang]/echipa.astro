@@ -12,22 +12,22 @@ const t = useTranslations(lang);
 const members = await getMembers();
 
 /*
-  Secțiunile, în ordinea cerută: coordonatorii care duc activitatea acum,
-  apoi părintele responsabil, iar la final foștii coordonatori.
+  Echipa de azi merge într-o singură înșiruire — coordonatorii, iar la urmă
+  părintele responsabil, cum a cerut utilizatorul — fără titlu de secțiune,
+  fiindcă titlul paginii o numește deja. Foștii coordonatori vin separat.
 */
 const sectiuni = [
-  { grup: 'coordonatori' as const, titlu: t('members.section.coordinators') },
-  { grup: 'responsabil' as const, titlu: t('members.section.responsabil') },
-  { grup: 'alumni' as const, titlu: t('members.section.alumni') },
+  { grup: 'echipa', titluri: ['coordonatori', 'responsabil'], titlu: null },
+  { grup: 'alumni', titluri: ['alumni'], titlu: t('members.section.alumni') },
 ]
-  .map((s) => ({ ...s, oameni: members.filter((m) => m.data.group === s.grup) }))
+  .map((s) => ({ ...s, oameni: members.filter((m) => s.titluri.includes(m.data.group)) }))
   .filter((s) => s.oameni.length > 0);
 
 /**
  * Iniţiala pentru cercul celor fără fotografie. Titulatura („Părintele”) nu
  * spune nimic despre persoană, așa că o sărim: „Părintele Ștefan I.” → „Ș”.
  */
-const titulaturi = ['părintele', 'pr.', 'père', 'le père', 'father', 'vater', 'diac.'];
+const titulaturi = ['părintele', 'pr.', 'père', 'le père', 'father', 'vater', 'diacon', 'diac.', 'diacre', 'deacon', 'diakon'];
 function initiala(nume: string): string {
   const cuvinte = nume.split(/\s+/).filter((c) => !titulaturi.includes(c.toLowerCase()));
   return (cuvinte[0] ?? nume).charAt(0).toUpperCase();
@@ -43,13 +43,15 @@ function initiala(nume: string): string {
 
     {
       sectiuni.map((sectiune) => (
-        <section class="mt-14" aria-labelledby={`echipa-${sectiune.grup}`}>
-          <h2
-            id={`echipa-${sectiune.grup}`}
-            class="border-b border-stone-200 pb-2 text-sm font-bold uppercase tracking-widest text-brand-600"
-          >
-            {sectiune.titlu}
-          </h2>
+        <section class="mt-14" aria-labelledby={sectiune.titlu ? `echipa-${sectiune.grup}` : undefined}>
+          {sectiune.titlu && (
+            <h2
+              id={`echipa-${sectiune.grup}`}
+              class="border-b border-stone-200 pb-2 font-serif text-xl font-bold text-brand-800"
+            >
+              {sectiune.titlu}
+            </h2>
+          )}
           <ul class="mt-8 grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-3 lg:grid-cols-4">
             {sectiune.oameni.map((member) => (
               <li class="text-center">
@@ -64,7 +66,7 @@ function initiala(nume: string): string {
                     loading="lazy"
                     width="240"
                     height="240"
-                    class="mx-auto aspect-square w-32 rounded-full border border-stone-200 object-cover shadow-sm sm:w-40"
+                    class="mx-auto aspect-square w-32 rounded-full border border-stone-200 object-cover object-top shadow-sm sm:w-40"
                   />
                 ) : (
                   <span

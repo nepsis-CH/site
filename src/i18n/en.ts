@@ -25,7 +25,7 @@ const en: Partial<typeof ro> = {
   'home.tagline': 'Young Orthodox Christians in Switzerland',
   'home.ageRange': 'Nepsis Switzerland is for young people between 14 and 35.',
   'home.about.title': 'About Nepsis Switzerland',
-  'home.nextEvent': 'Next event',
+  'home.nextEvent': 'Next Event',
   'home.noUpcoming':
     'Subscribe to the newsletter or write to us to be added to our WhatsApp groups or social media pages, so you stay up to date with our upcoming activities.',
   'home.allActivities': 'All events',
@@ -159,17 +159,16 @@ const en: Partial<typeof ro> = {
   'home.subtitle': 'the community of young Orthodox Christians in Switzerland',
   'home.lead':
     'We organise gatherings, pilgrimages and cultural and spiritual activities where young people can get to know one another and grow together.',
-  'home.activities.title': 'Our activities',
-  'home.activities.meetings': 'Gatherings and pilgrimages',
+  'home.activities.title': 'Our Activities',
+  'home.activities.meetings': 'Gatherings and Pilgrimages',
   'home.activities.meetingsText':
     'Pilgrimages to monasteries, hikes with catechesis and visits to the Romanian parishes in Switzerland.',
-  'home.activities.spiritual': 'Spiritual life',
+  'home.activities.spiritual': 'Spiritual Life',
   'home.activities.spiritualText':
-    'Vigils, the Divine Liturgy together, and conversations with priests and bishops.',
-  'home.activities.culture': 'Culture and Byzantine chant',
+    'Vigils, the Divine Liturgy, conversations and talks with priests and bishops of the Metropolis.',
+  'home.activities.culture': 'Culture and Byzantine Chant',
   'home.activities.cultureText':
     'Online Byzantine chant lessons, visits to museums and libraries, film screenings.',
-  'home.activities.more': 'Find out who we are',
   'activities.calendarTitle': 'Calendar of events {year}',
   'activities.calendarIntro': 'Everything we have planned for this year, month by month.',
   'activities.calendarEmpty': 'This year’s calendar has no announced events yet.',
@@ -200,9 +199,9 @@ const en: Partial<typeof ro> = {
   'psaltica.where': 'Where',
   'psaltica.whereText': 'Online, on Zoom',
   'psaltica.duration': 'Duration',
-  'psaltica.durationText': '30–40 minutes',
+  'psaltica.durationText': '30 minutes',
   'psaltica.forWhom': 'For whom',
-  'psaltica.forWhomText': 'All young people of the MOREOM Metropolis',
+  'psaltica.forWhomText': 'All young people of the Romanian Orthodox Metropolis of Western and Southern Europe',
   'psaltica.join': 'Do you want to join?',
   'psaltica.joinText':
     'Send us an e-mail and we will add you to the Telegram discussion group, where we share everything about the lessons.',

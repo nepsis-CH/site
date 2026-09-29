@@ -23,7 +23,7 @@ export default {
   'home.tagline': 'Tineri creștini ortodocși din Elveția',
   'home.ageRange': 'Nepsis Elveția se adresează tinerilor între 14 și 35 de ani.',
   'home.about.title': 'Despre Nepsis Elveția',
-  'home.nextEvent': 'Următorul eveniment',
+  'home.nextEvent': 'Următorul Eveniment',
   'home.noUpcoming':
     'Abonează-te la newsletter sau scrie-ne ca să fii adăugat pe grupurile noastre de WhatsApp sau paginile de social media, pentru a fi la curent cu următoarele activități.',
   'home.allActivities': 'Toate evenimentele',
@@ -155,16 +155,15 @@ export default {
   'home.subtitle': 'comunitatea tinerilor ortodocși din Elveția',
   'home.lead':
     'Organizăm întâlniri, pelerinaje și activități culturale și duhovnicești prin care tinerii se pot cunoaște și crește împreună.',
-  'home.activities.title': 'Activitățile noastre',
-  'home.activities.meetings': 'Întâlniri și pelerinaje',
+  'home.activities.title': 'Activitățile Noastre',
+  'home.activities.meetings': 'Întâlniri și Pelerinaje',
   'home.activities.meetingsText':
     'Pelerinaje la mănăstiri, drumeții cu cateheză și vizite în parohiile românești din Elveția.',
-  'home.activities.spiritual': 'Viață duhovnicească',
-  'home.activities.spiritualText': 'Privegheri, Sfânta Liturghie împreună și discuții cu preoți și ierarhi.',
-  'home.activities.culture': 'Cultură și psaltică',
+  'home.activities.spiritual': 'Viață Duhovnicească',
+  'home.activities.spiritualText': 'Privegheri, Sfânta Liturghie, discuții și conferințe cu preoți și ierarhi ai Mitropoliei.',
+  'home.activities.culture': 'Cultură și Psaltică',
   'home.activities.cultureText':
     'Lecții online de muzică psaltică, vizite la muzee și biblioteci, proiecții de film.',
-  'home.activities.more': 'Află cine suntem',
   'activities.calendarTitle': 'Calendarul Evenimentelor {year}',
   'activities.calendarIntro': 'Tot ce am pregătit pentru anul acesta, lună cu lună.',
   'activities.calendarEmpty': 'Calendarul anului acesta nu are încă evenimente anunțate.',
@@ -195,9 +194,9 @@ export default {
   'psaltica.where': 'Unde',
   'psaltica.whereText': 'Online, pe Zoom',
   'psaltica.duration': 'Durată',
-  'psaltica.durationText': '30–40 de minute',
+  'psaltica.durationText': '30 de minute',
   'psaltica.forWhom': 'Pentru cine',
-  'psaltica.forWhomText': 'Toți tinerii din Mitropolia MOREOM',
+  'psaltica.forWhomText': 'Toți tinerii din Mitropolia Ortodoxă Română a Europei Occidentale și Meridionale',
   'psaltica.join': 'Vrei să participi?',
   'psaltica.joinText':
     'Scrie-ne un e-mail și te adăugăm în grupul de discuții pe Telegram, unde comunicăm tot ce ține de lecții.',

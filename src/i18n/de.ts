@@ -161,11 +161,10 @@ const de: Partial<typeof ro> = {
     'Wallfahrten zu Klöstern, Wanderungen mit Katechese und Besuche in den rumänischen Pfarreien der Schweiz.',
   'home.activities.spiritual': 'Geistliches Leben',
   'home.activities.spiritualText':
-    'Vigilien, gemeinsame Göttliche Liturgie und Gespräche mit Priestern und Bischöfen.',
-  'home.activities.culture': 'Kultur und byzantinischer Gesang',
+    'Vigilien, gemeinsame Göttliche Liturgie, Gespräche und Vorträge mit Priestern und Bischöfen der Metropolie.',
+  'home.activities.culture': 'Kultur und Byzantinischer Gesang',
   'home.activities.cultureText':
     'Online-Unterricht in byzantinischem Gesang, Besuche in Museen und Bibliotheken, Filmvorführungen.',
-  'home.activities.more': 'Erfahre, wer wir sind',
   'activities.calendarTitle': 'Veranstaltungskalender {year}',
   'activities.calendarIntro': 'Alles, was wir für dieses Jahr geplant haben, Monat für Monat.',
   'activities.calendarEmpty': 'Der Kalender dieses Jahres hat noch keine angekündigten Veranstaltungen.',
@@ -196,9 +195,9 @@ const de: Partial<typeof ro> = {
   'psaltica.where': 'Wo',
   'psaltica.whereText': 'Online, auf Zoom',
   'psaltica.duration': 'Dauer',
-  'psaltica.durationText': '30–40 Minuten',
+  'psaltica.durationText': '30 Minuten',
   'psaltica.forWhom': 'Für wen',
-  'psaltica.forWhomText': 'Alle jungen Menschen der Metropolie MOREOM',
+  'psaltica.forWhomText': 'Alle jungen Menschen der Rumänisch-Orthodoxen Metropolie von West- und Südeuropa',
   'psaltica.join': 'Willst du mitmachen?',
   'psaltica.joinText':
     'Schreib uns eine E-Mail und wir nehmen dich in die Telegram-Diskussionsgruppe auf, in der wir alles zum Unterricht mitteilen.',

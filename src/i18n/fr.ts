@@ -25,7 +25,7 @@ const fr: Partial<typeof ro> = {
   'home.tagline': 'Jeunes chrétiens orthodoxes de Suisse',
   'home.ageRange': 'Nepsis Suisse s’adresse aux jeunes de 14 à 35 ans.',
   'home.about.title': 'À propos de Nepsis Suisse',
-  'home.nextEvent': 'Prochain événement',
+  'home.nextEvent': 'Prochain Événement',
   'home.noUpcoming': 'Abonne-toi à la newsletter ou écris-nous pour être ajouté(e) à nos groupes WhatsApp ou à nos pages de réseaux sociaux, et rester au courant des prochaines activités.',
   'home.allActivities': 'Tous les événements',
   'home.seeMemories': 'Voir nos souvenirs',
@@ -155,17 +155,16 @@ const fr: Partial<typeof ro> = {
   'home.subtitle': 'la communauté des jeunes orthodoxes de Suisse',
   'home.lead':
     'Nous organisons des rencontres, des pèlerinages et des activités culturelles et spirituelles où les jeunes peuvent se connaître et grandir ensemble.',
-  'home.activities.title': 'Nos activités',
-  'home.activities.meetings': 'Rencontres et pèlerinages',
+  'home.activities.title': 'Nos Activités',
+  'home.activities.meetings': 'Rencontres et Pèlerinages',
   'home.activities.meetingsText':
     'Pèlerinages aux monastères, randonnées avec catéchèse et visites dans les paroisses roumaines de Suisse.',
-  'home.activities.spiritual': 'Vie spirituelle',
+  'home.activities.spiritual': 'Vie Spirituelle',
   'home.activities.spiritualText':
-    'Vigiles, Sainte Liturgie ensemble et discussions avec des prêtres et des évêques.',
-  'home.activities.culture': 'Culture et chant byzantin',
+    'Vigiles, Sainte Liturgie, discussions et conférences avec des prêtres et des évêques de la Métropole.',
+  'home.activities.culture': 'Culture et Chant Byzantin',
   'home.activities.cultureText':
     'Cours en ligne de chant byzantin, visites de musées et de bibliothèques, projections de films.',
-  'home.activities.more': 'Découvre qui nous sommes',
   'activities.calendarTitle': 'Calendrier des événements {year}',
   'activities.calendarIntro': 'Tout ce que nous avons préparé pour cette année, mois après mois.',
   'activities.calendarEmpty': 'Le calendrier de cette année n\'a pas encore d\'événements annoncés.',
@@ -196,9 +195,9 @@ const fr: Partial<typeof ro> = {
   'psaltica.where': 'Où',
   'psaltica.whereText': 'En ligne, sur Zoom',
   'psaltica.duration': 'Durée',
-  'psaltica.durationText': '30 à 40 minutes',
+  'psaltica.durationText': '30 minutes',
   'psaltica.forWhom': 'Pour qui',
-  'psaltica.forWhomText': 'Tous les jeunes de la Métropole MOREOM',
+  'psaltica.forWhomText': 'Tous les jeunes de la Métropole orthodoxe roumaine d’Europe occidentale et méridionale',
   'psaltica.join': 'Tu veux participer ?',
   'psaltica.joinText':
     'Écris-nous un e-mail et nous t\'ajoutons au groupe de discussion Telegram, où nous communiquons tout ce qui concerne les cours.',
