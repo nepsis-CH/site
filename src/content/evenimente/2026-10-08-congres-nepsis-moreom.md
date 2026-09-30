@@ -16,5 +16,5 @@ Congresul, organizat de Federația Frățiilor Nepsis (Nepsis MOREOM) cu binecuv
 
 Nădăjduim să ne bucurăm împreună de momentele frumoase de la Roma și să ne întoarcem întăriți în credință și în prietenie.
 
-Ne vedem la Roma! 😊  
+Ne vedem la Roma!  
 Echipa Nepsis Elveția

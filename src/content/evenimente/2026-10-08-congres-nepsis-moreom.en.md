@@ -16,5 +16,5 @@ The Congress, organised by the Federation of Nepsis Brotherhoods (Nepsis MOREOM)
 
 We hope to share beautiful moments together in Rome and to come back strengthened in faith and in friendship.
 
-See you in Rome! 😊  
+See you in Rome!  
 The Nepsis Switzerland team

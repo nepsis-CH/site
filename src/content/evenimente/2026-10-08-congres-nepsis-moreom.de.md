@@ -16,5 +16,5 @@ Der Kongress wird von der Föderation der Nepsis-Bruderschaften (Nepsis MOREOM) 
 
 Wir hoffen, in Rom gemeinsam schöne Momente zu erleben und gestärkt im Glauben und in der Freundschaft zurückzukehren.
 
-Wir sehen uns in Rom! 😊  
+Wir sehen uns in Rom!  
 Das Team von Nepsis Schweiz

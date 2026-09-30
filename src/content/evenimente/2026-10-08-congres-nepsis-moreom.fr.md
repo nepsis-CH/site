@@ -16,5 +16,5 @@ Le Congrès, organisé par la Fédération des Fraternités Nepsis (Nepsis MOREO
 
 Nous espérons vivre ensemble de beaux moments à Rome et revenir affermis dans la foi et dans l'amitié.
 
-On se voit à Rome ! 😊  
+On se voit à Rome !  
 L'équipe Nepsis Suisse
