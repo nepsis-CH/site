@@ -45,7 +45,7 @@ function initiala(nume: string): string {
       /* Secțiunea cu titlu (alumni) se desparte vizibil de echipa de azi. */
       sectiuni.map((sectiune) => (
         <section
-          class:list={[sectiune.titlu ? 'mt-28 border-t border-stone-200 pt-16' : 'mt-14']}
+          class:list={[sectiune.titlu ? 'mt-28 border-t border-stone-200 pt-6' : 'mt-14']}
           aria-labelledby={sectiune.titlu ? `echipa-${sectiune.grup}` : undefined}
         >
           {sectiune.titlu && (
