@@ -56,10 +56,13 @@ const ancore = new Set(upcoming.map((e) => e.data.translationKey));
             {t('activities.noUpcoming')}
           </p>
         ) : (
-          <div class="mt-6 space-y-8">
-            {upcoming.map((event, i) => (
-              <EventCard event={event} lang={lang} detailed={i === 0} headingLevel="h3" />
-            ))}
+          <div class="mt-6">
+            {/*
+              Un singur eveniment aici, cel dintâi care nu a trecut. Care e
+              acela se hotărăște la fiecare construire a site-ului, după data
+              zilei; restul anului se vede mai jos, în calendar.
+            */}
+            <EventCard event={upcoming[0]} lang={lang} detailed headingLevel="h3" />
           </div>
         )
       }

@@ -13,10 +13,11 @@ import type { IntrareCalendar } from '../lib/content';
 /**
  * Calendarul anual, ca agendă pe luni.
  *
- * Ordinea nu e cea a calendarului de perete: întâi ce urmează, fiindcă după
- * asta se uită cineva care intră pe pagină, apoi ce a fost, cu cele mai
- * recente primele și puțin estompate. Plăcuța de dată din stânga se citește
- * la fel de repede pe telefon ca pe laptop, fără derulare laterală.
+ * Lunile curg în ordinea lor firească, ianuarie spre decembrie: pagina are
+ * deasupra o secțiune doar pentru evenimentul care urmează, deci calendarul
+ * poate rămâne un calendar. Ce a trecut se retrage estompat, fără să dispară.
+ * Plăcuța de dată din stânga se citește la fel de repede pe telefon ca pe
+ * laptop, fără derulare laterală.
  */
 interface Props {
   intrari: IntrareCalendar[];
@@ -33,30 +34,24 @@ const t = useTranslations(lang);
 const azi = Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate());
 const eTrecut = (i: IntrareCalendar) => i.date.getTime() < azi;
 
-const viitoare = intrari.filter((i) => !eTrecut(i)).sort((a, b) => a.date.getTime() - b.date.getTime());
-const trecute = intrari.filter(eTrecut).sort((a, b) => b.date.getTime() - a.date.getTime());
+const inOrdine = [...intrari].sort((a, b) => a.date.getTime() - b.date.getTime());
 
-const idUrmator = viitoare[0]?.cheie;
+// Primul care nu a trecut încă primește accentul „Următorul”.
+const idUrmator = inOrdine.find((i) => !eTrecut(i))?.cheie;
 
-/** Grupează pe luni, păstrând ordinea primită. */
-function peLuni(lista: IntrareCalendar[]) {
-  const grupuri: { nume: string; luna: number; intrari: IntrareCalendar[] }[] = [];
-  for (const i of lista) {
-    const luna = i.date.getUTCMonth();
-    let g = grupuri.at(-1);
-    if (!g || g.luna !== luna) {
-      g = { nume: formatMonthLong(i.date, lang), luna, intrari: [] };
-      grupuri.push(g);
-    }
-    g.intrari.push(i);
+// Grupare pe luni, în ordine cronologică.
+const luni: { nume: string; luna: number; intrari: IntrareCalendar[]; trecuta: boolean }[] = [];
+for (const i of inOrdine) {
+  const luna = i.date.getUTCMonth();
+  let g = luni.at(-1);
+  if (!g || g.luna !== luna) {
+    g = { nume: formatMonthLong(i.date, lang), luna, intrari: [], trecuta: true };
+    luni.push(g);
   }
-  return grupuri;
+  g.intrari.push(i);
+  // O lună rămâne „trecută” doar dacă tot ce e în ea a trecut.
+  if (!eTrecut(i)) g.trecuta = false;
 }
-
-const blocuri = [
-  { cheie: 'viitoare', trecut: false, luni: peLuni(viitoare) },
-  { cheie: 'trecute', trecut: true, luni: peLuni(trecute) },
-].filter((b) => b.luni.length > 0);
 ---
 
 {
@@ -66,107 +61,98 @@ const blocuri = [
     </p>
   ) : (
     <div class="mt-8">
-      {blocuri.map((bloc) => (
-        /* Ce a trecut rămâne lizibil, dar se retrage în pagină; la hover revine. */
-        <div class:list={[bloc.trecut && 'calendar-trecut opacity-60 transition-opacity hover:opacity-100']}>
-          {bloc.luni.map((luna) => (
-            <section class="relative pb-2 pl-6 sm:pl-8">
-              {/* Firul anului, continuu de la o lună la alta */}
-              <span
-                class:list={[
-                  'absolute top-0 bottom-0 left-0 w-0.5',
-                  bloc.trecut ? 'bg-stone-200' : 'bg-brand-100',
-                ]}
-                aria-hidden="true"
-              />
-              <h3
-                class:list={[
-                  'text-sm font-bold uppercase tracking-widest',
-                  bloc.trecut ? 'text-stone-500' : 'text-brand-600',
-                ]}
-              >
-                <span
-                  class:list={[
-                    'absolute -left-[5px] mt-1.5 h-3 w-3 rounded-full border-2 border-white',
-                    bloc.trecut ? 'bg-stone-300' : 'bg-brand-500',
-                  ]}
-                  aria-hidden="true"
-                />
-                {luna.nume}
-              </h3>
-              <ul class="mt-4 space-y-3 pb-8">
-                {luna.intrari.map((intrare) => {
-                  const ancora = intrare.href?.startsWith('#');
-                  const areLink = intrare.href && (!ancora || anchors.has(intrare.cheie));
-                  const urmator = intrare.cheie === idUrmator;
-                  const Rand = areLink ? 'a' : 'div';
-                  return (
-                    <li>
-                      <Rand
-                        href={areLink ? intrare.href : undefined}
+      {luni.map((luna) => (
+        <section class="relative pb-2 pl-6 sm:pl-8">
+          {/* Firul anului, continuu de la o lună la alta */}
+          <span
+            class:list={['absolute top-0 bottom-0 left-0 w-0.5', luna.trecuta ? 'bg-stone-200' : 'bg-brand-100']}
+            aria-hidden="true"
+          />
+          <h3
+            class:list={[
+              'text-sm font-bold uppercase tracking-widest',
+              luna.trecuta ? 'text-stone-500' : 'text-brand-600',
+            ]}
+          >
+            <span
+              class:list={[
+                'absolute -left-[5px] mt-1.5 h-3 w-3 rounded-full border-2 border-white',
+                luna.trecuta ? 'bg-stone-300' : 'bg-brand-500',
+              ]}
+              aria-hidden="true"
+            />
+            {luna.nume}
+          </h3>
+          <ul class="mt-4 space-y-3 pb-8">
+            {luna.intrari.map((intrare) => {
+              const trecut = eTrecut(intrare);
+              const ancora = intrare.href?.startsWith('#');
+              const areLink = intrare.href && (!ancora || anchors.has(intrare.cheie));
+              const urmator = intrare.cheie === idUrmator;
+              const Rand = areLink ? 'a' : 'div';
+              return (
+                <li class:list={[trecut && 'calendar-trecut opacity-60 transition-opacity hover:opacity-100']}>
+                  <Rand
+                    href={areLink ? intrare.href : undefined}
+                    class:list={[
+                      'flex items-center gap-4 rounded-xl border bg-white p-3 shadow-sm sm:p-4',
+                      urmator ? 'border-brand-300 ring-1 ring-brand-200' : 'border-stone-200',
+                      areLink && 'transition-colors hover:border-brand-400',
+                    ]}
+                  >
+                    {/* Plăcuța de dată: ziua mare, luna mică — ca o foaie de calendar */}
+                    <span
+                      class:list={[
+                        'flex h-14 w-14 shrink-0 flex-col items-center justify-center rounded-lg leading-none',
+                        trecut ? 'bg-stone-100 text-stone-500' : 'bg-brand-700 text-white',
+                      ]}
+                      aria-hidden="true"
+                    >
+                      {/* Fără zi cunoscută, plăcuța poartă doar luna. */}
+                      {intrare.showDay && <span class="text-xl font-bold">{formatDay(intrare.date, lang)}</span>}
+                      <span
                         class:list={[
-                          'flex items-center gap-4 rounded-xl border bg-white p-3 shadow-sm sm:p-4',
-                          urmator ? 'border-brand-300 ring-1 ring-brand-200' : 'border-stone-200',
-                          areLink && 'transition-colors hover:border-brand-400',
+                          'font-semibold uppercase tracking-wide',
+                          intrare.showDay ? 'mt-0.5 text-[0.65rem]' : 'text-sm',
                         ]}
                       >
-                        {/* Plăcuța de dată: ziua mare, luna mică — ca o foaie de calendar */}
-                        <span
-                          class:list={[
-                            'flex h-14 w-14 shrink-0 flex-col items-center justify-center rounded-lg leading-none',
-                            bloc.trecut ? 'bg-stone-100 text-stone-500' : 'bg-brand-700 text-white',
-                          ]}
-                          aria-hidden="true"
-                        >
-                          {/* Fără zi cunoscută, plăcuța poartă doar luna. */}
-                          {intrare.showDay && (
-                            <span class="text-xl font-bold">{formatDay(intrare.date, lang)}</span>
-                          )}
-                          <span
-                            class:list={[
-                              'font-semibold uppercase tracking-wide',
-                              intrare.showDay ? 'mt-0.5 text-[0.65rem]' : 'text-sm',
-                            ]}
-                          >
-                            {formatMonthShort(intrare.date, lang)}
-                          </span>
-                        </span>
-                        <span class="min-w-0 flex-1">
-                          <span
-                            class:list={['block font-semibold', bloc.trecut ? 'text-stone-600' : 'text-brand-900']}
-                          >
-                            {intrare.title}
-                          </span>
-                          {/* Data completă rămâne citibilă de cititoarele de ecran */}
-                          <span class="sr-only">{intrare.showDay ? formatDate(intrare.date, lang) : formatMonthYear(intrare.date, lang)}</span>
-                          {intrare.location && (
-                            <span class="mt-0.5 block truncate text-sm text-stone-500">{intrare.location}</span>
-                          )}
-                        </span>
-                        <span
-                          class:list={[
-                            'shrink-0 rounded-full px-2.5 py-1 text-xs font-semibold whitespace-nowrap',
-                            urmator
-                              ? 'bg-brand-100 text-brand-800'
-                              : bloc.trecut
-                                ? 'bg-stone-100 text-stone-500'
-                                : 'bg-brand-50 text-brand-700',
-                          ]}
-                        >
-                          {urmator
-                            ? t('activities.statusNext')
-                            : bloc.trecut
-                              ? t('activities.statusPast')
-                              : t('activities.statusUpcoming')}
-                        </span>
-                      </Rand>
-                    </li>
-                  );
-                })}
-              </ul>
-            </section>
-          ))}
-        </div>
+                        {formatMonthShort(intrare.date, lang)}
+                      </span>
+                    </span>
+                    <span class="min-w-0 flex-1">
+                      <span class:list={['block font-semibold', trecut ? 'text-stone-600' : 'text-brand-900']}>
+                        {intrare.title}
+                      </span>
+                      {/* Data completă rămâne citibilă de cititoarele de ecran */}
+                      <span class="sr-only">
+                        {intrare.showDay ? formatDate(intrare.date, lang) : formatMonthYear(intrare.date, lang)}
+                      </span>
+                      {intrare.location && (
+                        <span class="mt-0.5 block truncate text-sm text-stone-500">{intrare.location}</span>
+                      )}
+                    </span>
+                    <span
+                      class:list={[
+                        'shrink-0 rounded-full px-2.5 py-1 text-xs font-semibold whitespace-nowrap',
+                        urmator
+                          ? 'bg-brand-100 text-brand-800'
+                          : trecut
+                            ? 'bg-stone-100 text-stone-500'
+                            : 'bg-brand-50 text-brand-700',
+                      ]}
+                    >
+                      {urmator
+                        ? t('activities.statusNext')
+                        : trecut
+                          ? t('activities.statusPast')
+                          : t('activities.statusUpcoming')}
+                    </span>
+                  </Rand>
+                </li>
+              );
+            })}
+          </ul>
+        </section>
       ))}
     </div>
   )

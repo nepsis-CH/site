@@ -1,10 +1,12 @@
 ---
-title: "Sfântul Siluan Athonitul"
+title: "Priveghere Nepsis pentru Sfântul Siluan Athonitul"
 year: 2026
 date: 2026-09-23
 images:
   - src: /img/amintiri/2026-sf-siluan/01.webp
     alt: "Tineri Nepsis cu steagul Nepsis Elveția în biserică"
+  - src: /img/amintiri/2026-sf-siluan/02.webp
+    alt: "Afișul privegherii Nepsis Elveția la Sfântul Siluan Athonitul, cu programul slujbei"
 lang: ro
 translationKey: amintire-2026-sf-siluan
 ---
