@@ -12,6 +12,11 @@ const evenimente = defineCollection({
   schema: z.object({
     title: z.string(),
     date: z.coerce.date(),
+    /*
+      Pune `false` când se știe doar luna, nu și ziua: data rămâne folosită la
+      sortare, dar se afișează „noiembrie 2026”, nu o zi anume, aleasă de noi.
+    */
+    showDay: z.boolean().default(true),
     location: z.string().optional(),
     image: z.string().optional(),
     imageAlt: z.string().optional(),

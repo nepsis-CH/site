@@ -129,6 +129,8 @@ export function rezumatText(body: string | undefined, limita = 220): string {
 export type IntrareCalendar = {
   date: Date;
   title: string;
+  /** `false` când se știe doar luna: data servește atunci numai la ordonare. */
+  showDay: boolean;
   location?: string;
   /** Unde duce rândul: ancora cardului de pe pagină, sau pagina amintirii. */
   href?: string;
@@ -165,6 +167,7 @@ export async function getYearCalendar(
     dupaZi.set(zi(e.data.date), {
       date: e.data.date,
       title: e.data.title,
+      showDay: e.data.showDay,
       location: e.data.location,
       href: `#eveniment-${e.data.translationKey}`,
       cheie: e.data.translationKey,
@@ -181,6 +184,7 @@ export async function getYearCalendar(
       dupaZi.set(cheieZi, {
         date: memory.data.date!,
         title: memory.data.title,
+        showDay: memory.data.showDate,
         href: linkAmintire(slug),
         cheie: `amintire-${slug}`,
       });

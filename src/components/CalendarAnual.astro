@@ -5,6 +5,7 @@ import {
   formatDay,
   formatMonthLong,
   formatMonthShort,
+  formatMonthYear,
   useTranslations,
 } from '../i18n';
 import type { IntrareCalendar } from '../lib/content';
@@ -117,8 +118,16 @@ const blocuri = [
                           ]}
                           aria-hidden="true"
                         >
-                          <span class="text-xl font-bold">{formatDay(intrare.date, lang)}</span>
-                          <span class="mt-0.5 text-[0.65rem] font-semibold uppercase tracking-wide">
+                          {/* Fără zi cunoscută, plăcuța poartă doar luna. */}
+                          {intrare.showDay && (
+                            <span class="text-xl font-bold">{formatDay(intrare.date, lang)}</span>
+                          )}
+                          <span
+                            class:list={[
+                              'font-semibold uppercase tracking-wide',
+                              intrare.showDay ? 'mt-0.5 text-[0.65rem]' : 'text-sm',
+                            ]}
+                          >
                             {formatMonthShort(intrare.date, lang)}
                           </span>
                         </span>
@@ -129,7 +138,7 @@ const blocuri = [
                             {intrare.title}
                           </span>
                           {/* Data completă rămâne citibilă de cititoarele de ecran */}
-                          <span class="sr-only">{formatDate(intrare.date, lang)}</span>
+                          <span class="sr-only">{intrare.showDay ? formatDate(intrare.date, lang) : formatMonthYear(intrare.date, lang)}</span>
                           {intrare.location && (
                             <span class="mt-0.5 block truncate text-sm text-stone-500">{intrare.location}</span>
                           )}

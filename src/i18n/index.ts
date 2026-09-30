@@ -110,3 +110,12 @@ export function formatMonthShort(date: Date, locale: Locale): string {
 export function formatMonthLong(date: Date, locale: Locale): string {
   return new Intl.DateTimeFormat(dateLocales[locale], { month: 'long', timeZone: 'UTC' }).format(date);
 }
+
+/** Luna și anul, fără zi (ex. „noiembrie 2026”) — pentru datele încă neprecizate. */
+export function formatMonthYear(date: Date, locale: Locale): string {
+  return new Intl.DateTimeFormat(dateLocales[locale], {
+    month: 'long',
+    year: 'numeric',
+    timeZone: 'UTC',
+  }).format(date);
+}
