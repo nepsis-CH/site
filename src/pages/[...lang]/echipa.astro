@@ -42,12 +42,16 @@ function initiala(nume: string): string {
     </header>
 
     {
+      /* Secțiunea cu titlu (alumni) se desparte vizibil de echipa de azi. */
       sectiuni.map((sectiune) => (
-        <section class="mt-14" aria-labelledby={sectiune.titlu ? `echipa-${sectiune.grup}` : undefined}>
+        <section
+          class:list={[sectiune.titlu ? 'mt-20 border-t border-stone-200 pt-12' : 'mt-14']}
+          aria-labelledby={sectiune.titlu ? `echipa-${sectiune.grup}` : undefined}
+        >
           {sectiune.titlu && (
             <h2
               id={`echipa-${sectiune.grup}`}
-              class="border-b border-stone-200 pb-2 font-serif text-xl font-bold text-brand-800"
+              class="font-serif text-xl font-bold text-brand-800"
             >
               {sectiune.titlu}
             </h2>

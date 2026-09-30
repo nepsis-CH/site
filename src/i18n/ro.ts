@@ -205,6 +205,6 @@ export default {
   'members.intro': 'Cei care organizează activitățile Nepsis Elveția.',
   'members.section.coordinators': 'Coordonatorii',
   'members.section.responsabil': 'Responsabil',
-  'members.section.alumni': 'Alumni / foști coordonatori',
+  'members.section.alumni': 'Alumni',
   'members.role.diacon': 'Diacon',
 } as const;

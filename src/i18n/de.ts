@@ -206,7 +206,7 @@ const de: Partial<typeof ro> = {
   'members.intro': 'Die Menschen, die die Aktivitäten von Nepsis Schweiz organisieren.',
   'members.section.coordinators': 'Die Koordinatoren',
   'members.section.responsabil': 'Verantwortlicher',
-  'members.section.alumni': 'Alumni / ehemalige Koordinatoren',
+  'members.section.alumni': 'Alumni',
   'members.role.diacon': 'Diakon',
 };
 

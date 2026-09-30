@@ -210,7 +210,7 @@ const en: Partial<typeof ro> = {
   'members.intro': 'The people who organise the Nepsis Switzerland activities.',
   'members.section.coordinators': 'The coordinators',
   'members.section.responsabil': 'Coordinator in charge',
-  'members.section.alumni': 'Alumni / former coordinators',
+  'members.section.alumni': 'Alumni',
   'members.role.diacon': 'Deacon',
 };
 

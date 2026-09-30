@@ -1,6 +1,6 @@
 ---
 name: "Raluca"
 group: "alumni"
-parish: "Basel"
+parish: "Berna"
 order: 28
 ---
