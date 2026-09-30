@@ -14,13 +14,9 @@ images:
   - src: /img/amintiri/2026-drumetie-oeschinensee/05.webp
     alt: "Malul lacului văzut de pe pajiștea de deasupra traseului"
   - src: /img/amintiri/2026-drumetie-oeschinensee/06.webp
-    alt: "Priveliște largă peste lacul Oeschinensee, de pe poteca dinspre Kandersteg"
-  - src: /img/amintiri/2026-drumetie-oeschinensee/07.webp
     alt: "Masa de prânz pe traseu, cu valea și lacul în depărtare"
-  - src: /img/amintiri/2026-drumetie-oeschinensee/08.webp
+  - src: /img/amintiri/2026-drumetie-oeschinensee/07.webp
     alt: "Vaci odihnindu-se pe pășunea alpină de deasupra văii"
-  - src: /img/amintiri/2026-drumetie-oeschinensee/09.webp
-    alt: "Lacul Oeschinensee sub nori, cu peretele de stâncă și ghețarul deasupra"
 lang: ro
 translationKey: amintire-2026-oeschinensee
 ---
@@ -31,4 +27,4 @@ Participanții s-au întâlnit dimineața la stația telecabinei din Kandersteg,
 
 Părintele Ștefan, responsabilul Nepsis Elveția, i-a însoțit pe tineri pe parcursul drumeției și a purtat cu aceștia dialoguri duhovnicești, astfel încât ziua petrecută în mijlocul naturii a fost deopotrivă una de mișcare, de comuniune și de folos sufletesc.
 
-Echipa Nepsis Elveția 😊
+Echipa Nepsis Elveția
