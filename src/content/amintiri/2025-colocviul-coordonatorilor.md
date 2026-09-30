@@ -13,6 +13,8 @@ images:
     alt: "Poză Atelier Team Building Belgia 2025 - 4"
   - src: /img/evenimente/2025_team_buildings_4.jpg
     alt: "Poză Atelier Team Building Belgia 2025 - 3"
+  - src: /img/amintiri/2025-colocviul-coordonatorilor/06.webp
+    alt: "Flipchart cu bilețele adezive sub titlul „Scopul”, din atelierul coordonatorilor"
 lang: ro
 translationKey: amintire-2025-colocviu
 ---

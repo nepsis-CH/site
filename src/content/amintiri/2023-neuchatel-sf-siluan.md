@@ -5,6 +5,8 @@ date: 2023-09-23
 images:
   - src: /img/evenimente/2023_09_neuchatel_1.jpeg
     alt: "poza grup la parohia Neuchatel"
+  - src: /img/amintiri/2023-neuchatel-sf-siluan/02.webp
+    alt: "Tineri Nepsis cu steagul României pe malul lacului Neuchâtel"
   - src: /img/evenimente/2023_09_neuchatel_3.jpeg
     alt: "poza grup in oras"
 lang: ro

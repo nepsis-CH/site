@@ -5,6 +5,8 @@ date: 2024-06-22
 images:
   - src: /img/evenimente/2024_soultzmatt_grup.jpeg
     alt: "Poză de grup eveniment Soultzmatt"
+  - src: /img/amintiri/2024-soultzmatt/02.webp
+    alt: "Participanți printre crucile albe ale cimitirului militar românesc de la Soultzmatt"
 lang: ro
 translationKey: amintire-2024-soultzmatt
 ---

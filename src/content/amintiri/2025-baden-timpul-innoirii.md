@@ -5,6 +5,10 @@ date: 2025-10-05
 images:
   - src: /img/2025-octombrie-baden-1.jpeg
     alt: "Poză Grup Baden"
+  - src: /img/amintiri/2025-baden-timpul-innoirii/02.webp
+    alt: "Prezentarea proiectului Nepsis în sala parohiei din Baden"
+  - src: /img/amintiri/2025-baden-timpul-innoirii/03.webp
+    alt: "Tineri pregătind masa în sala parohiei"
 lang: ro
 translationKey: amintire-2025-baden
 ---

@@ -11,6 +11,8 @@ images:
     alt: "Poză August 2025 - 3"
   - src: /img/2025-august-excursie-4.jpeg
     alt: "Poză August 2025 - 4"
+  - src: /img/amintiri/2025-drumetie-lauterbrunnen/05.webp
+    alt: "Poză de grup cu părintele pe o pajiște din valea Lauterbrunnen"
 lang: ro
 translationKey: amintire-2025-lauterbrunnen
 ---
