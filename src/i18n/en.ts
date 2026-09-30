@@ -195,7 +195,7 @@ const en: Partial<typeof ro> = {
   'gallery.close': 'Close',
   'psaltica.schedule': 'Lesson schedule',
   'psaltica.when': 'When',
-  'psaltica.whenText': 'Monday to Saturday',
+  'psaltica.whenText': 'Monday to Saturday, 8:00 pm (Swiss time)',
   'psaltica.where': 'Where',
   'psaltica.whereText': 'Online, on Zoom',
   'psaltica.duration': 'Duration',

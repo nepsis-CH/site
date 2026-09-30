@@ -190,7 +190,7 @@ export default {
   'gallery.close': 'Închide',
   'psaltica.schedule': 'Programul lecțiilor',
   'psaltica.when': 'Când',
-  'psaltica.whenText': 'Luni - Sâmbătă',
+  'psaltica.whenText': 'Luni - Sâmbătă, ora 20:00 (ora Elveției)',
   'psaltica.where': 'Unde',
   'psaltica.whereText': 'Online, pe Zoom',
   'psaltica.duration': 'Durată',

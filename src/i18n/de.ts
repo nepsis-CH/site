@@ -191,7 +191,7 @@ const de: Partial<typeof ro> = {
   'gallery.close': 'Schliessen',
   'psaltica.schedule': 'Unterrichtsplan',
   'psaltica.when': 'Wann',
-  'psaltica.whenText': 'Montag bis Samstag',
+  'psaltica.whenText': 'Montag bis Samstag, 20:00 Uhr (Schweizer Zeit)',
   'psaltica.where': 'Wo',
   'psaltica.whereText': 'Online, auf Zoom',
   'psaltica.duration': 'Dauer',
