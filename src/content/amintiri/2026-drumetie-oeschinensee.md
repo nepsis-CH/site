@@ -4,9 +4,23 @@ year: 2026
 date: 2026-07-18
 images:
   - src: /img/amintiri/2026-drumetie-oeschinensee/01.webp
-    alt: "Lacul Oeschinensee văzut de pe traseu, cu munții și pădurea de brazi în jur"
+    alt: "Patru tineri Nepsis pe traseu, cu lacul Oeschinensee și crestele înzăpezite în spate"
   - src: /img/amintiri/2026-drumetie-oeschinensee/02.webp
-    alt: "Malul lacului Oeschinensee, cu peretele de stâncă și ghețarul deasupra"
+    alt: "Podeț de lemn peste un pârâu de munte, pe traseul spre lac"
+  - src: /img/amintiri/2026-drumetie-oeschinensee/03.webp
+    alt: "Lacul Oeschinensee văzut printre brazi, cu pereții de stâncă deasupra"
+  - src: /img/amintiri/2026-drumetie-oeschinensee/04.webp
+    alt: "Apa turcoaz a lacului, cu ghețarul și crestele în fundal"
+  - src: /img/amintiri/2026-drumetie-oeschinensee/05.webp
+    alt: "Malul lacului văzut de pe pajiștea de deasupra traseului"
+  - src: /img/amintiri/2026-drumetie-oeschinensee/06.webp
+    alt: "Priveliște largă peste lacul Oeschinensee, de pe poteca dinspre Kandersteg"
+  - src: /img/amintiri/2026-drumetie-oeschinensee/07.webp
+    alt: "Masa de prânz pe traseu, cu valea și lacul în depărtare"
+  - src: /img/amintiri/2026-drumetie-oeschinensee/08.webp
+    alt: "Vaci odihnindu-se pe pășunea alpină de deasupra văii"
+  - src: /img/amintiri/2026-drumetie-oeschinensee/09.webp
+    alt: "Lacul Oeschinensee sub nori, cu peretele de stâncă și ghețarul deasupra"
 lang: ro
 translationKey: amintire-2026-oeschinensee
 ---
@@ -21,5 +35,5 @@ Părintele Ștefan, responsabilul Nepsis Elveția, i-a însoțit pe tineri pe pa
 
 Nepsis Elveția mulțumește tuturor celor care au participat și celor care s-au ostenit cu organizarea.
 
-Dumnezeu să vă binecuvânteze!
+Dumnezeu să vă binecuvânteze!  
 Echipa Nepsis Elveția 😊
