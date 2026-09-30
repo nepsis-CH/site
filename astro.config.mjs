@@ -50,6 +50,7 @@ export default defineConfig({
     '/fr/membri': '/fr/echipa',
     '/en/membri': '/en/echipa',
     '/de/membri': '/de/echipa',
+    '/it/membri': '/it/echipa',
   },
   trailingSlash: 'ignore',
   build: {
@@ -61,7 +62,7 @@ export default defineConfig({
   },
   i18n: {
     defaultLocale: 'ro',
-    locales: ['ro', 'fr', 'en', 'de'],
+    locales: ['ro', 'fr', 'en', 'de', 'it'],
     routing: {
       prefixDefaultLocale: false,
     },
@@ -70,7 +71,7 @@ export default defineConfig({
     sitemap({
       i18n: {
         defaultLocale: 'ro',
-        locales: { ro: 'ro', fr: 'fr', en: 'en', de: 'de' },
+        locales: { ro: 'ro', fr: 'fr', en: 'en', de: 'de', it: 'it' },
       },
     }),
   ],

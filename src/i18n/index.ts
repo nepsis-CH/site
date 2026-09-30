@@ -2,8 +2,9 @@ import ro from './ro';
 import fr from './fr';
 import en from './en';
 import de from './de';
+import it from './it';
 
-export const locales = ['ro', 'fr', 'en', 'de'] as const;
+export const locales = ['ro', 'fr', 'en', 'de', 'it'] as const;
 export type Locale = (typeof locales)[number];
 export const defaultLocale: Locale = 'ro';
 
@@ -29,7 +30,14 @@ function stripBase(pathname: string): string {
 export type UIDict = typeof ro;
 export type UIKey = keyof UIDict;
 
-const dicts: Record<Locale, Partial<UIDict>> = { ro, fr, en, de };
+/**
+ * Un dicționar de traduceri: aceleași chei ca în română (fără chei inventate),
+ * dar cu valori de tip `string` — româna e `as const`, deci `Partial<UIDict>`
+ * ar cere fiecărei limbi exact textul românesc.
+ */
+export type UITranslations = Partial<Record<UIKey, string>>;
+
+const dicts: Record<Locale, UITranslations> = { ro, fr, en, de, it };
 
 export function isLocale(value: unknown): value is Locale {
   return typeof value === 'string' && (locales as readonly string[]).includes(value);
@@ -68,13 +76,14 @@ export function stripLocale(pathname: string): string {
   return path || '/';
 }
 
-/** Căile statice pentru rutele `[...lang]`: /, /fr, /en, /de. */
+/**
+ * Căile statice pentru rutele `[...lang]`: /, /fr, /en, /de, /it.
+ * Se derivă din `locales`, ca o limbă nouă să nu mai trebuiască adăugată aici.
+ */
 export function langStaticPaths() {
   return [
     { params: { lang: undefined } },
-    { params: { lang: 'fr' } },
-    { params: { lang: 'en' } },
-    { params: { lang: 'de' } },
+    ...locales.filter((l) => l !== defaultLocale).map((l) => ({ params: { lang: l } })),
   ];
 }
 
@@ -83,6 +92,7 @@ const dateLocales: Record<Locale, string> = {
   fr: 'fr-CH',
   en: 'en-GB',
   de: 'de-CH',
+  it: 'it-CH',
 };
 
 /** Formatează o dată complet (ex. „28 februarie 2026”). */

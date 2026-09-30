@@ -1,6 +1,6 @@
 import type ro from './ro';
 
-const fr: Partial<typeof ro> = {
+const fr: Partial<Record<keyof typeof ro, string>> = {
   'site.name': 'Nepsis Suisse',
   'site.description':
     'Site officiel des jeunes chrétiens orthodoxes de la fraternité Nepsis Suisse, Métropole Orthodoxe Roumaine d’Europe Occidentale et Méridionale, Église Orthodoxe Roumaine.',

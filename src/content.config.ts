@@ -1,7 +1,7 @@
 import { defineCollection, z } from 'astro:content';
 import { glob } from 'astro/loaders';
 
-const langSchema = z.enum(['ro', 'fr', 'en', 'de']).default('ro');
+const langSchema = z.enum(['ro', 'fr', 'en', 'de', 'it']).default('ro');
 
 /**
  * Evenimente (viitoare și trecute). Un fișier .md = un eveniment.

@@ -10,7 +10,7 @@ const t = useTranslations(lang);
 // Pagina 404 există doar în română — selectorul duce atunci la paginile principale.
 const rawPath = stripLocale(Astro.url.pathname);
 const path = rawPath.startsWith('/404') ? '/' : rawPath;
-const names: Record<Locale, string> = { ro: 'Română', fr: 'Français', en: 'English', de: 'Deutsch' };
+const names: Record<Locale, string> = { ro: 'Română', fr: 'Français', en: 'English', de: 'Deutsch', it: 'Italiano' };
 ---
 
 <nav aria-label={t('nav.language')} class="flex shrink-0 items-center gap-0.5 text-xs sm:gap-1 sm:text-sm">
@@ -23,7 +23,7 @@ const names: Record<Locale, string> = { ro: 'Română', fr: 'Français', en: 'En
         aria-current={l === lang ? 'true' : undefined}
         title={names[l]}
         class:list={[
-          'rounded px-1.5 py-1 font-medium uppercase tracking-wide transition-colors sm:px-2',
+          'rounded px-2 py-1.5 font-medium uppercase tracking-normal transition-colors sm:tracking-wide',
           l === lang
             ? 'bg-brand-800 text-white'
             : 'text-stone-500 hover:bg-brand-50 hover:text-brand-900',
