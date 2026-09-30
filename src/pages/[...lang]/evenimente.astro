@@ -2,9 +2,10 @@
 import { Image } from 'astro:assets';
 import Base from '../../layouts/Base.astro';
 import EventCard from '../../components/EventCard.astro';
+import MemoryCard from '../../components/MemoryCard.astro';
 import CalendarAnual from '../../components/CalendarAnual.astro';
 import { langStaticPaths, localeFromParam, localePath, useTranslations } from '../../i18n';
-import { getEvents, splitEvents, getYearCalendar } from '../../lib/content';
+import { getEvents, splitEvents, getYearCalendar, getRecentMemories, rezumatText } from '../../lib/content';
 import psalticaLogo from '../../assets/nepsis_psaltica_logo.jpg';
 
 export function getStaticPaths() {
@@ -16,10 +17,14 @@ const t = useTranslations(lang);
 
 // Împărțirea se face automat la fiecare build, după data evenimentului.
 const toate = await getEvents(lang);
-const { upcoming, past } = splitEvents(toate);
+const { upcoming } = splitEvents(toate);
 
-// Recentele afișate pe pagină (doar acestea au card, deci și ancoră).
-const recente = past.slice(0, 3);
+/*
+  „Evenimente recente” arată ce s-a întâmplat ultima dată, iar asta se citește
+  din amintiri: un eveniment anunțat rămâne în calendar și după ce trece, dar
+  povestea lui, cu fotografii, stă în amintiri.
+*/
+const recente = await getRecentMemories(lang, 3);
 
 /*
   Calendarul anual se construiește din aceleași evenimente, nu din tabelul
@@ -30,7 +35,7 @@ const anul = new Date().getUTCFullYear();
 // Calendarul adună și evenimentele anunțate, și amintirile anului: ce urmează
 // și ce a fost sunt același an, privit din două momente.
 const intrariCalendar = await getYearCalendar(lang, anul, (slug) => localePath(lang, `/amintiri/${slug}/`));
-const ancore = new Set([...upcoming, ...recente].map((e) => e.data.translationKey));
+const ancore = new Set(upcoming.map((e) => e.data.translationKey));
 ---
 
 <Base lang={lang} title={`${t('activities.title')} · ${t('site.name')}`} description={t('activities.description')}>
@@ -107,7 +112,17 @@ const ancore = new Set([...upcoming, ...recente].map((e) => e.data.translationKe
         {t('activities.past')}
       </h2>
       <div class="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {recente.map((event) => <EventCard event={event} lang={lang} headingLevel="h3" />)}
+        {
+          recente.map(({ memory, slug }) => (
+            <MemoryCard
+              memory={memory}
+              lang={lang}
+              href={localePath(lang, `/amintiri/${slug}/`)}
+              rezumat={rezumatText(memory.body)}
+              vertical
+            />
+          ))
+        }
       </div>
       <p class="mt-10 text-center">
         <a

@@ -189,3 +189,17 @@ export async function getYearCalendar(
 
   return [...dupaZi.values()].sort((a, b) => a.date.getTime() - b.date.getTime());
 }
+
+/**
+ * Cele mai recente amintiri, oricare ar fi anul lor.
+ *
+ * „Evenimente recente” înseamnă ce s-a întâmplat ultima dată, iar asta se
+ * citește din amintiri, nu din evenimentele anunțate: un eveniment din
+ * calendar rămâne acolo și după ce trece, dar povestea lui apare în amintiri.
+ */
+export async function getRecentMemories(locale: Locale, limita = 3): Promise<MemoryWithSlug[]> {
+  const toate = (await getMemoriesByYear(locale)).flatMap((g) => g.entries);
+  const cheie = (m: MemoryWithSlug) =>
+    m.memory.data.date ? m.memory.data.date.getTime() : Date.UTC(m.memory.data.year, 0, 1);
+  return [...toate].sort((a, b) => cheie(b) - cheie(a)).slice(0, limita);
+}
