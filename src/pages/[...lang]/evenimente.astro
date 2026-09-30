@@ -4,7 +4,7 @@ import Base from '../../layouts/Base.astro';
 import EventCard from '../../components/EventCard.astro';
 import CalendarAnual from '../../components/CalendarAnual.astro';
 import { langStaticPaths, localeFromParam, localePath, useTranslations } from '../../i18n';
-import { getEvents, splitEvents } from '../../lib/content';
+import { getEvents, splitEvents, getYearCalendar } from '../../lib/content';
 import psalticaLogo from '../../assets/nepsis_psaltica_logo.jpg';
 
 export function getStaticPaths() {
@@ -27,7 +27,9 @@ const recente = past.slice(0, 3);
   ca titlul să nu rămână în urmă la 1 ianuarie.
 */
 const anul = new Date().getUTCFullYear();
-const dinAnulCurent = toate.filter((e) => e.data.date.getUTCFullYear() === anul);
+// Calendarul adună și evenimentele anunțate, și amintirile anului: ce urmează
+// și ce a fost sunt același an, privit din două momente.
+const intrariCalendar = await getYearCalendar(lang, anul, (slug) => localePath(lang, `/amintiri/${slug}/`));
 const ancore = new Set([...upcoming, ...recente].map((e) => e.data.translationKey));
 ---
 
@@ -64,7 +66,7 @@ const ancore = new Set([...upcoming, ...recente].map((e) => e.data.translationKe
         {t('activities.calendarTitle').replace('{year}', String(anul))}
       </h2>
       <p class="mt-3 max-w-prose text-stone-600">{t('activities.calendarIntro')}</p>
-      <CalendarAnual events={dinAnulCurent} lang={lang} anchors={ancore} />
+      <CalendarAnual intrari={intrariCalendar} lang={lang} anchors={ancore} />
       <p class="text-sm text-stone-500">{t('activities.calendarNote')}</p>
     </section>
 

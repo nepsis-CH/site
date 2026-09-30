@@ -124,3 +124,68 @@ export function rezumatText(body: string | undefined, limita = 220): string {
     .slice(0, limita)
     .trim();
 }
+
+/** O intrare din calendarul anual: fie un eveniment anunțat, fie o amintire. */
+export type IntrareCalendar = {
+  date: Date;
+  title: string;
+  location?: string;
+  /** Unde duce rândul: ancora cardului de pe pagină, sau pagina amintirii. */
+  href?: string;
+  cheie: string;
+};
+
+/**
+ * Calendarul unui an, adunat din ambele colecții.
+ *
+ * Evenimentele anunțate și amintirile sunt același lucru privit din două
+ * momente: înainte și după. Calendarul le arată pe toate, ca anul să fie
+ * întreg, fără ca cineva să scrie aceeași dată în două fișiere.
+ *
+ * Când o amintire cade în ziua unui eveniment, rămâne titlul evenimentului
+ * (el e tradus în toate limbile), dar rândul trimite la amintire — acolo sunt
+ * fotografiile, iar evenimentul a trecut deja.
+ */
+export async function getYearCalendar(
+  locale: Locale,
+  year: number,
+  linkAmintire: (slug: string) => string,
+): Promise<IntrareCalendar[]> {
+  const zi = (d: Date) => d.toISOString().slice(0, 10);
+
+  const evenimente = (await getEvents(locale)).filter((e) => e.data.date.getUTCFullYear() === year);
+
+  const amintiri = (await getMemoriesByYear(locale))
+    .filter((g) => g.year === year)
+    .flatMap((g) => g.entries)
+    .filter(({ memory }) => memory.data.date);
+
+  const dupaZi = new Map<string, IntrareCalendar>();
+  for (const e of evenimente) {
+    dupaZi.set(zi(e.data.date), {
+      date: e.data.date,
+      title: e.data.title,
+      location: e.data.location,
+      href: `#eveniment-${e.data.translationKey}`,
+      cheie: e.data.translationKey,
+    });
+  }
+
+  for (const { memory, slug } of amintiri) {
+    const cheieZi = zi(memory.data.date!);
+    const existent = dupaZi.get(cheieZi);
+    if (existent) {
+      // Evenimentul are deja rândul; îl trimitem însă către amintire.
+      existent.href = linkAmintire(slug);
+    } else {
+      dupaZi.set(cheieZi, {
+        date: memory.data.date!,
+        title: memory.data.title,
+        href: linkAmintire(slug),
+        cheie: `amintire-${slug}`,
+      });
+    }
+  }
+
+  return [...dupaZi.values()].sort((a, b) => a.date.getTime() - b.date.getTime());
+}
