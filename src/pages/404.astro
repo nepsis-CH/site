@@ -1,8 +1,14 @@
 ---
 import Base from '../layouts/Base.astro';
-import { defaultLocale, useTranslations, localePath } from '../i18n';
+import { defaultLocale, isLocale, useTranslations, localePath } from '../i18n';
 
-const lang = defaultLocale;
+/*
+  404 e o singură pagină, servită pentru orice adresă greșită, deci nu poate
+  ști dinainte limba. O citim din prefixul căii cerute: cine greșește o adresă
+  sub /fr/ primește pagina în franceză, nu în română.
+*/
+const prefix = Astro.url.pathname.split('/').filter(Boolean)[0];
+const lang = isLocale(prefix) ? prefix : defaultLocale;
 const t = useTranslations(lang);
 ---
 

@@ -55,7 +55,7 @@ export default {
     'Amintiri din evenimentele Nepsis Elveția, grupate pe ani: pelerinaje, drumeții, privegheri, congrese și întâlniri ale tinerilor ortodocși din Elveția.',
   'memories.intro': 'Dacă vrei să știi cum arătăm și ce am făcut până acum, aici este locul potrivit!',
   'memories.year': 'Anul',
-  'memories.onlyRo': 'Amintirile mai vechi sunt disponibile doar în limba română.',
+  'memories.onlyRo': 'Amintirile sunt scrise în limba română.',
   'memories.back': 'Înapoi la amintiri',
   'memories.readMore': 'Citește mai mult',
 

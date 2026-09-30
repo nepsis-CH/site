@@ -9,4 +9,4 @@ translationKey: turul-parohiilor-2026
 
 Im November ziehen wir wieder durch die rumänischen Pfarreien der Schweiz, um die jungen Menschen dort zu treffen, bei ihnen zu Hause.
 
-Die Daten und Pfarreien werden nach und nach bekannt gegeben. Abonniere den [Newsletter](/newsletter/) oder [schreib uns](/contact/), um auf dem Laufenden zu bleiben.
+Die Daten und Pfarreien werden nach und nach bekannt gegeben. Abonniere den [Newsletter](/de/newsletter/) oder [schreib uns](/de/contact/), um auf dem Laufenden zu bleiben.

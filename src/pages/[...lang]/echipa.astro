@@ -87,15 +87,13 @@ function initiala(nume: string): string {
                     {t(`members.role.${member.data.role}` as UIKey)}
                   </p>
                 )}
-                {member.data.parish && (
+                {/*
+                  La responsabil nu scriem nimic aici: rolul lui spune deja „Nepsis
+                  Elveția”, iar un rând cu numele țării dedesubt doar l-ar repeta.
+                */}
+                {member.data.parish && member.data.role !== 'responsabil' && (
                   <p class="text-sm text-stone-500">
-                    {/*
-                      Părintele răspunde de frăție la nivel de țară, nu de o parohie,
-                      deci la el nu punem prefixul „Parohia”.
-                    */}
-                    {member.data.role === 'responsabil'
-                      ? member.data.parish
-                      : `${t('members.parish')} ${member.data.parish}`}
+                    {t('members.parish')} {member.data.parish}
                   </p>
                 )}
               </li>

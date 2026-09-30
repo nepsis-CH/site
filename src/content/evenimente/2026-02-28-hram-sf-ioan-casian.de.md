@@ -34,6 +34,6 @@ Das Patronatsfest von Nepsis „Heiliger Johannes Cassian“ findet im rumänisc
 - 3 Personen – 115 CHF
 - 4 Personen – 150 CHF
 
-Die Reservierung erfolgt individuell gemäß den Angaben auf der Website: [lapintedelys.ch](https://lapintedelys.ch/language/en/). Wenn du angibst, dass du zur Klostergruppe gehörst, erhältst du 10 % Rabatt 💸.
+Die Reservierung erfolgt individuell gemäss den Angaben auf der Website: [lapintedelys.ch](https://lapintedelys.ch/language/en/). Wenn du angibst, dass du zur Klostergruppe gehörst, erhältst du 10 % Rabatt 💸.
 
 ❗ Für eine gute Organisation bitten wir dich, das untenstehende Anmeldeformular auszufüllen.

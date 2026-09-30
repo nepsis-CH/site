@@ -57,7 +57,7 @@ const en: Partial<typeof ro> = {
     'Memories from Nepsis Switzerland events, grouped by year: pilgrimages, hikes, vigils, congresses and gatherings of the young Orthodox Christians in Switzerland.',
   'memories.intro': 'If you want to know what we look like and what we have done so far, this is the right place!',
   'memories.year': 'Year',
-  'memories.onlyRo': 'Older memories are available in Romanian only.',
+  'memories.onlyRo': 'The memories are written in Romanian.',
   'memories.back': 'Back to memories',
   'memories.readMore': 'Read more',
 

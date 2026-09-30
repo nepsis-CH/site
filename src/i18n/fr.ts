@@ -31,7 +31,7 @@ const fr: Partial<typeof ro> = {
   'home.seeMemories': 'Voir nos souvenirs',
   'home.contactUs': 'Contacte-nous',
   'home.moreAbout': 'Tu veux en savoir plus sur qui nous sommes et ce que nous faisons ?',
-  'home.moreAboutLink': 'Visitez la page des souvenirs.',
+  'home.moreAboutLink': 'Va voir la page des souvenirs.',
 
   // Activités
   'activities.title': 'Événements',
@@ -55,7 +55,7 @@ const fr: Partial<typeof ro> = {
     'Souvenirs des événements de Nepsis Suisse, classés par année : pèlerinages, randonnées, vigiles, congrès et rencontres des jeunes orthodoxes de Suisse.',
   'memories.intro': 'Si tu veux savoir à quoi nous ressemblons et ce que nous avons fait jusqu’à présent, tu es au bon endroit !',
   'memories.year': 'Année',
-  'memories.onlyRo': 'Les souvenirs plus anciens ne sont disponibles qu’en roumain.',
+  'memories.onlyRo': 'Les souvenirs sont rédigés en roumain.',
   'memories.back': 'Retour aux souvenirs',
   'memories.readMore': 'Lire la suite',
 
@@ -118,7 +118,7 @@ const fr: Partial<typeof ro> = {
 
   // Pied de page
   'footer.contact': 'Contact',
-  'footer.social': 'Retrouvez-nous aussi sur',
+  'footer.social': 'Tu nous trouves aussi sur',
   'footer.useful': 'Adresses utiles',
   'footer.bank': 'Compte bancaire',
   'footer.rights': 'Tous droits réservés.',
@@ -167,8 +167,8 @@ const fr: Partial<typeof ro> = {
     'Cours en ligne de chant byzantin, visites de musées et de bibliothèques, projections de films.',
   'activities.calendarTitle': 'Calendrier des événements {year}',
   'activities.calendarIntro': 'Tout ce que nous avons préparé pour cette année, mois après mois.',
-  'activities.calendarEmpty': 'Le calendrier de cette année n\'a pas encore d\'événements annoncés.',
-  'activities.calendarNote': 'Le calendrier se remplit au fil de l\'année.',
+  'activities.calendarEmpty': 'Le calendrier de cette année n’a pas encore d’événements annoncés.',
+  'activities.calendarNote': 'Le calendrier se remplit au fil de l’année.',
   'activities.statusUpcoming': 'À venir',
   'activities.statusPast': 'A eu lieu',
   'activities.statusNext': 'Prochain',
@@ -178,7 +178,7 @@ const fr: Partial<typeof ro> = {
   'gallery.sections': 'Sections Souvenirs',
   'gallery.tabEvents': 'Événements',
   'gallery.intro':
-    'Toutes les photos de nos souvenirs. Choisis une année ou un événement et ouvre n\'importe quelle photo pour la voir en grand.',
+    'Toutes les photos de nos souvenirs. Choisis une année ou un événement et ouvre n’importe quelle photo pour la voir en grand.',
   'gallery.filterYear': 'Filtrer par année',
   'gallery.allYears': 'Toutes les années',
   'gallery.event': 'Événement',
@@ -200,7 +200,7 @@ const fr: Partial<typeof ro> = {
   'psaltica.forWhomText': 'Tous les jeunes de la Métropole orthodoxe roumaine d’Europe occidentale et méridionale',
   'psaltica.join': 'Tu veux participer ?',
   'psaltica.joinText':
-    'Écris-nous un e-mail et nous t\'ajoutons au groupe de discussion Telegram, où nous communiquons tout ce qui concerne les cours.',
+    'Écris-nous un e-mail et nous t’ajoutons au groupe de discussion Telegram, où nous communiquons tout ce qui concerne les cours.',
   'psaltica.emailButton': 'Écris-nous un e-mail !',
   // --- v10: secțiunile paginii Echipa ---
   'members.intro': 'Celles et ceux qui organisent les activités de Nepsis Suisse.',

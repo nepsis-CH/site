@@ -16,7 +16,7 @@ const de: Partial<typeof ro> = {
   'nav.contact': 'Kontakt',
   'nav.menu': 'Menü',
   'nav.openMenu': 'Menü öffnen',
-  'nav.closeMenu': 'Menü schließen',
+  'nav.closeMenu': 'Menü schliessen',
   'nav.language': 'Sprache',
   'nav.skipToContent': 'Zum Inhalt springen',
 
@@ -55,7 +55,7 @@ const de: Partial<typeof ro> = {
     'Erinnerungen an die Veranstaltungen von Nepsis Schweiz, nach Jahren geordnet: Wallfahrten, Wanderungen, Vigilien, Kongresse und Treffen der jungen orthodoxen Christen in der Schweiz.',
   'memories.intro': 'Wenn du wissen möchtest, wie wir aussehen und was wir bisher unternommen haben, bist du hier genau richtig!',
   'memories.year': 'Jahr',
-  'memories.onlyRo': 'Ältere Erinnerungen sind nur auf Rumänisch verfügbar.',
+  'memories.onlyRo': 'Die Erinnerungen sind auf Rumänisch verfasst.',
   'memories.back': 'Zurück zu den Erinnerungen',
   'memories.readMore': 'Weiterlesen',
 
@@ -116,7 +116,7 @@ const de: Partial<typeof ro> = {
   'contact.newsletterButton': 'Abonniere den Newsletter!',
   'contact.newsletterLink': 'Newsletter abonnieren',
 
-  // Fußzeile
+  // Fusszeile
   'footer.contact': 'Kontakt',
   'footer.social': 'Du findest uns auch auf',
   'footer.useful': 'Nützliche Adressen',
@@ -201,7 +201,7 @@ const de: Partial<typeof ro> = {
   'psaltica.join': 'Willst du mitmachen?',
   'psaltica.joinText':
     'Schreib uns eine E-Mail und wir nehmen dich in die Telegram-Diskussionsgruppe auf, in der wir alles zum Unterricht mitteilen.',
-  'psaltica.emailButton': 'Schreib uns eine E-Mail !',
+  'psaltica.emailButton': 'Schreib uns eine E-Mail!',
   // --- v10: secțiunile paginii Echipa ---
   'members.intro': 'Die Menschen, die die Aktivitäten von Nepsis Schweiz organisieren.',
   'members.section.coordinators': 'Die Koordinatoren',
