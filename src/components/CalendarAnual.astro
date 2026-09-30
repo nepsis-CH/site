@@ -13,11 +13,11 @@ import type { IntrareCalendar } from '../lib/content';
 /**
  * Calendarul anual, ca agendă pe luni.
  *
- * Lunile curg în ordinea lor firească, ianuarie spre decembrie: pagina are
- * deasupra o secțiune doar pentru evenimentul care urmează, deci calendarul
- * poate rămâne un calendar. Ce a trecut se retrage estompat, fără să dispară.
- * Plăcuța de dată din stânga se citește la fel de repede pe telefon ca pe
- * laptop, fără derulare laterală.
+ * Lunile curg de la cea mai îndepărtată spre cea mai veche, decembrie spre
+ * ianuarie, ca ce urmează să stea sus, la îndemână, iar anul deja consumat să
+ * rămână dedesubt. Ce a trecut se retrage estompat, fără să dispară. Plăcuța
+ * de dată din stânga se citește la fel de repede pe telefon ca pe laptop,
+ * fără derulare laterală.
  */
 interface Props {
   intrari: IntrareCalendar[];
@@ -34,12 +34,18 @@ const t = useTranslations(lang);
 const azi = Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate());
 const eTrecut = (i: IntrareCalendar) => i.date.getTime() < azi;
 
-const inOrdine = [...intrari].sort((a, b) => a.date.getTime() - b.date.getTime());
+/*
+  „Următorul” înseamnă cel mai apropiat eveniment din viitor, deci se caută
+  în ordine crescătoare — nu în cea de afișare, care merge invers.
+*/
+const idUrmator = [...intrari]
+  .sort((a, b) => a.date.getTime() - b.date.getTime())
+  .find((i) => !eTrecut(i))?.cheie;
 
-// Primul care nu a trecut încă primește accentul „Următorul”.
-const idUrmator = inOrdine.find((i) => !eTrecut(i))?.cheie;
+// Afișarea merge invers: lunile dinspre decembrie spre ianuarie.
+const inOrdine = [...intrari].sort((a, b) => b.date.getTime() - a.date.getTime());
 
-// Grupare pe luni, în ordine cronologică.
+// Grupare pe luni, păstrând ordinea de afișare.
 const luni: { nume: string; luna: number; intrari: IntrareCalendar[]; trecuta: boolean }[] = [];
 for (const i of inOrdine) {
   const luna = i.date.getUTCMonth();
