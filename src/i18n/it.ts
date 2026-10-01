@@ -24,7 +24,7 @@ const it: Partial<Record<keyof typeof ro, string>> = {
   'home.heroAlt': 'Collage di foto dagli incontri di Nepsis Svizzera',
   'home.tagline': 'Giovani cristiani ortodossi della Svizzera',
   'home.ageRange': 'Nepsis Svizzera si rivolge ai giovani tra i 14 e i 35 anni.',
-  'home.about.title': 'Chi è Nepsis Svizzera',
+  'home.about.title': 'Chi siamo?',
   'home.nextEvent': 'Il prossimo evento',
   'home.noUpcoming':
     'Iscriviti alla newsletter oppure scrivici per essere aggiunto ai nostri gruppi WhatsApp o per seguire le nostre pagine sui social, così resti aggiornato sulle prossime attività.',

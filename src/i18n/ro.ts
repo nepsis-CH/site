@@ -22,7 +22,7 @@ export default {
   'home.heroAlt': 'Colaj cu fotografii de la întâlnirile Nepsis Elveția',
   'home.tagline': 'Tineri creștini ortodocși din Elveția',
   'home.ageRange': 'Nepsis Elveția se adresează tinerilor între 14 și 35 de ani.',
-  'home.about.title': 'Despre Nepsis Elveția',
+  'home.about.title': 'Cine suntem ?',
   'home.nextEvent': 'Următorul Eveniment',
   'home.noUpcoming':
     'Abonează-te la newsletter sau scrie-ne ca să fii adăugat pe grupurile noastre de WhatsApp sau paginile de social media, pentru a fi la curent cu următoarele activități.',

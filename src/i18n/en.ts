@@ -24,7 +24,7 @@ const en: Partial<Record<keyof typeof ro, string>> = {
   'home.heroAlt': 'Photo collage from Nepsis Switzerland gatherings',
   'home.tagline': 'Young Orthodox Christians in Switzerland',
   'home.ageRange': 'Nepsis Switzerland is for young people between 14 and 35.',
-  'home.about.title': 'About Nepsis Switzerland',
+  'home.about.title': 'Who are we?',
   'home.nextEvent': 'Next Event',
   'home.noUpcoming':
     'Subscribe to the newsletter or write to us to be added to our WhatsApp groups or social media pages, so you stay up to date with our upcoming activities.',
