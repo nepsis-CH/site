@@ -38,8 +38,11 @@ const year = new Date().getFullYear();
 
     <p class="text-sm">
       <ObfuscatedEmail class="text-brand-200 underline decoration-brand-700 underline-offset-2 hover:text-white" />
-      <span class="mx-2 text-stone-600" aria-hidden="true">·</span>
-      <a href={localePath(lang, '/newsletter/')} class="underline decoration-brand-700 underline-offset-2 hover:text-white">
+      {/* Newsletterul stă pe rândul lui, sub adresă, nu lipit de ea. */}
+      <a
+        href={localePath(lang, '/newsletter/')}
+        class="mt-2 block underline decoration-brand-700 underline-offset-2 hover:text-white"
+      >
         {t('contact.newsletterLink')}
       </a>
     </p>
