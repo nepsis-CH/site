@@ -10,6 +10,11 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+  # Site-ul e static: „următorul eveniment” se hotărăște la construire, după
+  # ceasul de atunci. Fără reconstruire, pagina ar rămâne să arate un eveniment
+  # care a trecut. Reconstruim în fiecare noapte, ca ziua să înceapă corect.
+  schedule:
+    - cron: '0 3 * * *'
 
 permissions:
   contents: read
