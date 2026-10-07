@@ -20,6 +20,28 @@ const pathNoLocale = stripLocale(Astro.url.pathname);
 const canonical = new URL(Astro.url.pathname, Astro.site);
 // Pagina 404 există doar în română — fără alternative hreflang.
 const hasAlternates = !pathNoLocale.startsWith('/404');
+
+/*
+  Numele site-ului pentru Google.
+
+  ch.nepsis.org e subdomeniu al lui nepsis.org, care se numește „NEPSIS
+  France”. Lipsind un semnal propriu destul de puternic, Google îl moștenea pe
+  al domeniului părinte și îl afișa la rezultatele noastre.
+
+  Datele structurate `WebSite` sunt semnalul pe care Google îl ia primul,
+  înaintea lui og:site_name. Se pun doar pe prima pagină și trimit la rădăcina
+  site-ului, cum cere documentația. Numele e în limba paginii, iar celelalte
+  patru merg ca denumiri alternative.
+*/
+const estePrimaPagina = pathNoLocale === '/' || pathNoLocale === '';
+const numeAlternative = locales.filter((l) => l !== lang).map((l) => useTranslations(l)('site.name'));
+const dateSite = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: t('site.name'),
+  alternateName: numeAlternative,
+  url: new URL(withBase('/'), Astro.site).href,
+};
 const ogLocales: Record<Locale, string> = { ro: 'ro_RO', fr: 'fr_CH', en: 'en_GB', de: 'de_CH' };
 ---
 
@@ -60,6 +82,7 @@ const ogLocales: Record<Locale, string> = { ro: 'ro_RO', fr: 'fr_CH', en: 'en_GB
         ))
     }
     {hasAlternates && <link rel="alternate" hreflang="x-default" href={new URL(withBase(pathNoLocale), Astro.site).href} />}
+    {estePrimaPagina && <script type="application/ld+json" set:html={JSON.stringify(dateSite)} />}
     <meta property="og:type" content="website" />
     <meta property="og:locale" content={ogLocales[lang]} />
     <meta property="og:site_name" content={t('site.name')} />
