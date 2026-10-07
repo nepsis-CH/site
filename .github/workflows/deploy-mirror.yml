@@ -10,11 +10,11 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
-  # Site-ul e static: „următorul eveniment” se hotărăște la construire, după
-  # ceasul de atunci. Fără reconstruire, pagina ar rămâne să arate un eveniment
-  # care a trecut. Reconstruim în fiecare noapte, ca ziua să înceapă corect.
-  schedule:
-    - cron: '0 3 * * *'
+  # ATENȚIE: fără „schedule” aici. Un declanșator programat ignoră filtrul
+  # `branches` și rulează întotdeauna pe ramura implicită a depozitului. Pe
+  # depozitul de producție aceea e `master`, deci un cron pus aici ar construi
+  # site-ul real cu BASE_PATH-ul oglinzii și i-ar șterge CNAME-ul.
+  # Reconstruirea zilnică stă doar în deploy.yml.
 
 permissions:
   contents: read
