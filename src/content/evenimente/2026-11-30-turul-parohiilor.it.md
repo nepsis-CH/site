@@ -1,6 +1,6 @@
 ---
 title: "Giro delle parrocchie"
-date: 2026-11-01
+date: 2026-11-30
 showDay: false
 location: "Le parrocchie romene della Svizzera"
 lang: it

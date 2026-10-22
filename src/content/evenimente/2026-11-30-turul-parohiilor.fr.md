@@ -1,6 +1,6 @@
 ---
 title: "Tournée des paroisses"
-date: 2026-11-01
+date: 2026-11-30
 showDay: false
 location: "Les paroisses roumaines de Suisse"
 lang: fr

@@ -1,6 +1,6 @@
 ---
 title: "Parish Tour"
-date: 2026-11-01
+date: 2026-11-30
 showDay: false
 location: "The Romanian parishes in Switzerland"
 lang: en

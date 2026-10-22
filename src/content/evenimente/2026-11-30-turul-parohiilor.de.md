@@ -1,6 +1,6 @@
 ---
 title: "Pfarreien-Tour"
-date: 2026-11-01
+date: 2026-11-30
 showDay: false
 location: "Die rumänischen Pfarreien der Schweiz"
 lang: de

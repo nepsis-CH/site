@@ -1,6 +1,6 @@
 ---
 title: "Turul Parohiilor"
-date: 2026-11-01
+date: 2026-11-30
 showDay: false
 location: "Parohiile românești din Elveția"
 lang: ro

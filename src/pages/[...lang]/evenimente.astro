@@ -35,7 +35,12 @@ const anul = new Date().getUTCFullYear();
 // Calendarul adună și evenimentele anunțate, și amintirile anului: ce urmează
 // și ce a fost sunt același an, privit din două momente.
 const intrariCalendar = await getYearCalendar(lang, anul, (slug) => localePath(lang, `/amintiri/${slug}/`));
-const ancore = new Set(upcoming.map((e) => e.data.translationKey));
+/*
+  Ancore doar pentru evenimentul care chiar are card pe pagină. Secțiunea de sus
+  arată unul singur, deci rândurile celorlalte evenimente viitoare din calendar
+  ar fi trimis către ancore inexistente — linkuri care nu fac nimic la click.
+*/
+const ancore = new Set(upcoming[0] ? [upcoming[0].data.translationKey] : []);
 ---
 
 <Base lang={lang} title={`${t('activities.title')} · ${t('site.name')}`} description={t('activities.description')}>
